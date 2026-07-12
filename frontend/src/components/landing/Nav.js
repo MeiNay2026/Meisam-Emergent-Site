@@ -22,6 +22,8 @@ export default function Nav({ onCheckSymptoms }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const light = !scrolled && !mobileOpen; // light text over the hero photo
+
   const links = [
     { id: "conditions", label: t.nav.conditions },
     { id: "why", label: t.nav.whyChoose },
@@ -41,46 +43,45 @@ export default function Nav({ onCheckSymptoms }) {
       data-testid="site-nav"
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-cream-100/80 backdrop-blur-xl border-b border-forest-100 shadow-sm"
+          ? "bg-cream-100/85 backdrop-blur-xl border-b border-forest-100 shadow-sm"
           : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-10">
-        {/* Logo */}
-        <button
-          onClick={() => go("hero")}
-          data-testid="nav-logo"
-          className="text-start leading-tight"
-        >
-          <span className="block font-heading text-xl font-semibold tracking-tight text-forest-900">
+        <button onClick={() => go("hero")} data-testid="nav-logo" className="text-start leading-tight">
+          <span className={`block font-heading text-xl font-semibold tracking-tight transition-colors ${light ? "text-cream-100" : "text-forest-900"}`}>
             Dr. Meisam Lund
           </span>
-          <span className="block text-[10px] font-medium uppercase tracking-[0.22em] text-forest-500">
+          <span className={`block text-[10px] font-medium uppercase tracking-[0.22em] transition-colors ${light ? "text-cream-100/70" : "text-forest-500"}`}>
             {t.footer.role}
           </span>
         </button>
 
-        {/* Desktop links */}
         <div className="hidden items-center gap-7 xl:flex">
           {links.map((l) => (
             <button
               key={l.id}
               onClick={() => go(l.id)}
               data-testid={`nav-link-${l.id}`}
-              className="relative text-sm font-medium text-forest-800/90 transition-colors hover:text-forest-900 after:absolute after:-bottom-1.5 after:start-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+              className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:start-0 after:h-px after:w-0 after:bg-lime after:transition-all after:duration-300 hover:after:w-full ${
+                light ? "text-cream-100/90 hover:text-white" : "text-forest-800/90 hover:text-forest-900"
+              }`}
             >
               {l.label}
             </button>
           ))}
         </div>
 
-        {/* Right */}
         <div className="flex items-center gap-2.5">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button
                 data-testid="language-switcher"
-                className="inline-flex items-center gap-1.5 rounded-full border border-forest-900/15 bg-white/50 px-3 py-2 text-xs font-semibold text-forest-800 backdrop-blur transition-colors hover:bg-white"
+                className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-2 text-xs font-semibold backdrop-blur transition-colors ${
+                  light
+                    ? "border-cream-100/40 bg-white/10 text-cream-100 hover:bg-white/20"
+                    : "border-forest-900/15 bg-white/50 text-forest-800 hover:bg-white"
+                }`}
               >
                 <Globe className="h-4 w-4" />
                 {langs.find((l) => l.code === lang)?.label}
@@ -92,25 +93,23 @@ export default function Nav({ onCheckSymptoms }) {
                   key={l.code}
                   data-testid={`lang-option-${l.code}`}
                   onClick={() => setLang(l.code)}
-                  className="flex items-center justify-between gap-3 cursor-pointer"
+                  className="flex cursor-pointer items-center justify-between gap-3"
                 >
                   <span>{l.name}</span>
-                  {lang === l.code && <Check className="h-4 w-4 text-gold" />}
+                  {lang === l.code && <Check className="h-4 w-4 text-lime-dark" />}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <BookButton
-            label={t.nav.book}
-            testid="nav-book-btn"
-            className="hidden sm:inline-flex"
-          />
+          <BookButton label={t.nav.book} testid="nav-book-btn" variant="lime" className="hidden sm:inline-flex" />
 
           <button
             onClick={() => setMobileOpen((v) => !v)}
             data-testid="mobile-menu-toggle"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-forest-900/15 bg-white/50 text-forest-900 xl:hidden"
+            className={`inline-flex h-10 w-10 items-center justify-center rounded-full border xl:hidden ${
+              light ? "border-cream-100/40 bg-white/10 text-cream-100" : "border-forest-900/15 bg-white/50 text-forest-900"
+            }`}
             aria-label="Menu"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -118,7 +117,6 @@ export default function Nav({ onCheckSymptoms }) {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -140,7 +138,7 @@ export default function Nav({ onCheckSymptoms }) {
                 </button>
               ))}
               <div className="mt-3 flex flex-col gap-2">
-                <BookButton label={t.nav.book} testid="mobile-book-btn" className="w-full" />
+                <BookButton label={t.nav.book} testid="mobile-book-btn" variant="lime" className="w-full" />
                 <button
                   onClick={() => {
                     setMobileOpen(false);

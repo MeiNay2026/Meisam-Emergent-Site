@@ -36,7 +36,7 @@ export default function WhyChoose() {
               <Reveal key={i} delay={i * 0.08}>
                 <div data-testid={`why-item-${i}`} className="group">
                   <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-cream-100/5 ring-1 ring-cream-100/15 transition-colors group-hover:bg-cream-100/10">
-                    <Icon className="h-5 w-5 text-gold" strokeWidth={1.4} />
+                    <Icon className="h-5 w-5 text-lime" strokeWidth={1.4} />
                   </div>
                   <h3 className="font-heading text-2xl font-normal text-cream-100">
                     {it.title}

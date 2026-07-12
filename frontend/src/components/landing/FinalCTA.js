@@ -35,18 +35,18 @@ export default function FinalCTA() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <BookButton label={f.book} testid="final-book-btn" className="bg-cream-100 !text-forest-900 hover:bg-white" />
+            <BookButton label={f.book} testid="final-book-btn" variant="lime" />
             <CallButton label={f.call} />
             <WhatsAppButton label={f.whatsapp} />
           </div>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 text-sm text-cream-500/80 sm:flex-row sm:gap-10">
             <span className="inline-flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-gold" />
+              <MapPin className="h-4 w-4 text-lime" />
               {SITE.location}
             </span>
             <span className="inline-flex items-center gap-2">
-              <Clock className="h-4 w-4 text-gold" />
+              <Clock className="h-4 w-4 text-lime" />
               {f.hours}
             </span>
           </div>

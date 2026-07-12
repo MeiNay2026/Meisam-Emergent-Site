@@ -18,19 +18,23 @@ module.exports = {
       },
       colors: {
         forest: {
-          900: '#142E25',
-          800: '#1B3B31',
-          700: '#2A5245',
-          500: '#4A7A68',
-          300: '#8AB0A0',
-          100: '#D8E2DC',
+          900: '#17170F',
+          800: '#26251A',
+          700: '#45443A',
+          500: '#77766A',
+          300: '#A9A797',
+          100: '#E7E1D5',
         },
         cream: {
-          900: '#D5CEBA',
-          500: '#EAE3D2',
-          100: '#F9F6F0',
+          900: '#E3D9C8',
+          500: '#EFE9DE',
+          100: '#F7F3EC',
         },
-        gold: '#C4A47C',
+        gold: '#B79367',
+        lime: {
+          DEFAULT: '#CBEF4A',
+          dark: '#B4D92F',
+        },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

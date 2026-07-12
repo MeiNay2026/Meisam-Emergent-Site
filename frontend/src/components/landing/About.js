@@ -1,5 +1,5 @@
 import React from "react";
-import { Quote } from "lucide-react";
+import { Quote, GraduationCap, Briefcase, BadgeCheck } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { IMAGES } from "@/lib/site";
 import { Reveal, Overline } from "./Reveal";
@@ -63,6 +63,36 @@ export default function About() {
             </div>
           </Reveal>
         </div>
+      </div>
+
+      {/* Credentials */}
+      <div className="mx-auto mt-16 max-w-7xl px-5 lg:mt-24 lg:px-10">
+        <Reveal>
+          <div className="grid grid-cols-1 gap-8 rounded-[2rem] border border-forest-100 bg-cream-100 p-8 md:grid-cols-3 lg:p-12">
+            {[
+              { title: a.credentials.educationTitle, items: a.credentials.education, Icon: GraduationCap },
+              { title: a.credentials.experienceTitle, items: a.credentials.experience, Icon: Briefcase },
+              { title: a.credentials.associationTitle, items: a.credentials.associations, Icon: BadgeCheck },
+            ].map((col, ci) => (
+              <div key={ci} data-testid={`credentials-col-${ci}`}>
+                <div className="mb-5 flex items-center gap-2.5">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-lime/30 text-forest-900">
+                    <col.Icon className="h-4 w-4" strokeWidth={1.6} />
+                  </span>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-forest-800">{col.title}</h3>
+                </div>
+                <ul className="space-y-3">
+                  {col.items.map((it, i) => (
+                    <li key={i} className="flex gap-2.5 text-sm leading-snug text-forest-700/90">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
