@@ -1,0 +1,136 @@
+{
+  "theme": "Light theme dominant (warm cream/off-white) with deep forest green sections for contrast. Apple x Scandinavian minimalism x luxury healthcare.",
+  "typography": {
+    "fonts": {
+      "headings": "Cormorant Garamond, serif (Luxury, elegant, trustworthy, editorial feel)",
+      "body": "Manrope, sans-serif (Clean, readable, modern geometric sans)",
+      "fallback": "serif and sans-serif respectively"
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight text-forest-900",
+      "h2": "text-4xl sm:text-5xl font-light tracking-tight text-forest-900",
+      "h3": "text-2xl sm:text-3xl font-medium tracking-tight text-forest-800",
+      "body": "text-base lg:text-lg leading-relaxed text-forest-700/80",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em] text-forest-500"
+    },
+    "rules": [
+      "NEVER use Inter, Space Grotesk, or generic defaults.",
+      "Headings must use Cormorant Garamond with tight letter spacing (tracking-tight) to feel editorial.",
+      "Never center align body text; prefer left alignment for readability.",
+      "Line height must be tight for headings (leading-none or leading-tight) and loose for body (leading-relaxed)."
+    ]
+  },
+  "colors": {
+    "palette": {
+      "background": "#F9F6F0",
+      "surface": "#FFFFFF",
+      "forest": {
+        "900": "#142E25",
+        "800": "#1B3B31",
+        "700": "#2A5245",
+        "500": "#4A7A68",
+        "300": "#8AB0A0",
+        "100": "#D8E2DC"
+      },
+      "cream": {
+        "900": "#D5CEBA",
+        "500": "#EAE3D2",
+        "100": "#F9F6F0"
+      },
+      "text": {
+        "primary": "#181C1A",
+        "secondary": "#4A524E",
+        "inverse": "#F9F6F0"
+      },
+      "accent": "#C4A47C"
+    },
+    "rules": [
+      "Use Archetype 1: Organic & Earthy.",
+      "Deep forest green is the anchor. Warm cream is the canvas.",
+      "Avoid harsh pure white (#FFFFFF) for the main background; use warm cream (#F9F6F0) to reduce clinical anxiety.",
+      "No generic full-screen gradients. Use solid colors or very subtle radial glows.",
+      "Ensure text contrast meets APCA/WCAG standards (minimum 4.5:1 for body)."
+    ]
+  },
+  "visual_enhancers": {
+    "surfaces": [
+      "Cards: Flat solid surfaces with subtle 1px borders (border-forest-100) and soft ambient shadows.",
+      "Glassmorphism (Crystal Variant): Use ONLY for the sticky nav or AI Symptom Checker floating UI. Implement with backdrop-blur-xl bg-white/70 or bg-forest-900/80 and 1px inner border. Never use muddy gray transparency.",
+      "Corner Radius: Subtle roundness (rounded-2xl to rounded-3xl for cards). Nothing sharp, nothing too bubbly."
+    ],
+    "textures": "Subtle noise/grain overlay globally on dark sections to make it feel like premium print, not digital flat."
+  },
+  "grids_and_layouts": {
+    "spacing_system": "Generous spacing. Use p-12, p-16, p-24, py-32 to create breathing room. Do not cram elements.",
+    "patterns": {
+      "hero": "Asymmetric split layout. Left side: Text and CTAs. Right side: Doctor's photo spanning height.",
+      "trust_bar": "Marquee or wide horizontal grid, muted opacity for logos, extremely clean.",
+      "cards_grid": "Bento style or 3-column grid with gap-8. Elements must be direct children of the grid.",
+      "patient_journey": "Vertical timeline with a scrolling progress line connecting steps."
+    }
+  },
+  "motion": {
+    "libraries": ["framer-motion", "lenis"],
+    "interactions": [
+      "Lenis: Must be used for smooth momentum scrolling.",
+      "Framer Motion: Scroll-triggered fade-ups (y: 30, opacity: 0 -> y: 0, opacity: 1) with easeOut.",
+      "Hover states: Subtle lifts (-translate-y-1) and shadow increases on cards.",
+      "AI Typing Effect: For the symptom checker responses to mimic human interaction."
+    ]
+  },
+  "media": {
+    "images": [
+      {
+        "category": "Hero Doctor Photo 1",
+        "url": "https://customer-assets.emergentagent.com/job_5ed6d006-b6f7-445f-80ce-b496542d7340/artifacts/u4ja9nos_SR5_0382%20%281%29.webp",
+        "description": "Doctor in white coat at American Hospital. Use as primary hero image."
+      },
+      {
+        "category": "About Doctor Headshot",
+        "url": "https://customer-assets.emergentagent.com/job_5ed6d006-b6f7-445f-80ce-b496542d7340/artifacts/qpdb2xg6_MEISAM%20BIO%20PROFILE%20PIC.jpeg",
+        "description": "Doctor profile headshot. Use in the 'About Dr. Meisam' section."
+      },
+      {
+        "category": "Hospital/Clinic Ambient",
+        "url": "https://images.unsplash.com/photo-1719934398679-d764c1410770",
+        "description": "Minimalist bright hallway. Use as background for trust or testimonial sections."
+      },
+      {
+        "category": "Scandinavian Trust Vibe",
+        "url": "https://images.unsplash.com/photo-1757075027551-30c4fd0a7042",
+        "description": "Calm Scandinavian nature landscape. Use as a parallax background or texture for the 'Why Choose' or Swedish Board Certified section."
+      },
+      {
+        "category": "Medical Abstraction - Digestive",
+        "url": "https://images.unsplash.com/photo-1743767587835-7a80fe384236",
+        "description": "Clean 3D anatomical layout. Use as subtle visual for the 'Conditions' section."
+      }
+    ],
+    "rules": [
+      "Images must be object-cover and bounded. Max height 80vh on mobile.",
+      "If text overlays an image, use a gradient scrim (bg-gradient-to-t from-forest-900/80 to-transparent) or glassmorphism. NEVER pure transparent.",
+      "Preserve doctor faces perfectly."
+    ]
+  },
+  "component_guidelines": {
+    "navigation": "Sticky (top-0, z-50). Crystal glassmorphism. Left: Logo, Middle: Desktop links, Right: Language Switcher (EN/AR/SV) + Primary CTA.",
+    "buttons": "Pill-shaped (rounded-full). Primary: bg-forest-900 text-white hover:bg-forest-800. Secondary: border border-forest-900 text-forest-900 hover:bg-forest-100.",
+    "symptom_checker": "Interactive UI. A container with symptom chips ('Hernia', 'Reflux'). Clicking a chip triggers a framer-motion card appearing with an AI-generated surgeon's response. Needs 'AI Typing' simulation.",
+    "condition_cards": "Expandable Shadcn/framer-motion accordion or cards. Must have ample p-8 padding and elegant typography."
+  },
+  "accessibility": {
+    "contrast": "Strict APCA/WCAG standards. Text on dark green must be white/cream.",
+    "testing": "All interactive elements (buttons, chips, language toggle, accordion) MUST have data-testid attributes (e.g., data-testid='book-consultation-btn').",
+    "motion": "Respect prefers-reduced-motion CSS."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You are building a luxury healthcare site, not a SaaS dashboard. Avoid generic Inter font, avoid standard blue gradients.",
+    "Use framer-motion heavily but tastefully—fade ups, slow transitions. Static is dead.",
+    "Padding must be luxurious. Use p-12 to py-32 for sections.",
+    "The AI Symptom Checker must feel personal. Use a subtle animation for the AI typing.",
+    "Do not use generic placeholder texts. Write realistic copy based on the prompt (Clear answers. Precise surgery. Personal care.).",
+    "Links like 'Book Consultation' should href to 'tel:+97143775500' or WhatsApp 'https://wa.me/97143775500'. No basic forms.",
+    "Use lucide-react or @phosphor-icons/react for premium, thin icons.",
+    "Build using .js files since the project uses JS."
+  ]
+}
