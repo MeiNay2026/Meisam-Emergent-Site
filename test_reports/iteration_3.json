@@ -1,0 +1,31 @@
+{
+  "summary": "Regression test after removing WebGL 3D layer. All frontend flows working. No WebGL crash, no scene-3d/scene-3d-fallback elements, no CRA red overlay, zero console errors captured. Hero, symptom checker (AI), language switcher (EN/AR/SV with dir toggle), scroll reveals, condition toggle, FAQ expand, testimonials carousel, and all CTA hrefs verified.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Section-level data-testid attributes are missing on patient-journey, testimonials, articles, faq, insurance, and footer sections. Sections render correctly and are visible (confirmed via screenshot) but automated opacity checks by data-testid could not locate them. Consider adding data-testid=\"<section-name>\" on each section root for easier future regression testing."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only requested)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "WebGL 3D layer fully removed. Scene3D.js and SmoothScroll.js confirmed deleted. App is stable on the non-3D 'first version'. AI symptom-check endpoint responded within ~5-10s in this run. Language switcher applies dir='rtl' correctly for AR and 'ltr' for EN/SV. All CTAs use tel:+97143775500 and WhatsApp uses wa.me/97143775500.",
+  "verified_flows": {
+    "no_webgl": "PASS - no scene-3d, no fallback, no CRA overlay, 0 console errors",
+    "hero": "PASS - headline, hero-book-btn, hero-symptom-btn, hero-badge all visible",
+    "symptom_checker": "PASS - gallstones chip -> ask -> symptom-result appeared, no symptom-error",
+    "i18n": "PASS - AR->rtl, SV->ltr, EN->ltr",
+    "scroll_reveals": "PASS (visual) - all sections visible in screenshot",
+    "condition_toggle_hernia": "PASS - expands/collapses",
+    "faq_item_0": "PASS - clickable",
+    "testimonials": "PASS - next changed the quote",
+    "ctas": "PASS - hero-book-btn & nav-book-btn href=tel:+97143775500, whatsapp-btn href=https://wa.me/97143775500"
+  }
+}

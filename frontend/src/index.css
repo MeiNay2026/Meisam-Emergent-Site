@@ -83,3 +83,14 @@ body[dir="rtl"] .font-heading {
     transition-duration: 0.01ms !important;
   }
 }
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -32px, 0) scale(1.05); }
+}
+@keyframes blobFloatSlow {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(18px, 24px, 0) scale(0.95); }
+}
+.blob-float { animation: blobFloat 9s ease-in-out infinite; will-change: transform; }
+.blob-float-slow { animation: blobFloatSlow 12s ease-in-out infinite; will-change: transform; }
