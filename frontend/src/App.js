@@ -1,55 +1,44 @@
-import { useEffect } from "react";
+import React from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import { LanguageProvider } from "@/context/LanguageContext";
+import Nav from "@/components/landing/Nav";
+import Hero from "@/components/landing/Hero";
+import TrustBar from "@/components/landing/TrustBar";
+import SymptomChecker from "@/components/landing/SymptomChecker";
+import Conditions from "@/components/landing/Conditions";
+import WhyChoose from "@/components/landing/WhyChoose";
+import PatientJourney from "@/components/landing/PatientJourney";
+import Testimonials from "@/components/landing/Testimonials";
+import Articles from "@/components/landing/Articles";
+import FAQ from "@/components/landing/FAQ";
+import Insurance from "@/components/landing/Insurance";
+import FinalCTA from "@/components/landing/FinalCTA";
+import Footer from "@/components/landing/Footer";
+import { scrollToId } from "@/components/landing/cta";
 
 function App() {
+  const goSymptoms = () => scrollToId("symptoms");
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-cream-100 font-body text-forest-900 antialiased">
+        <Nav onCheckSymptoms={goSymptoms} />
+        <main>
+          <Hero onCheckSymptoms={goSymptoms} />
+          <TrustBar />
+          <SymptomChecker />
+          <Conditions />
+          <WhyChoose />
+          <PatientJourney />
+          <Testimonials />
+          <Articles />
+          <FAQ />
+          <Insurance />
+          <FinalCTA />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

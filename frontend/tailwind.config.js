@@ -7,12 +7,30 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['"Cormorant Garamond"', 'serif'],
+        body: ['Manrope', 'sans-serif'],
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
       },
       colors: {
+        forest: {
+          900: '#142E25',
+          800: '#1B3B31',
+          700: '#2A5245',
+          500: '#4A7A68',
+          300: '#8AB0A0',
+          100: '#D8E2DC',
+        },
+        cream: {
+          900: '#D5CEBA',
+          500: '#EAE3D2',
+          100: '#F9F6F0',
+        },
+        gold: '#C4A47C',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -70,11 +88,16 @@ module.exports = {
           to: {
             height: '0'
           }
+        },
+        'marquee': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'marquee': 'marquee 40s linear infinite'
       }
     }
   },
