@@ -99,7 +99,9 @@ def build_prompt(symptom: str, details: str, language: str) -> str:
         '  "when_to_book": "1-2 sentences advising when to book a consultation with me",\n'
         '  "disclaimer": "1 short sentence that this is general guidance, not a diagnosis"\n'
         "}\n"
-        "Keep every string concise. Do not add keys. Do not wrap in markdown."
+        "Keep every string concise. Do not add keys. Do not wrap in markdown.\n"
+        "IMPORTANT STYLE RULE: Never use em dashes or en dashes (the characters "
+        "\u2014 or \u2013) anywhere in your response. Use commas, periods, or the word 'and' instead."
     )
 
 
@@ -140,6 +142,14 @@ async def get_status_checks():
     return status_checks
 
 
+def _no_dash(text):
+    if isinstance(text, str):
+        return text.replace(" \u2014 ", ", ").replace("\u2014", ", ").replace(" \u2013 ", ", ").replace("\u2013", "-")
+    if isinstance(text, list):
+        return [_no_dash(t) for t in text]
+    return text
+
+
 @api_router.post("/symptom-check", response_model=SymptomResponse)
 async def symptom_check(req: SymptomRequest):
     if not EMERGENT_LLM_KEY:
@@ -163,12 +173,12 @@ async def symptom_check(req: SymptomRequest):
     result = SymptomResponse(
         id=session_id,
         symptom=req.symptom,
-        intro=data.get("intro", ""),
-        possible_causes=data.get("possible_causes", []) or [],
-        when_surgery_helps=data.get("when_surgery_helps", ""),
-        red_flags=data.get("red_flags", []) or [],
-        when_to_book=data.get("when_to_book", ""),
-        disclaimer=data.get("disclaimer", ""),
+        intro=_no_dash(data.get("intro", "")),
+        possible_causes=_no_dash(data.get("possible_causes", []) or []),
+        when_surgery_helps=_no_dash(data.get("when_surgery_helps", "")),
+        red_flags=_no_dash(data.get("red_flags", []) or []),
+        when_to_book=_no_dash(data.get("when_to_book", "")),
+        disclaimer=_no_dash(data.get("disclaimer", "")),
     )
 
     # persist

@@ -2,13 +2,18 @@ export const SITE = {
   doctorName: "Dr. Meisam Lund",
   phone: "+97143775500",
   phoneDisplay: "+971 4 377 5500",
-  whatsapp: "97143775500",
+  whatsapp: "971503147013",
   hospital: "American Hospital Dubai",
   location: "American Hospital Dubai, Oud Metha, Dubai",
 };
 
 export const telHref = `tel:${SITE.phone}`;
 export const waHref = `https://wa.me/${SITE.whatsapp}`;
+
+export const SOCIALS = {
+  linkedin: "https://www.linkedin.com/in/drmeisam",
+  instagram: "https://instagram.com/doctormeisam",
+};
 
 export const IMAGES = {
   heroDoctor:

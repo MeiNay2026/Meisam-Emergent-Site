@@ -16,7 +16,7 @@ const en = {
     overline: "Swedish Board Certified Consultant Surgeon",
     titleLines: ["Clear answers.", "Precise surgery.", "Personal care."],
     subtitle:
-      "Internationally trained across Sweden, the USA and the UAE — helping patients make confident, unhurried decisions using advanced minimally invasive techniques.",
+      "Internationally trained across Sweden, the USA and the UAE, helping patients make confident, unhurried decisions using advanced minimally invasive techniques.",
     cta1: "Book Consultation",
     cta2: "Check My Symptoms",
     rating: "Trusted by patients from Sweden, the UAE & around the world",
@@ -41,8 +41,11 @@ const en = {
     detailsPlaceholder: "Optional: add a little more about how you feel…",
     ask: "Ask Dr. Meisam",
     thinking: "Dr. Meisam is considering your answer…",
+    botTag: "AI Digital Twin",
+    botGreeting:
+      "Hello, I'm the AI digital twin of Dr. Meisam Lund, trained on his medical knowledge and approach. I'm not Dr. Meisam himself, but I can help you understand your symptoms. What's bothering you?",
     disclaimer:
-      "This guidance is general and personal to my experience — it is not a diagnosis and does not replace a consultation.",
+      "I'm an AI digital twin trained on Dr. Meisam's knowledge, not Dr. Meisam himself. This guidance is general, not a diagnosis, and does not replace a consultation.",
     labels: {
       causes: "Possible causes",
       surgery: "When surgery may help",
@@ -70,7 +73,7 @@ const en = {
       { title: "Scandinavian Precision", desc: "Swedish training and consultant experience with an unwavering focus on safety and quality." },
       { title: "International Expertise", desc: "Clinical practice across Sweden, the USA and the UAE brings a broad, modern perspective." },
       { title: "Minimally Invasive", desc: "Advanced keyhole techniques for less pain, smaller scars and a faster recovery." },
-      { title: "Evidence-Based Decisions", desc: "Surgery only when it offers you the greatest, clearest benefit — never by default." },
+      { title: "Evidence-Based Decisions", desc: "Surgery only when it offers you the greatest, clearest benefit, never by default." },
       { title: "Calm Under Pressure", desc: "Level I trauma and military surgical experience for confidence when it matters most." },
       { title: "Continuity of Care", desc: "From first consultation to full recovery, you stay in the same trusted hands." },
     ],
@@ -86,14 +89,14 @@ const en = {
         id: "hernia",
         title: "Hernia Surgery",
         short: "Inguinal, umbilical, incisional and complex hernia repairs using advanced techniques.",
-        long: "Most hernias are safe to observe until they cause symptoms, but a bulge that grows, hurts or becomes hard to push back deserves attention. I favour tailored repairs — open or laparoscopic — chosen around your body and your life, not a one-size-fits-all mesh.",
+        long: "Most hernias are safe to observe until they cause symptoms, but a bulge that grows, hurts or becomes hard to push back deserves attention. I favour tailored repairs, open or laparoscopic, chosen around your body and your life, not a one-size-fits-all mesh.",
         bullets: ["Inguinal & umbilical repair", "Incisional & recurrent hernias", "Laparoscopic & robotic options"],
       },
       {
         id: "gallbladder",
         title: "Gallbladder Surgery",
         short: "Minimally invasive removal of the gallbladder for stones, inflammation and pain.",
-        long: "Gallstones are common and often silent. When they cause pain, nausea or infection, keyhole removal of the gallbladder is one of the safest, most rewarding operations in surgery — most patients go home the same or next day.",
+        long: "Gallstones are common and often silent. When they cause pain, nausea or infection, keyhole removal of the gallbladder is one of the safest, most rewarding operations in surgery, most patients go home the same or next day.",
         bullets: ["Keyhole (laparoscopic) surgery", "Same-day discharge in most cases", "Rapid return to normal life"],
       },
       {
@@ -121,7 +124,7 @@ const en = {
         id: "emergency",
         title: "Emergency & Trauma Surgery",
         short: "Experienced in emergency surgery and trauma care in high-pressure situations.",
-        long: "Trained in Level I trauma centres and military medicine, I am at my calmest when things are urgent — appendicitis, obstructions, acute abdomen and trauma — making fast, sound decisions under pressure.",
+        long: "Trained in Level I trauma centres and military medicine, I am at my calmest when things are urgent, appendicitis, obstructions, acute abdomen and trauma, making fast, sound decisions under pressure.",
         bullets: ["Acute abdomen & appendicitis", "Trauma & disaster medicine", "Rapid, decisive assessment"],
       },
     ],
@@ -130,13 +133,13 @@ const en = {
     overline: "About Dr. Meisam",
     title: "A surgeon's journey across three continents",
     paragraphs: [
-      "I did not become a surgeon to perform as many operations as possible. I became one to give people clear answers — and the safest possible care — in moments that feel frightening and uncertain.",
-      "I am a Swedish Board-Certified Consultant General Surgeon, certified since 2013, and I have practised across Sweden, the United States and the UAE. My training runs through Karolinska University Hospital in Stockholm, Level I trauma at Penn Presbyterian Medical Center in the USA, and military surgical training with the Swedish Armed Forces — experience that taught me calm, precise judgement under pressure.",
-      "I specialise in hernias, gallbladder disease, stomach and bowel disorders, weight-loss surgery, emergency and trauma surgery, and diagnostic and therapeutic endoscopy, with particular skill in advanced minimally invasive (keyhole) techniques. At American Hospital Dubai I combine Scandinavian precision with international expertise — and a simple belief that surgery should only be recommended when it truly benefits you.",
+      "I did not become a surgeon to perform as many operations as possible. I became one to give people clear answers, and the safest possible care, in moments that feel frightening and uncertain.",
+      "I am a Swedish Board-Certified Consultant General Surgeon, certified since 2013, and I have practised across Sweden, the United States and the UAE. My training runs through Karolinska University Hospital in Stockholm, Level I trauma at Penn Presbyterian Medical Center in the USA, and military surgical training with the Swedish Armed Forces, experience that taught me calm, precise judgement under pressure.",
+      "I specialise in hernias, gallbladder disease, stomach and bowel disorders, weight-loss surgery, emergency and trauma surgery, and diagnostic and therapeutic endoscopy, with particular skill in advanced minimally invasive (keyhole) techniques. At American Hospital Dubai I combine Scandinavian precision with international expertise, and a simple belief that surgery should only be recommended when it truly benefits you.",
     ],
     philosophyTitle: "My philosophy",
     philosophy:
-      "\u201CSurgery should only be recommended when it offers the greatest benefit to the patient — combining Scandinavian precision with compassionate, personalised care.\u201D",
+      "\u201CSurgery should only be recommended when it offers the greatest benefit to the patient, combining Scandinavian precision with compassionate, personalised care.\u201D",
     stats: [
       { value: "2013", label: "Board certified since" },
       { value: "3", label: "Countries of practice" },
@@ -148,17 +151,17 @@ const en = {
       associationTitle: "Memberships",
       education: [
         "Swedish Board Certification in General Surgery",
-        "Level I Trauma Training — Penn Presbyterian Medical Center, USA",
-        "Advanced Open & Minimal Access Surgery — Karolinska University Hospital",
-        "Disaster, Wilderness & Mountain Medicine — Swedish Armed Forces",
-        "Medical Degree (MD) — Wrocław Medical University, Poland",
+        "Level I Trauma Training, Penn Presbyterian Medical Center, USA",
+        "Advanced Open & Minimal Access Surgery, Karolinska University Hospital",
+        "Disaster, Wilderness & Mountain Medicine, Swedish Armed Forces",
+        "Medical Degree (MD), Wrocław Medical University, Poland",
       ],
       experience: [
-        "Consultant General Surgeon — Östersund Regional University Hospital, Sweden",
-        "Consultant & Head of Benign Surgery — Sundsvall Regional University Hospital, Sweden",
-        "Consultant General Surgeon — Dubai London Hospital, UAE",
-        "Visiting Surgeon — Karolinska University Hospital, Sweden",
-        "Visiting Surgeon — Penn Presbyterian Medical Center, USA",
+        "Consultant General Surgeon, Östersund Regional University Hospital, Sweden",
+        "Consultant & Head of Benign Surgery, Sundsvall Regional University Hospital, Sweden",
+        "Consultant General Surgeon, Dubai London Hospital, UAE",
+        "Visiting Surgeon, Karolinska University Hospital, Sweden",
+        "Visiting Surgeon, Penn Presbyterian Medical Center, USA",
       ],
       associations: [
         "Emirates Medical Association",
@@ -171,7 +174,7 @@ const en = {
   journey: {
     overline: "Your journey with me",
     title: "From consultation to recovery",
-    subtitle: "A clear, unhurried path — so you always know what comes next.",
+    subtitle: "A clear, unhurried path, so you always know what comes next.",
     steps: [
       { title: "Consultation", desc: "We listen, examine and truly understand your concerns." },
       { title: "Diagnosis", desc: "We investigate and explain exactly what is happening." },
@@ -187,20 +190,20 @@ const en = {
     items: [
       { quote: "Dr. Meisam explained everything so clearly. I felt confident and well cared for from the very first consultation.", name: "Josephine Y.", location: "Dubai, UAE" },
       { quote: "The surgery was smoother than I expected and recovery was much faster. I'm back to my normal life.", name: "Sven A.", location: "Stockholm, Sweden" },
-      { quote: "He is not just an excellent surgeon — he genuinely cares about his patients as people.", name: "Omar H.", location: "Abu Dhabi, UAE" },
+      { quote: "He is not just an excellent surgeon, he genuinely cares about his patients as people.", name: "Omar H.", location: "Abu Dhabi, UAE" },
       { quote: "For the first time I understood my options without pressure. He told me I didn't need surgery yet, and he was right.", name: "Layla M.", location: "Dubai, UAE" },
     ],
   },
   articles: {
     overline: "Surgical clarity",
     title: "Expert insights to help you decide",
-    subtitle: "Honest, plain-language articles — no jargon, no fear.",
+    subtitle: "Honest, plain-language articles, no jargon, no fear.",
     readMore: "Read more",
     items: [
       { tag: "Decisions", title: "Do I Really Need Surgery?", excerpt: "When surgery helps and when other options may be better for you." },
       { tag: "Gallbladder", title: "Gallstones Explained", excerpt: "Symptoms, causes and the treatment options worth knowing about." },
       { tag: "Hernia", title: "Hernia Myths", excerpt: "Common myths about hernias and the facts you should actually know." },
-      { tag: "Warning signs", title: "When Abdominal Pain Becomes Serious", excerpt: "The red flags you should never ignore — and when to seek care." },
+      { tag: "Warning signs", title: "When Abdominal Pain Becomes Serious", excerpt: "The red flags you should never ignore, and when to seek care." },
       { tag: "Recovery", title: "Recovery After Keyhole Surgery", excerpt: "What to expect and simple tips for a faster, calmer recovery." },
       { tag: "Second opinion", title: "The Value of a Second Opinion", excerpt: "Getting clarity and confidence before an important decision." },
     ],
@@ -211,7 +214,7 @@ const en = {
     subtitle: "Straight answers to what patients ask me most.",
     items: [
       { q: "How do I book a consultation?", a: "You can call the American Hospital Dubai contact centre or message us on WhatsApp using the buttons on this page. My team will find a time that suits you." },
-      { q: "Will I definitely need surgery?", a: "Not at all. Many conditions I see are managed without surgery. I only recommend an operation when it offers a clear, meaningful benefit — and I'll always explain why." },
+      { q: "Will I definitely need surgery?", a: "Not at all. Many conditions I see are managed without surgery. I only recommend an operation when it offers a clear, meaningful benefit, and I'll always explain why." },
       { q: "What is minimally invasive (keyhole) surgery?", a: "It uses a few tiny incisions and a camera instead of one large cut. For most patients this means less pain, smaller scars and a faster return to normal life." },
       { q: "Do you offer second opinions?", a: "Yes, and I welcome them. A calm, independent review can bring real clarity before any important decision." },
       { q: "Which insurance plans are accepted?", a: "American Hospital Dubai works with most major regional and international insurers. My team will confirm your coverage before your visit." },
@@ -227,7 +230,7 @@ const en = {
   },
   finalCta: {
     title: "Let's make the right decision together.",
-    subtitle: "Whether you need surgery, reassurance or simply another opinion — I'm here to help.",
+    subtitle: "Whether you need surgery, reassurance or simply another opinion, I'm here to help.",
     book: "Book Consultation",
     call: "Call " ,
     whatsapp: "WhatsApp Us",
@@ -257,7 +260,7 @@ const ar = {
     overline: "استشاري جراحة عامة معتمد من المجلس السويدي",
     titleLines: ["إجابات واضحة.", "جراحة دقيقة.", "رعاية شخصية."],
     subtitle:
-      "تدريب دولي في السويد والولايات المتحدة والإمارات — أساعد المرضى على اتخاذ قرارات واثقة ومدروسة باستخدام أحدث تقنيات الجراحة طفيفة التوغل.",
+      "تدريب دولي في السويد والولايات المتحدة والإمارات, أساعد المرضى على اتخاذ قرارات واثقة ومدروسة باستخدام أحدث تقنيات الجراحة طفيفة التوغل.",
     cta1: "احجز استشارة",
     cta2: "افحص أعراضي",
     rating: "موضع ثقة المرضى من السويد والإمارات وحول العالم",
@@ -282,8 +285,11 @@ const ar = {
     detailsPlaceholder: "اختياري: أضف المزيد حول شعورك…",
     ask: "اسأل د. ميسم",
     thinking: "د. ميسم يفكّر في إجابتك…",
+    botTag: "التوأم الرقمي بالذكاء الاصطناعي",
+    botGreeting:
+      "مرحبًا، أنا التوأم الرقمي بالذكاء الاصطناعي للدكتور ميسم لوند، مُدرَّب على معرفته الطبية ونهجه. لست الدكتور ميسم نفسه، لكن يمكنني مساعدتك على فهم أعراضك. ما الذي يزعجك؟",
     disclaimer:
-      "هذه الإرشادات عامة ومبنية على خبرتي — وهي ليست تشخيصًا ولا تغني عن الاستشارة.",
+      "أنا توأم رقمي بالذكاء الاصطناعي مُدرَّب على معرفة الدكتور ميسم، ولست الدكتور ميسم نفسه. هذه الإرشادات عامة وليست تشخيصًا ولا تغني عن الاستشارة.",
     labels: {
       causes: "الأسباب المحتملة",
       surgery: "متى قد تفيد الجراحة",
@@ -311,7 +317,7 @@ const ar = {
       { title: "دقة اسكندنافية", desc: "تدريب وخبرة استشارية سويدية مع تركيز ثابت على السلامة والجودة." },
       { title: "خبرة دولية", desc: "ممارسة سريرية في السويد وأمريكا والإمارات تمنح رؤية واسعة وحديثة." },
       { title: "جراحة طفيفة التوغل", desc: "تقنيات المنظار المتقدمة لألم أقل وندوب أصغر وتعافٍ أسرع." },
-      { title: "قرارات مبنية على الأدلة", desc: "الجراحة فقط عندما تقدّم لك أوضح فائدة — لا بشكل افتراضي." },
+      { title: "قرارات مبنية على الأدلة", desc: "الجراحة فقط عندما تقدّم لك أوضح فائدة, لا بشكل افتراضي." },
       { title: "هدوء تحت الضغط", desc: "خبرة في صدمات المستوى الأول والجراحة العسكرية للثقة وقت الحاجة." },
       { title: "استمرارية الرعاية", desc: "من أول استشارة حتى التعافي الكامل، تبقى في الأيدي نفسها الموثوقة." },
     ],
@@ -323,25 +329,25 @@ const ar = {
     learnMore: "اعرف المزيد",
     close: "عرض أقل",
     items: [
-      { id: "hernia", title: "جراحة الفتق", short: "إصلاح الفتق الإربي والسري والجراحي والمعقّد بتقنيات متقدمة.", long: "معظم أنواع الفتق آمنة للمراقبة حتى تسبب أعراضًا، لكن الانتفاخ الذي يكبر أو يؤلم يستحق الاهتمام. أفضّل الإصلاح المخصّص — مفتوحًا أو بالمنظار — بما يناسب جسمك وحياتك.", bullets: ["إصلاح إربي وسري", "فتق جراحي ومتكرر", "خيارات المنظار والروبوت"] },
-      { id: "gallbladder", title: "جراحة المرارة", short: "استئصال المرارة بالمنظار للحصوات والالتهاب والألم.", long: "حصوات المرارة شائعة وغالبًا صامتة. عندما تسبب ألمًا أو التهابًا، يكون استئصال المرارة بالمنظار من أكثر العمليات أمانًا — ويعود معظم المرضى للمنزل في نفس اليوم.", bullets: ["جراحة بالمنظار", "خروج في نفس اليوم غالبًا", "عودة سريعة للحياة"] },
+      { id: "hernia", title: "جراحة الفتق", short: "إصلاح الفتق الإربي والسري والجراحي والمعقّد بتقنيات متقدمة.", long: "معظم أنواع الفتق آمنة للمراقبة حتى تسبب أعراضًا، لكن الانتفاخ الذي يكبر أو يؤلم يستحق الاهتمام. أفضّل الإصلاح المخصّص, مفتوحًا أو بالمنظار, بما يناسب جسمك وحياتك.", bullets: ["إصلاح إربي وسري", "فتق جراحي ومتكرر", "خيارات المنظار والروبوت"] },
+      { id: "gallbladder", title: "جراحة المرارة", short: "استئصال المرارة بالمنظار للحصوات والالتهاب والألم.", long: "حصوات المرارة شائعة وغالبًا صامتة. عندما تسبب ألمًا أو التهابًا، يكون استئصال المرارة بالمنظار من أكثر العمليات أمانًا, ويعود معظم المرضى للمنزل في نفس اليوم.", bullets: ["جراحة بالمنظار", "خروج في نفس اليوم غالبًا", "عودة سريعة للحياة"] },
       { id: "gi", title: "حالات المعدة والأمعاء", short: "رعاية شاملة للارتجاع والقرحة واضطرابات الأمعاء الحميدة.", long: "من الارتجاع العنيد إلى مشكلات الأمعاء، أفحص بعناية قبل التوصية بأي شيء. كثير من الحالات تتحسن بالتشخيص الصحيح دون جراحة.", bullets: ["جراحة مضادة للارتجاع", "حالات الأمعاء والقولون", "وضوح تشخيصي أولًا"] },
       { id: "weightloss", title: "جراحة إنقاص الوزن", short: "جراحة سمنة مبنية على الأدلة مع دعم طويل الأمد.", long: "جراحة إنقاص الوزن قرار شخصي وجاد. أركّز على ما إذا كانت مناسبة لك حقًا، وأجهّزك جيدًا، وأبقى معك للمتابعة طويلة الأمد.", bullets: ["تقييم دقيق للأهلية", "متابعة منظّمة طويلة الأمد", "نهج داعم دون أحكام"] },
       { id: "endoscopy", title: "التنظير الداخلي", short: "تنظير تشخيصي وعلاجي لتشخيص دقيق وعلاج فعّال.", long: "يتيح لي التنظير رؤية المشكلات وعلاجها غالبًا دون أي شق. وهو أساسي لاكتشاف المشكلات مبكرًا ومنحك إجابات واضحة.", bullets: ["تنظير المعدة والقولون", "كشف مبكر وفحص", "تقنية لطيفة ومريحة"] },
-      { id: "emergency", title: "جراحة الطوارئ والصدمات", short: "خبرة في جراحة الطوارئ ورعاية الصدمات في المواقف الصعبة.", long: "بتدريبي في مراكز صدمات المستوى الأول والطب العسكري، أكون أكثر هدوءًا وقت الطوارئ — الزائدة، الانسداد، البطن الحاد والصدمات.", bullets: ["البطن الحاد والزائدة", "طب الصدمات والكوارث", "تقييم سريع وحاسم"] },
+      { id: "emergency", title: "جراحة الطوارئ والصدمات", short: "خبرة في جراحة الطوارئ ورعاية الصدمات في المواقف الصعبة.", long: "بتدريبي في مراكز صدمات المستوى الأول والطب العسكري، أكون أكثر هدوءًا وقت الطوارئ, الزائدة، الانسداد، البطن الحاد والصدمات.", bullets: ["البطن الحاد والزائدة", "طب الصدمات والكوارث", "تقييم سريع وحاسم"] },
     ],
   },
   about: {
     overline: "نبذة عن د. ميسم",
     title: "رحلة جرّاح عبر ثلاث قارات",
     paragraphs: [
-      "لم أصبح جرّاحًا لأُجري أكبر عدد من العمليات، بل لأمنح الناس إجابات واضحة — وأأمن رعاية ممكنة — في لحظات مخيفة وغير مؤكدة.",
+      "لم أصبح جرّاحًا لأُجري أكبر عدد من العمليات، بل لأمنح الناس إجابات واضحة, وأأمن رعاية ممكنة, في لحظات مخيفة وغير مؤكدة.",
       "أنا استشاري جراحة عامة معتمد من المجلس السويدي منذ عام 2013، ومارست في السويد والولايات المتحدة والإمارات. يشمل تدريبي مستشفى كارولينسكا الجامعي في ستوكهولم، وتدريب صدمات المستوى الأول في مركز بِن بريسبيتيريان الطبي بأمريكا، والتدريب الجراحي العسكري مع القوات المسلحة السويدية.",
-      "أتخصص في الفتق وأمراض المرارة واضطرابات المعدة والأمعاء وجراحة إنقاص الوزن وجراحة الطوارئ والصدمات والتنظير التشخيصي والعلاجي، مع مهارة خاصة في تقنيات الجراحة طفيفة التوغل (بالمنظار). في المستشفى الأمريكي دبي أجمع الدقة الاسكندنافية بالخبرة الدولية — وإيمان بأن الجراحة يجب أن تُقترح فقط عندما تفيدك حقًا.",
+      "أتخصص في الفتق وأمراض المرارة واضطرابات المعدة والأمعاء وجراحة إنقاص الوزن وجراحة الطوارئ والصدمات والتنظير التشخيصي والعلاجي، مع مهارة خاصة في تقنيات الجراحة طفيفة التوغل (بالمنظار). في المستشفى الأمريكي دبي أجمع الدقة الاسكندنافية بالخبرة الدولية, وإيمان بأن الجراحة يجب أن تُقترح فقط عندما تفيدك حقًا.",
     ],
     philosophyTitle: "فلسفتي",
     philosophy:
-      "«يجب اقتراح الجراحة فقط عندما تقدّم أكبر فائدة للمريض — بالجمع بين الدقة الاسكندنافية والرعاية الرحيمة والشخصية.»",
+      "«يجب اقتراح الجراحة فقط عندما تقدّم أكبر فائدة للمريض, بالجمع بين الدقة الاسكندنافية والرعاية الرحيمة والشخصية.»",
     stats: [
       { value: "2013", label: "معتمد منذ" },
       { value: "3", label: "دول ممارسة" },
@@ -353,17 +359,17 @@ const ar = {
       associationTitle: "العضويات",
       education: [
         "شهادة المجلس السويدي في الجراحة العامة",
-        "تدريب صدمات المستوى الأول — Penn Presbyterian Medical Center, USA",
-        "جراحة متقدمة مفتوحة وبالمنظار — Karolinska University Hospital",
-        "طب الكوارث والبرية والجبال — Swedish Armed Forces",
-        "شهادة الطب (MD) — Wrocław Medical University, Poland",
+        "تدريب صدمات المستوى الأول, Penn Presbyterian Medical Center, USA",
+        "جراحة متقدمة مفتوحة وبالمنظار, Karolinska University Hospital",
+        "طب الكوارث والبرية والجبال, Swedish Armed Forces",
+        "شهادة الطب (MD), Wrocław Medical University, Poland",
       ],
       experience: [
-        "استشاري جراحة عامة — Östersund Regional University Hospital, Sweden",
-        "استشاري ورئيس الجراحة الحميدة — Sundsvall Regional University Hospital, Sweden",
-        "استشاري جراحة عامة — Dubai London Hospital, UAE",
-        "جرّاح زائر — Karolinska University Hospital, Sweden",
-        "جرّاح زائر — Penn Presbyterian Medical Center, USA",
+        "استشاري جراحة عامة, Östersund Regional University Hospital, Sweden",
+        "استشاري ورئيس الجراحة الحميدة, Sundsvall Regional University Hospital, Sweden",
+        "استشاري جراحة عامة, Dubai London Hospital, UAE",
+        "جرّاح زائر, Karolinska University Hospital, Sweden",
+        "جرّاح زائر, Penn Presbyterian Medical Center, USA",
       ],
       associations: [
         "Emirates Medical Association",
@@ -376,7 +382,7 @@ const ar = {
   journey: {
     overline: "رحلتك معي",
     title: "من الاستشارة إلى التعافي",
-    subtitle: "مسار واضح وغير متعجّل — لتعرف دائمًا ما يليه.",
+    subtitle: "مسار واضح وغير متعجّل, لتعرف دائمًا ما يليه.",
     steps: [
       { title: "الاستشارة", desc: "نستمع ونفحص ونفهم مخاوفك حقًا." },
       { title: "التشخيص", desc: "نبحث ونشرح ما يحدث بالضبط." },
@@ -392,14 +398,14 @@ const ar = {
     items: [
       { quote: "شرح لي د. ميسم كل شيء بوضوح. شعرت بالثقة والرعاية منذ أول استشارة.", name: "جوزفين ي.", location: "دبي، الإمارات" },
       { quote: "كانت الجراحة أسهل مما توقعت والتعافي أسرع بكثير. عدت إلى حياتي الطبيعية.", name: "سفين أ.", location: "ستوكهولم، السويد" },
-      { quote: "ليس جرّاحًا بارعًا فحسب — بل يهتم فعلًا بمرضاه كأشخاص.", name: "عمر ح.", location: "أبوظبي، الإمارات" },
+      { quote: "ليس جرّاحًا بارعًا فحسب, بل يهتم فعلًا بمرضاه كأشخاص.", name: "عمر ح.", location: "أبوظبي، الإمارات" },
       { quote: "لأول مرة فهمت خياراتي دون ضغط. أخبرني أني لا أحتاج جراحة بعد، وكان محقًا.", name: "ليلى م.", location: "دبي، الإمارات" },
     ],
   },
   articles: {
     overline: "وضوح جراحي",
     title: "رؤى خبيرة تساعدك على القرار",
-    subtitle: "مقالات صادقة بلغة بسيطة — بلا مصطلحات ولا تخويف.",
+    subtitle: "مقالات صادقة بلغة بسيطة, بلا مصطلحات ولا تخويف.",
     readMore: "اقرأ المزيد",
     items: [
       { tag: "قرارات", title: "هل أحتاج الجراحة فعلًا؟", excerpt: "متى تفيد الجراحة ومتى تكون خيارات أخرى أفضل لك." },
@@ -432,7 +438,7 @@ const ar = {
   },
   finalCta: {
     title: "لنتخذ القرار الصحيح معًا.",
-    subtitle: "سواء احتجت جراحة أو طمأنينة أو مجرد رأي آخر — أنا هنا لمساعدتك.",
+    subtitle: "سواء احتجت جراحة أو طمأنينة أو مجرد رأي آخر, أنا هنا لمساعدتك.",
     book: "احجز استشارة",
     call: "اتصل ",
     whatsapp: "راسلنا واتساب",
@@ -462,7 +468,7 @@ const sv = {
     overline: "Svensk specialistläkare i kirurgi",
     titleLines: ["Tydliga svar.", "Precis kirurgi.", "Personlig omsorg."],
     subtitle:
-      "Internationellt utbildad i Sverige, USA och Förenade Arabemiraten — jag hjälper patienter fatta trygga, genomtänkta beslut med avancerad titthålskirurgi.",
+      "Internationellt utbildad i Sverige, USA och Förenade Arabemiraten, jag hjälper patienter fatta trygga, genomtänkta beslut med avancerad titthålskirurgi.",
     cta1: "Boka konsultation",
     cta2: "Kolla mina symtom",
     rating: "Anlitad av patienter från Sverige, Förenade Arabemiraten och hela världen",
@@ -487,8 +493,11 @@ const sv = {
     detailsPlaceholder: "Valfritt: berätta gärna lite mer om hur du mår…",
     ask: "Fråga dr Meisam",
     thinking: "Dr Meisam funderar på ditt svar…",
+    botTag: "AI digital tvilling",
+    botGreeting:
+      "Hej, jag är dr Meisam Lunds AI-digitala tvilling, tränad på hans medicinska kunskap och arbetssätt. Jag är inte dr Meisam själv, men jag kan hjälpa dig förstå dina symtom. Vad besvärar dig?",
     disclaimer:
-      "Denna vägledning är allmän och bygger på min erfarenhet — den är ingen diagnos och ersätter inte en konsultation.",
+      "Jag är en AI-digital tvilling tränad på dr Meisams kunskap, inte dr Meisam själv. Denna vägledning är allmän, ingen diagnos, och ersätter inte en konsultation.",
     labels: {
       causes: "Möjliga orsaker",
       surgery: "När kirurgi kan hjälpa",
@@ -516,7 +525,7 @@ const sv = {
       { title: "Skandinavisk precision", desc: "Svensk utbildning och specialisterfarenhet med orubbligt fokus på säkerhet och kvalitet." },
       { title: "Internationell expertis", desc: "Klinisk verksamhet i Sverige, USA och Förenade Arabemiraten ger ett brett, modernt perspektiv." },
       { title: "Titthålskirurgi", desc: "Avancerad titthålsteknik för mindre smärta, mindre ärr och snabbare återhämtning." },
-      { title: "Evidensbaserade beslut", desc: "Kirurgi endast när den ger dig störst och tydligast nytta — aldrig per automatik." },
+      { title: "Evidensbaserade beslut", desc: "Kirurgi endast när den ger dig störst och tydligast nytta, aldrig per automatik." },
       { title: "Lugn under press", desc: "Erfarenhet från nivå I-trauma och militärkirurgi ger trygghet när det gäller." },
       { title: "Kontinuitet i vården", desc: "Från första konsultation till full återhämtning stannar du i samma trygga händer." },
     ],
@@ -528,25 +537,25 @@ const sv = {
     learnMore: "Läs mer",
     close: "Visa mindre",
     items: [
-      { id: "hernia", title: "Bråckkirurgi", short: "Ljumsk-, navel-, ärr- och komplexa bråck med avancerad teknik.", long: "De flesta bråck är säkra att avvakta tills de ger besvär, men en utbuktning som växer eller gör ont förtjänar uppmärksamhet. Jag föredrar skräddarsydda ingrepp — öppna eller titthål — anpassade efter dig.", bullets: ["Ljumsk- & navelbråck", "Ärr- & återkommande bråck", "Titthåls- & robotalternativ"] },
-      { id: "gallbladder", title: "Gallblåskirurgi", short: "Titthålsborttagning av gallblåsan vid sten, inflammation och smärta.", long: "Gallsten är vanligt och ofta symtomfritt. När de ger smärta eller infektion är titthålsborttagning en av de säkraste operationerna — de flesta går hem samma eller nästa dag.", bullets: ["Titthålskirurgi", "Hemgång ofta samma dag", "Snabb återgång till vardagen"] },
+      { id: "hernia", title: "Bråckkirurgi", short: "Ljumsk-, navel-, ärr- och komplexa bråck med avancerad teknik.", long: "De flesta bråck är säkra att avvakta tills de ger besvär, men en utbuktning som växer eller gör ont förtjänar uppmärksamhet. Jag föredrar skräddarsydda ingrepp, öppna eller titthål, anpassade efter dig.", bullets: ["Ljumsk- & navelbråck", "Ärr- & återkommande bråck", "Titthåls- & robotalternativ"] },
+      { id: "gallbladder", title: "Gallblåskirurgi", short: "Titthålsborttagning av gallblåsan vid sten, inflammation och smärta.", long: "Gallsten är vanligt och ofta symtomfritt. När de ger smärta eller infektion är titthålsborttagning en av de säkraste operationerna, de flesta går hem samma eller nästa dag.", bullets: ["Titthålskirurgi", "Hemgång ofta samma dag", "Snabb återgång till vardagen"] },
       { id: "gi", title: "Mag- & tarmtillstånd", short: "Omfattande vård för reflux, sår, tarmbesvär och godartade tillstånd.", long: "Från envis reflux till tarmbesvär utreder jag noga innan jag rekommenderar något. Många tillstånd förbättras med rätt diagnos utan kirurgi.", bullets: ["Reflux- & antirefluxkirurgi", "Tarm- & kolontillstånd", "Diagnostisk tydlighet först"] },
       { id: "weightloss", title: "Överviktskirurgi", short: "Evidensbaserad obesitaskirurgi med långsiktigt stöd.", long: "Överviktskirurgi är ett allvarligt och personligt beslut. Jag fokuserar på om det verkligen är rätt för dig och följer dig långsiktigt.", bullets: ["Noggrann lämplighetsbedömning", "Strukturerad uppföljning", "Ett stödjande, fördomsfritt bemötande"] },
       { id: "endoscopy", title: "Endoskopi", short: "Diagnostisk och terapeutisk endoskopi för säker diagnos.", long: "Endoskopi låter mig se och ofta behandla problem utan ett enda snitt. Det är centralt för att upptäcka besvär tidigt och ge tydliga svar.", bullets: ["Gastroskopi & koloskopi", "Tidig upptäckt & screening", "Skonsam, bekväm teknik"] },
-      { id: "emergency", title: "Akut- & traumakirurgi", short: "Erfaren av akutkirurgi och traumavård i pressade situationer.", long: "Utbildad vid nivå I-traumacenter och inom militärmedicin är jag som lugnast när det brådskar — blindtarm, tarmvred, akut buk och trauma.", bullets: ["Akut buk & blindtarm", "Trauma- & katastrofmedicin", "Snabb, beslutsam bedömning"] },
+      { id: "emergency", title: "Akut- & traumakirurgi", short: "Erfaren av akutkirurgi och traumavård i pressade situationer.", long: "Utbildad vid nivå I-traumacenter och inom militärmedicin är jag som lugnast när det brådskar, blindtarm, tarmvred, akut buk och trauma.", bullets: ["Akut buk & blindtarm", "Trauma- & katastrofmedicin", "Snabb, beslutsam bedömning"] },
     ],
   },
   about: {
     overline: "Om dr Meisam",
     title: "En kirurgs resa över tre kontinenter",
     paragraphs: [
-      "Jag blev inte kirurg för att utföra så många operationer som möjligt. Jag blev det för att ge människor tydliga svar — och tryggast möjliga vård — i stunder som känns skrämmande och osäkra.",
+      "Jag blev inte kirurg för att utföra så många operationer som möjligt. Jag blev det för att ge människor tydliga svar, och tryggast möjliga vård, i stunder som känns skrämmande och osäkra.",
       "Jag är svensk specialistläkare i allmänkirurgi, specialistkompetent sedan 2013, och har arbetat i Sverige, USA och Förenade Arabemiraten. Min utbildning omfattar Karolinska Universitetssjukhuset i Stockholm, nivå I-trauma vid Penn Presbyterian Medical Center i USA och militärkirurgisk utbildning med Försvarsmakten.",
-      "Jag är specialiserad på bråck, gallblåssjukdom, mag- och tarmåkommor, överviktskirurgi, akut- och traumakirurgi samt diagnostisk och terapeutisk endoskopi, med särskild skicklighet i avancerad titthålsteknik. På American Hospital Dubai förenar jag skandinavisk precision med internationell expertis — och övertygelsen att kirurgi bara ska rekommenderas när den verkligen gynnar dig.",
+      "Jag är specialiserad på bråck, gallblåssjukdom, mag- och tarmåkommor, överviktskirurgi, akut- och traumakirurgi samt diagnostisk och terapeutisk endoskopi, med särskild skicklighet i avancerad titthålsteknik. På American Hospital Dubai förenar jag skandinavisk precision med internationell expertis, och övertygelsen att kirurgi bara ska rekommenderas när den verkligen gynnar dig.",
     ],
     philosophyTitle: "Min filosofi",
     philosophy:
-      "”Kirurgi ska bara rekommenderas när den ger patienten störst nytta — genom att förena skandinavisk precision med omtänksam, personlig vård.”",
+      "”Kirurgi ska bara rekommenderas när den ger patienten störst nytta, genom att förena skandinavisk precision med omtänksam, personlig vård.”",
     stats: [
       { value: "2013", label: "Specialist sedan" },
       { value: "3", label: "Länder av verksamhet" },
@@ -558,17 +567,17 @@ const sv = {
       associationTitle: "Medlemskap",
       education: [
         "Svensk specialistkompetens i allmänkirurgi",
-        "Nivå I-traumautbildning — Penn Presbyterian Medical Center, USA",
-        "Avancerad öppen & titthålskirurgi — Karolinska Universitetssjukhuset",
-        "Katastrof-, vildmarks- & bergsmedicin — Försvarsmakten",
-        "Läkarexamen (MD) — Wrocław Medical University, Polen",
+        "Nivå I-traumautbildning, Penn Presbyterian Medical Center, USA",
+        "Avancerad öppen & titthålskirurgi, Karolinska Universitetssjukhuset",
+        "Katastrof-, vildmarks- & bergsmedicin, Försvarsmakten",
+        "Läkarexamen (MD), Wrocław Medical University, Polen",
       ],
       experience: [
-        "Överläkare i allmänkirurgi — Östersunds sjukhus, Sverige",
-        "Överläkare & chef för benign kirurgi — Sundsvalls sjukhus, Sverige",
-        "Konsultkirurg — Dubai London Hospital, UAE",
-        "Gästkirurg — Karolinska Universitetssjukhuset, Sverige",
-        "Gästkirurg — Penn Presbyterian Medical Center, USA",
+        "Överläkare i allmänkirurgi, Östersunds sjukhus, Sverige",
+        "Överläkare & chef för benign kirurgi, Sundsvalls sjukhus, Sverige",
+        "Konsultkirurg, Dubai London Hospital, UAE",
+        "Gästkirurg, Karolinska Universitetssjukhuset, Sverige",
+        "Gästkirurg, Penn Presbyterian Medical Center, USA",
       ],
       associations: [
         "Emirates Medical Association",
@@ -581,7 +590,7 @@ const sv = {
   journey: {
     overline: "Din resa med mig",
     title: "Från konsultation till återhämtning",
-    subtitle: "En tydlig, lugn väg — så du alltid vet vad som kommer härnäst.",
+    subtitle: "En tydlig, lugn väg, så du alltid vet vad som kommer härnäst.",
     steps: [
       { title: "Konsultation", desc: "Vi lyssnar, undersöker och förstår dina besvär." },
       { title: "Diagnos", desc: "Vi utreder och förklarar exakt vad som händer." },
@@ -597,20 +606,20 @@ const sv = {
     items: [
       { quote: "Dr Meisam förklarade allt så tydligt. Jag kände mig trygg och väl omhändertagen från första konsultationen.", name: "Josephine Y.", location: "Dubai, UAE" },
       { quote: "Operationen gick smidigare än väntat och återhämtningen var mycket snabbare. Jag är tillbaka i vardagen.", name: "Sven A.", location: "Stockholm, Sverige" },
-      { quote: "Han är inte bara en utmärkt kirurg — han bryr sig genuint om sina patienter som människor.", name: "Omar H.", location: "Abu Dhabi, UAE" },
+      { quote: "Han är inte bara en utmärkt kirurg, han bryr sig genuint om sina patienter som människor.", name: "Omar H.", location: "Abu Dhabi, UAE" },
       { quote: "För första gången förstod jag mina alternativ utan press. Han sa att jag inte behövde operation än, och han hade rätt.", name: "Layla M.", location: "Dubai, UAE" },
     ],
   },
   articles: {
     overline: "Kirurgisk tydlighet",
     title: "Expertinsikter som hjälper dig besluta",
-    subtitle: "Ärliga artiklar på enkelt språk — utan jargong, utan rädsla.",
+    subtitle: "Ärliga artiklar på enkelt språk, utan jargong, utan rädsla.",
     readMore: "Läs mer",
     items: [
       { tag: "Beslut", title: "Behöver jag verkligen opereras?", excerpt: "När kirurgi hjälper och när andra alternativ kan vara bättre." },
       { tag: "Gallblåsa", title: "Gallsten förklarat", excerpt: "Symtom, orsaker och behandlingsalternativ värda att känna till." },
       { tag: "Bråck", title: "Myter om bråck", excerpt: "Vanliga myter om bråck och fakta du faktiskt bör känna till." },
-      { tag: "Varningstecken", title: "När magsmärta blir allvarlig", excerpt: "Varningstecknen du aldrig bör ignorera — och när du bör söka vård." },
+      { tag: "Varningstecken", title: "När magsmärta blir allvarlig", excerpt: "Varningstecknen du aldrig bör ignorera, och när du bör söka vård." },
       { tag: "Återhämtning", title: "Återhämtning efter titthålskirurgi", excerpt: "Vad du kan förvänta dig och enkla tips för snabbare återhämtning." },
       { tag: "Andra bedömning", title: "Värdet av en andra bedömning", excerpt: "Tydlighet och trygghet inför ett viktigt beslut." },
     ],
@@ -621,7 +630,7 @@ const sv = {
     subtitle: "Raka svar på det patienter frågar mig mest.",
     items: [
       { q: "Hur bokar jag en konsultation?", a: "Ring American Hospital Dubais kontaktcenter eller skriv till oss på WhatsApp via knapparna på sidan. Mitt team hittar en tid som passar dig." },
-      { q: "Kommer jag definitivt att behöva opereras?", a: "Inte alls. Många tillstånd sköts utan kirurgi. Jag rekommenderar bara operation när den ger tydlig nytta — och jag förklarar alltid varför." },
+      { q: "Kommer jag definitivt att behöva opereras?", a: "Inte alls. Många tillstånd sköts utan kirurgi. Jag rekommenderar bara operation när den ger tydlig nytta, och jag förklarar alltid varför." },
       { q: "Vad är titthålskirurgi?", a: "Den använder några små snitt och en kamera istället för ett stort snitt. För de flesta betyder det mindre smärta, mindre ärr och snabbare återgång." },
       { q: "Erbjuder du andra bedömningar?", a: "Ja, och jag välkomnar dem. En lugn, oberoende genomgång kan ge verklig tydlighet inför ett viktigt beslut." },
       { q: "Vilka försäkringar accepteras?", a: "American Hospital Dubai samarbetar med de flesta stora regionala och internationella försäkringsbolag. Mitt team bekräftar din täckning innan besöket." },
@@ -637,7 +646,7 @@ const sv = {
   },
   finalCta: {
     title: "Låt oss fatta rätt beslut tillsammans.",
-    subtitle: "Oavsett om du behöver kirurgi, lugnande besked eller bara en andra åsikt — jag finns här.",
+    subtitle: "Oavsett om du behöver kirurgi, lugnande besked eller bara en andra åsikt, jag finns här.",
     book: "Boka konsultation",
     call: "Ring ",
     whatsapp: "WhatsApp oss",

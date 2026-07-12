@@ -1,7 +1,7 @@
 import React from "react";
-import { MapPin, Clock } from "lucide-react";
+import { MapPin, Clock, Linkedin, Instagram } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
-import { IMAGES, SITE } from "@/lib/site";
+import { IMAGES, SITE, SOCIALS } from "@/lib/site";
 import { Reveal } from "./Reveal";
 import { BookButton, CallButton, WhatsAppButton } from "./cta";
 
@@ -49,6 +49,25 @@ export default function FinalCTA() {
               <Clock className="h-4 w-4 text-lime" />
               {f.hours}
             </span>
+          </div>
+
+          <div className="mt-8 flex items-center justify-center gap-3">
+            {[
+              { Icon: Linkedin, href: SOCIALS.linkedin, label: "LinkedIn" },
+              { Icon: Instagram, href: SOCIALS.instagram, label: "Instagram" },
+            ].map(({ Icon, href, label }, i) => (
+              <a
+                key={i}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                data-testid={`cta-social-${label.toLowerCase()}`}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-cream-100/30 text-cream-100 transition-colors hover:border-lime hover:bg-lime hover:text-forest-900"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
           </div>
         </Reveal>
       </div>

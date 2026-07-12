@@ -23,9 +23,9 @@ export default function SymptomBot({ open, setOpen }) {
   // seed greeting once
   useEffect(() => {
     if (open && messages.length === 0) {
-      setMessages([{ role: "bot", kind: "text", text: s.subtitle }]);
+      setMessages([{ role: "bot", kind: "text", text: s.botGreeting || s.subtitle }]);
     }
-  }, [open, messages.length, s.subtitle]);
+  }, [open, messages.length, s.botGreeting, s.subtitle]);
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -103,7 +103,7 @@ export default function SymptomBot({ open, setOpen }) {
               <div className="flex-1 leading-tight">
                 <div className="font-heading text-lg font-medium">Dr. Meisam Lund</div>
                 <div className="flex items-center gap-1.5 text-[11px] text-cream-100/70">
-                  <span className="h-2 w-2 rounded-full bg-lime" /> {s.overline}
+                  <span className="h-2 w-2 rounded-full bg-lime" /> {s.botTag}
                 </div>
               </div>
               <button
@@ -132,7 +132,7 @@ export default function SymptomBot({ open, setOpen }) {
                 ) : m.kind === "error" ? (
                   <BotBubble key={i}>
                     <p className="text-sm text-destructive" data-testid="bot-error">
-                      Something went wrong — please try again in a moment.
+                      Something went wrong. Please try again in a moment.
                     </p>
                   </BotBubble>
                 ) : (

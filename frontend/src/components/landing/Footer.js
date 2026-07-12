@@ -1,7 +1,7 @@
 import React from "react";
-import { Linkedin, Instagram, Youtube } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
-import { SITE } from "@/lib/site";
+import { SITE, SOCIALS } from "@/lib/site";
 import { scrollToId } from "./cta";
 
 export default function Footer() {
@@ -50,11 +50,17 @@ export default function Footer() {
               {t.footer.followMe}
             </div>
             <div className="flex gap-3">
-              {[Linkedin, Instagram, Youtube].map((Icon, i) => (
+              {[
+                { Icon: Linkedin, href: SOCIALS.linkedin, label: "LinkedIn" },
+                { Icon: Instagram, href: SOCIALS.instagram, label: "Instagram" },
+              ].map(({ Icon, href, label }, i) => (
                 <a
                   key={i}
-                  href="#"
-                  aria-label="social"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  data-testid={`footer-social-${label.toLowerCase()}`}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-forest-100 text-forest-700 transition-colors hover:bg-forest-900 hover:text-cream-100"
                 >
                   <Icon className="h-4 w-4" />

@@ -22,7 +22,7 @@ export default function Nav({ onCheckSymptoms }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const light = !scrolled && !mobileOpen; // light text over the hero photo
+  const light = false; // hero now has a light cream canvas, so nav uses dark text
 
   const links = [
     { id: "conditions", label: t.nav.conditions },
@@ -49,10 +49,10 @@ export default function Nav({ onCheckSymptoms }) {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-10">
         <button onClick={() => go("hero")} data-testid="nav-logo" className="text-start leading-tight">
-          <span className={`block font-heading text-xl font-semibold tracking-tight transition-colors ${light ? "text-cream-100" : "text-forest-900"}`}>
+          <span className={`block font-heading text-2xl font-semibold tracking-tight transition-colors sm:text-3xl ${light ? "text-cream-100" : "text-forest-900"}`}>
             Dr. Meisam Lund
           </span>
-          <span className={`block text-[10px] font-medium uppercase tracking-[0.22em] transition-colors ${light ? "text-cream-100/70" : "text-forest-500"}`}>
+          <span className={`block text-[11px] font-medium uppercase tracking-[0.22em] transition-colors ${light ? "text-cream-100/70" : "text-forest-500"}`}>
             {t.footer.role}
           </span>
         </button>
