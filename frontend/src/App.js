@@ -1,6 +1,7 @@
 import React from "react";
 import "@/App.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import Scene3D from "@/components/landing/Scene3D";
 import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
 import TrustBar from "@/components/landing/TrustBar";
@@ -21,22 +22,25 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-cream-100 font-body text-forest-900 antialiased">
-        <Nav onCheckSymptoms={goSymptoms} />
-        <main>
-          <Hero onCheckSymptoms={goSymptoms} />
-          <TrustBar />
-          <SymptomChecker />
-          <Conditions />
-          <WhyChoose />
-          <PatientJourney />
-          <Testimonials />
-          <Articles />
-          <FAQ />
-          <Insurance />
-          <FinalCTA />
-        </main>
-        <Footer />
+      <div className="relative min-h-screen font-body text-forest-900 antialiased">
+        <Scene3D />
+        <div className="relative z-10">
+          <Nav onCheckSymptoms={goSymptoms} />
+          <main>
+            <Hero onCheckSymptoms={goSymptoms} />
+            <TrustBar />
+            <SymptomChecker />
+            <Conditions />
+            <WhyChoose />
+            <PatientJourney />
+            <Testimonials />
+            <Articles />
+            <FAQ />
+            <Insurance />
+            <FinalCTA />
+          </main>
+          <Footer />
+        </div>
       </div>
     </LanguageProvider>
   );

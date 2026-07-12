@@ -18,7 +18,7 @@ export default function Hero({ onCheckSymptoms }) {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative overflow-hidden bg-cream-100 pt-28 lg:pt-36"
+      className="relative overflow-hidden pt-28 lg:min-h-screen lg:pt-36"
     >
       <div className="pointer-events-none absolute -top-40 end-[-10%] h-[520px] w-[520px] rounded-full bg-forest-100/50 blur-3xl" />
 

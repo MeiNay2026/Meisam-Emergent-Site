@@ -1,0 +1,39 @@
+{
+  "summary": "Frontend regression + 3D scene verification pass. WebGL 3D background (Scene3D) renders successfully behind the hero with a valid WebGL context on a <canvas> inside [data-testid=scene-3d]. Large green sphere and gold orbs are clearly visible in the hero screenshot. No console errors. All regression flows (hero CTAs, AI Symptom Checker, language switch AR/EN, scroll reveals, Conditions/FAQ accordions, CTA hrefs) work as expected. Pointer-events on the fixed 3D canvas do NOT block interactive content — all clicks succeeded.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_results_detail": {
+    "scene_3d_present": true,
+    "webgl_canvas": true,
+    "webgl_context_created": true,
+    "console_errors": 0,
+    "hero_headline_visible": true,
+    "hero_book_btn_href": "tel:+97143775500",
+    "nav_book_btn_href": "tel:+97143775500",
+    "whatsapp_btn_href": "https://wa.me/97143775500",
+    "hero_symptom_btn_clickable": true,
+    "symptom_result_returned": true,
+    "language_switch_ar_dir": "rtl",
+    "language_switch_en_dir": "ltr",
+    "condition_toggle_hernia_clickable": true,
+    "faq_item_0_clickable": true,
+    "section_conditions_opacity": "1",
+    "footer_opacity": "1",
+    "other_sections_visible_in_screenshot": true
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Optional: Some sections (why-choose, patient-journey, testimonials, articles, faq, insurance, final-cta) lack top-level HTML id anchors that match nav hrefs (they were probed via #id and not found). Content is rendered and visible, but adding matching id attributes would improve anchor-based nav scrolling and testability. Non-blocking."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (not tested this pass)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "3D Scene renders correctly with WebGL. Full regression suite green. Only minor observation: several sections lack HTML id anchors matching nav links (why-choose, patient-journey, testimonials, articles, insurance, final-cta) — visually rendered but not queryable by #id. If nav anchor scrolling is a requirement, ask main agent to add ids."
+}
