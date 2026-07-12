@@ -7,6 +7,7 @@ import TrustBar from "@/components/landing/TrustBar";
 import SymptomBot from "@/components/landing/SymptomBot";
 import Conditions from "@/components/landing/Conditions";
 import WhyChoose from "@/components/landing/WhyChoose";
+import About from "@/components/landing/About";
 import PatientJourney from "@/components/landing/PatientJourney";
 import Testimonials from "@/components/landing/Testimonials";
 import Articles from "@/components/landing/Articles";
@@ -28,6 +29,7 @@ function App() {
           <TrustBar />
           <Conditions />
           <WhyChoose />
+          <About />
           <PatientJourney />
           <Testimonials />
           <Articles />
