@@ -34,3 +34,12 @@ to Book a Consultation. Sections: Hero, Trust Bar, AI Symptom Checker, Why Choos
 - P1: Real social links; optional dedicated article detail pages.
 - P2: Streaming/typing effect for AI responses; analytics on CTA clicks; SEO/OG meta + schema.org Physician.
 - P2: Optional booking form + admin if lead capture is desired later.
+
+## Update (Dec 2025) — Redesign + integrations
+- Bright Healen palette (cream + near-black ink + lime accent); full-bleed hero with doctor photo anchored right, text on cream left, no dark overlay; larger header logo.
+- Symptom Checker converted to a floating AI chatbot ("AI Digital Twin" — labelled as trained on Dr. Meisam's knowledge, not his persona). Em dashes stripped from all page text and AI responses (build_prompt rule + _no_dash sanitizer).
+- WhatsApp number: +971503147013. Socials wired: LinkedIn /in/drmeisam, Instagram doctormeisam (footer + final CTA).
+- Bio/specialties updated from provided Word doc; About credentials block (Education/Experience/Memberships) in EN/AR/SV.
+- Blog: GET /api/blog/posts auto-pulls WordPress via WP REST (_embed for image+tag). Controlled by backend env WORDPRESS_BASE_URL (currently empty -> graceful fallback to 6 curated cards). Set WORDPRESS_BASE_URL to the site root to go live.
+- Google reviews: skipped per user; styled testimonials retained.
+- Verified: test_reports/iteration_6.json (backend 5/5, frontend 100%).
