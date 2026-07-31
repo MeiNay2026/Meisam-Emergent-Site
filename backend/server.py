@@ -6,6 +6,7 @@ import os
 import re
 import json
 import logging
+import httpx
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional
@@ -24,6 +25,7 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
 EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY')
+WORDPRESS_BASE_URL = (os.environ.get('WORDPRESS_BASE_URL') or '').rstrip('/')
 
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
@@ -189,6 +191,50 @@ async def symptom_check(req: SymptomRequest):
     await db.symptom_checks.insert_one(doc)
 
     return result
+
+
+@api_router.get("/blog/posts")
+async def blog_posts(limit: int = 6):
+    """Auto-pulls latest posts from a WordPress site via the WP REST API.
+    Returns configured=False (graceful fallback) until WORDPRESS_BASE_URL is set."""
+    if not WORDPRESS_BASE_URL:
+        return {"configured": False, "posts": []}
+
+    url = f"{WORDPRESS_BASE_URL}/wp-json/wp/v2/posts"
+    params = {"per_page": max(1, min(limit, 12)), "_embed": "1"}
+
+    def strip(h):
+        return re.sub(r"<[^>]+>", "", h or "").replace("&hellip;", "\u2026").replace("&#8217;", "'").strip()
+
+    try:
+        async with httpx.AsyncClient(timeout=10, follow_redirects=True) as c:
+            r = await c.get(url, params=params, headers={"User-Agent": "MeisamSite/1.0"})
+            r.raise_for_status()
+            data = r.json()
+    except Exception as e:
+        logger.warning(f"WordPress fetch failed: {e}")
+        return {"configured": True, "posts": [], "error": "fetch_failed"}
+
+    posts = []
+    for p in data if isinstance(data, list) else []:
+        try:
+            image = p["_embedded"]["wp:featuredmedia"][0]["source_url"]
+        except Exception:
+            image = None
+        try:
+            tag = p["_embedded"]["wp:term"][0][0]["name"]
+        except Exception:
+            tag = None
+        excerpt = strip(p.get("excerpt", {}).get("rendered", ""))
+        posts.append({
+            "title": strip(p.get("title", {}).get("rendered", "")),
+            "excerpt": (excerpt[:180] + "\u2026") if len(excerpt) > 180 else excerpt,
+            "url": p.get("link"),
+            "image": image,
+            "tag": tag,
+            "date": p.get("date"),
+        })
+    return {"configured": True, "posts": posts}
 
 
 app.include_router(api_router)
