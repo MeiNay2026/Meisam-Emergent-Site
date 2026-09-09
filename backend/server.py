@@ -13,7 +13,7 @@ from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 
-from emergentintegrations.llm.chat import LlmChat, UserMessage
+import anthropic
 
 
 ROOT_DIR = Path(__file__).parent
@@ -24,7 +24,9 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
-EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY')
+ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
+ANTHROPIC_MODEL = os.environ.get('ANTHROPIC_MODEL', 'claude-sonnet-4-5')
+anthropic_client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY) if ANTHROPIC_API_KEY else None
 WORDPRESS_BASE_URL = (os.environ.get('WORDPRESS_BASE_URL') or '').rstrip('/')
 
 app = FastAPI()
@@ -154,19 +156,19 @@ def _no_dash(text):
 
 @api_router.post("/symptom-check", response_model=SymptomResponse)
 async def symptom_check(req: SymptomRequest):
-    if not EMERGENT_LLM_KEY:
+    if not anthropic_client:
         raise HTTPException(status_code=500, detail="LLM key not configured")
 
     session_id = str(uuid.uuid4())
     try:
-        chat = LlmChat(
-            api_key=EMERGENT_LLM_KEY,
-            session_id=session_id,
-            system_message=SYSTEM_MESSAGE,
-        ).with_model("anthropic", "claude-sonnet-4-6")
-
-        user_message = UserMessage(text=build_prompt(req.symptom, req.details or "", req.language or "en"))
-        raw = await chat.send_message(user_message)
+        prompt = build_prompt(req.symptom, req.details or "", req.language or "en")
+        response = await anthropic_client.messages.create(
+            model=ANTHROPIC_MODEL,
+            max_tokens=1024,
+            system=SYSTEM_MESSAGE,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        raw = "".join(block.text for block in response.content if block.type == "text")
         data = _extract_json(raw)
     except Exception as e:
         logger.exception("Symptom check failed")
