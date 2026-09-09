@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: doctormeisam-api
+    runtime: python
+    rootDir: backend
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME
+        value: doctormeisam
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-4-5
+      - key: CORS_ORIGINS
+        value: https://doctormeisam.com,https://www.doctormeisam.com
+      - key: WORDPRESS_BASE_URL
+        value: ""
