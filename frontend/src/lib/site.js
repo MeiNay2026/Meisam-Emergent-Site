@@ -19,8 +19,8 @@ export const IMAGES = {
   // NOTE: previously hosted on Emergent's own CDN (customer-assets.emergentagent.com),
   // which won't be reliable once this project is deployed independently. Now self-hosted
   // from /public/images/ — place the real files there (see deploy notes).
-  heroDoctor: "/images/hero-doctor.webp",
-  aboutDoctor: "/images/about-doctor.jpg",
+   heroDoctor: "/u4ja9nos_SR5_0382.webp",
+   aboutDoctor: "/qpdb2xg6_MEISAM%20BIO%20PROFILE%20PIC.jpeg",
   heroBg:
     "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=2400&q=80",
   hospitalAmbient:
