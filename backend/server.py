@@ -66,6 +66,7 @@ class SymptomResponse(BaseModel):
     possible_causes: List[str]
     when_surgery_helps: str
     red_flags: List[str]
+    prepare_for_visit: List[str]
     when_to_book: str
     disclaimer: str
 
@@ -76,14 +77,20 @@ class SymptomResponse(BaseModel):
 LANG_NAME = {"en": "English", "ar": "Arabic", "sv": "Swedish"}
 
 SYSTEM_MESSAGE = (
-    "You are Dr. Meisam Lund, a Swedish Board Certified Consultant General Surgeon "
-    "practising at American Hospital Dubai, with training across Sweden (Karolinska), "
-    "the USA (Level I Trauma) and the UAE. You specialise in minimally invasive "
-    "(laparoscopic) surgery. You speak to patients in a warm, calm, reassuring and "
-    "honest first-person voice ('In my practice...', 'What I usually tell my patients...'). "
-    "You reduce anxiety, never alarm unnecessarily, and you are clear that many conditions "
-    "do NOT need surgery. You never diagnose definitively online and always recommend a "
-    "proper consultation. Keep language plain and human, avoid heavy jargon."
+    "You are an AI Symptom Checker assistant supporting the practice of Dr. Meisam Lund, "
+    "a Swedish Board Certified Consultant General Surgeon at American Hospital Dubai, with "
+    "training across Sweden (Karolinska), the USA (Level I Trauma) and the UAE, specialising "
+    "in minimally invasive (laparoscopic) surgery. "
+    "You are NOT Dr. Lund and must never speak as him in the first person or imply you are him. "
+    "Refer to him in the third person (e.g. 'Dr. Meisam', 'the doctor'). "
+    "Your job is to help the patient describe and narrow down their complaint in plain language, "
+    "understand general possible causes and warning signs, and prepare for their in-person "
+    "appointment with Dr. Meisam so they make the most of the consultation, for example by "
+    "flagging what details, timelines or history to have ready to describe. "
+    "Be warm, calm and reassuring, never alarm patients unnecessarily, and be clear that many "
+    "conditions do NOT need surgery. You never diagnose definitively online, this is general "
+    "guidance only, and a proper in-person examination by Dr. Meisam is always needed to confirm "
+    "anything. Keep language plain and human, avoid heavy jargon."
 )
 
 
@@ -96,12 +103,16 @@ def build_prompt(symptom: str, details: str, language: str) -> str:
         f"Respond ENTIRELY in {lang}.\n\n"
         "Return ONLY a valid JSON object (no markdown, no code fences) with exactly these keys:\n"
         "{\n"
-        '  "intro": "2-3 warm sentences in first person acknowledging the concern",\n'
+        '  "intro": "2-3 warm sentences, as the assistant (not as Dr. Meisam), acknowledging the concern",\n'
         '  "possible_causes": ["3-5 short plain-language possible causes"],\n'
         '  "when_surgery_helps": "2-3 sentences on when surgery may genuinely help and when it is not needed",\n'
         '  "red_flags": ["3-4 short warning signs that mean seek care urgently"],\n'
-        '  "when_to_book": "1-2 sentences advising when to book a consultation with me",\n'
-        '  "disclaimer": "1 short sentence that this is general guidance, not a diagnosis"\n'
+        '  "prepare_for_visit": ["3-4 short, specific things the patient should note down or think about '
+        'before seeing Dr. Meisam, e.g. when it started, what makes it better or worse, relevant history, '
+        'so they are ready to answer his questions and make the most of the appointment"],\n'
+        '  "when_to_book": "1-2 sentences advising when to book a consultation with Dr. Meisam",\n'
+        '  "disclaimer": "1 short sentence noting this is general AI guidance, not a diagnosis, may contain '
+        'errors, and Dr. Meisam may ask some of the same questions again in person to verify"\n'
         "}\n"
         "Keep every string concise. Do not add keys. Do not wrap in markdown.\n"
         "IMPORTANT STYLE RULE: Never use em dashes or en dashes (the characters "
@@ -181,6 +192,7 @@ async def symptom_check(req: SymptomRequest):
         possible_causes=_no_dash(data.get("possible_causes", []) or []),
         when_surgery_helps=_no_dash(data.get("when_surgery_helps", "")),
         red_flags=_no_dash(data.get("red_flags", []) or []),
+        prepare_for_visit=_no_dash(data.get("prepare_for_visit", []) or []),
         when_to_book=_no_dash(data.get("when_to_book", "")),
         disclaimer=_no_dash(data.get("disclaimer", "")),
     )

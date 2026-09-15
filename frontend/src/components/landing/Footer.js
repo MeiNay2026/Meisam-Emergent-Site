@@ -1,7 +1,7 @@
 import React from "react";
 import { Linkedin, Instagram } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
-import { SITE, SOCIALS } from "@/lib/site";
+import { SITE, SOCIALS, telHref, telHrefIntl, waHref } from "@/lib/site";
 import { scrollToId } from "./cta";
 
 export default function Footer() {
@@ -44,6 +44,32 @@ export default function Footer() {
               </button>
             ))}
           </nav>
+
+          <div>
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-forest-500">
+              {t.footer.contactTitle}
+            </div>
+            <div className="space-y-1.5 text-sm text-forest-800/90">
+              <div>
+                <a href={telHref} className="font-medium hover:text-forest-900 hover:underline">
+                  {SITE.phoneDisplay}
+                </a>{" "}
+                <span className="text-forest-500">({t.footer.uae})</span>
+              </div>
+              <div>
+                <a href={telHrefIntl} className="hover:text-forest-900 hover:underline">
+                  {SITE.phoneIntlDisplay}
+                </a>{" "}
+                <span className="text-forest-500">({t.footer.intl})</span>
+              </div>
+              <div>
+                <a href={waHref} target="_blank" rel="noopener noreferrer" className="hover:text-forest-900 hover:underline">
+                  {t.footer.whatsappLabel}
+                </a>
+              </div>
+              <div className="pt-1 text-forest-500">{SITE.location}</div>
+            </div>
+          </div>
 
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-forest-500">

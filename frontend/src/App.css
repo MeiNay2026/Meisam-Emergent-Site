@@ -1,8 +1,0 @@
-.App {
-  text-align: start;
-}
-
-/* Prevent horizontal scroll from decorative blurred glows */
-html, body, #root {
-  overflow-x: hidden;
-}

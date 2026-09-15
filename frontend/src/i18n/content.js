@@ -34,22 +34,23 @@ const en = {
     ],
   },
   symptom: {
-    overline: "Interactive Symptom Guide",
-    title: "What's bothering you?",
+    overline: "Pre-Visit Symptom Checker",
+    title: "Symptom Checker",
     subtitle:
-      "Select your main concern and I'll share, in my own words, what it could mean, when surgery genuinely helps, and when it's time to see me.",
+      "Select your main concern and this assistant will help you understand what it could mean, when surgery genuinely helps, and what to have ready so you get the most out of your appointment with Dr. Meisam.",
     detailsPlaceholder: "Optional: add a little more about how you feel…",
-    ask: "Ask Dr. Meisam",
-    thinking: "Dr. Meisam is considering your answer…",
-    botTag: "AI Digital Twin",
+    ask: "Check My Symptoms",
+    thinking: "Reviewing your answer…",
+    botTag: "AI Symptom Checker",
     botGreeting:
-      "Hello, I'm the AI digital twin of Dr. Meisam Lund, trained on his medical knowledge and approach. I'm not Dr. Meisam himself, but I can help you understand your symptoms. What's bothering you?",
+      "Hello, I'm an AI symptom checker for Dr. Meisam Lund's practice. I'm not Dr. Meisam himself, I'm here to help you describe your complaint clearly and get ready for your appointment. What's bothering you?",
     disclaimer:
-      "I'm an AI digital twin trained on Dr. Meisam's knowledge, not Dr. Meisam himself. This guidance is general, not a diagnosis, and does not replace a consultation.",
+      "This is an AI assistant, not Dr. Meisam himself. It can make mistakes and does not diagnose. Dr. Meisam may ask you some of the same questions again in person to verify your answers before deciding on any treatment.",
     labels: {
       causes: "Possible causes",
       surgery: "When surgery may help",
       redflags: "See care urgently if…",
+      prepare: "Get ready for your visit",
       book: "When to book",
     },
     symptoms: [
@@ -213,7 +214,7 @@ const en = {
     title: "Frequently asked questions",
     subtitle: "Straight answers to what patients ask me most.",
     items: [
-      { q: "How do I book a consultation?", a: "You can call the American Hospital Dubai contact centre or message us on WhatsApp using the buttons on this page. My team will find a time that suits you." },
+      { q: "How do I book a consultation?", a: "Call American Hospital Dubai's customer care on 800 24392 (or +971 4 377 5500 from outside the UAE) using the button on this page, and the hospital team will find a time that suits you. WhatsApp is available for quick, urgent questions, but appointments themselves are always booked through the hospital." },
       { q: "Will I definitely need surgery?", a: "Not at all. Many conditions I see are managed without surgery. I only recommend an operation when it offers a clear, meaningful benefit, and I'll always explain why." },
       { q: "What is minimally invasive (keyhole) surgery?", a: "It uses a few tiny incisions and a camera instead of one large cut. For most patients this means less pain, smaller scars and a faster return to normal life." },
       { q: "Do you offer second opinions?", a: "Yes, and I welcome them. A calm, independent review can bring real clarity before any important decision." },
@@ -235,6 +236,8 @@ const en = {
     call: "Call " ,
     whatsapp: "WhatsApp Us",
     hours: "Mon – Fri: 8:00 AM – 6:00 PM",
+    intlNote: "Calling from outside the UAE? Reach American Hospital Dubai directly on",
+    whatsappNote: "WhatsApp is for quick, urgent questions, appointments are always booked through American Hospital Dubai.",
   },
   footer: {
     role: "Consultant Surgeon",
@@ -242,6 +245,10 @@ const en = {
     followMe: "Follow me",
     rights: "All rights reserved.",
     practising: "Practising at American Hospital Dubai",
+    contactTitle: "Contact",
+    uae: "UAE",
+    intl: "outside UAE",
+    whatsappLabel: "WhatsApp for urgent questions",
   },
 };
 
@@ -278,22 +285,23 @@ const ar = {
     ],
   },
   symptom: {
-    overline: "دليل الأعراض التفاعلي",
-    title: "ما الذي يزعجك؟",
+    overline: "فاحص الأعراض قبل الزيارة",
+    title: "فاحص الأعراض",
     subtitle:
-      "اختر همّك الرئيسي وسأشرح لك بكلماتي ماذا قد يعني، ومتى تفيد الجراحة حقًا، ومتى يحين وقت زيارتي.",
+      "اختر همّك الرئيسي وسيساعدك هذا المساعد على فهم ما قد يعنيه، ومتى تفيد الجراحة حقًا، وما يجب تجهيزه للاستفادة القصوى من موعدك مع د. ميسم.",
     detailsPlaceholder: "اختياري: أضف المزيد حول شعورك…",
-    ask: "اسأل د. ميسم",
-    thinking: "د. ميسم يفكّر في إجابتك…",
-    botTag: "التوأم الرقمي بالذكاء الاصطناعي",
+    ask: "افحص أعراضي",
+    thinking: "جارٍ مراجعة إجابتك…",
+    botTag: "فاحص أعراض بالذكاء الاصطناعي",
     botGreeting:
-      "مرحبًا، أنا التوأم الرقمي بالذكاء الاصطناعي للدكتور ميسم لوند، مُدرَّب على معرفته الطبية ونهجه. لست الدكتور ميسم نفسه، لكن يمكنني مساعدتك على فهم أعراضك. ما الذي يزعجك؟",
+      "مرحبًا، أنا فاحص أعراض بالذكاء الاصطناعي لعيادة د. ميسم لوند. لست الدكتور ميسم نفسه، بل هنا لمساعدتك على وصف شكواك بوضوح والاستعداد لموعدك. ما الذي يزعجك؟",
     disclaimer:
-      "أنا توأم رقمي بالذكاء الاصطناعي مُدرَّب على معرفة الدكتور ميسم، ولست الدكتور ميسم نفسه. هذه الإرشادات عامة وليست تشخيصًا ولا تغني عن الاستشارة.",
+      "هذا مساعد بالذكاء الاصطناعي وليس الدكتور ميسم نفسه. قد يخطئ ولا يقدّم تشخيصًا. قد يسأل د. ميسم بعض الأسئلة نفسها مجددًا شخصيًا للتحقق من إجاباتك قبل تحديد أي علاج.",
     labels: {
       causes: "الأسباب المحتملة",
       surgery: "متى قد تفيد الجراحة",
       redflags: "اطلب الرعاية فورًا إذا…",
+      prepare: "استعد لموعدك",
       book: "متى تحجز",
     },
     symptoms: [
@@ -421,7 +429,7 @@ const ar = {
     title: "الأسئلة الشائعة",
     subtitle: "إجابات مباشرة لأكثر ما يسألني عنه المرضى.",
     items: [
-      { q: "كيف أحجز استشارة؟", a: "اتصل بمركز تواصل المستشفى الأمريكي دبي أو راسلنا عبر واتساب من الأزرار في هذه الصفحة، وسيجد فريقي وقتًا يناسبك." },
+      { q: "كيف أحجز استشارة؟", a: "اتصل بخدمة عملاء المستشفى الأمريكي دبي على 800 24392 (أو ‎+971 4 377 5500 من خارج الإمارات) من الزر في هذه الصفحة، وسيجد فريق المستشفى وقتًا يناسبك. واتساب متاح للأسئلة السريعة والعاجلة، لكن الحجز يتم دائمًا عبر المستشفى." },
       { q: "هل سأحتاج الجراحة حتمًا؟", a: "أبدًا. كثير من الحالات تُدار دون جراحة. أوصي بالعملية فقط عند وجود فائدة واضحة وسأشرح السبب دائمًا." },
       { q: "ما هي الجراحة طفيفة التوغل؟", a: "تستخدم شقوقًا صغيرة وكاميرا بدل شق كبير، ما يعني لمعظم المرضى ألمًا أقل وندوبًا أصغر وعودة أسرع." },
       { q: "هل تقدّم رأيًا ثانيًا؟", a: "نعم وأرحّب به. المراجعة المستقلة الهادئة تمنح وضوحًا حقيقيًا قبل أي قرار مهم." },
@@ -443,6 +451,8 @@ const ar = {
     call: "اتصل ",
     whatsapp: "راسلنا واتساب",
     hours: "الإثنين – الجمعة: 8:00 ص – 6:00 م",
+    intlNote: "تتصل من خارج الإمارات؟ تواصل مع المستشفى الأمريكي دبي مباشرة على",
+    whatsappNote: "واتساب للأسئلة السريعة والعاجلة فقط، أما الحجز فيتم دائمًا عبر المستشفى الأمريكي دبي.",
   },
   footer: {
     role: "استشاري جراحة",
@@ -450,6 +460,10 @@ const ar = {
     followMe: "تابعني",
     rights: "جميع الحقوق محفوظة.",
     practising: "يمارس في المستشفى الأمريكي دبي",
+    contactTitle: "تواصل",
+    uae: "الإمارات",
+    intl: "خارج الإمارات",
+    whatsappLabel: "واتساب للأسئلة العاجلة",
   },
 };
 
@@ -486,22 +500,23 @@ const sv = {
     ],
   },
   symptom: {
-    overline: "Interaktiv symtomguide",
-    title: "Vad besvärar dig?",
+    overline: "Symtomkoll inför besöket",
+    title: "Symtomkoll",
     subtitle:
-      "Välj ditt huvudsakliga besvär så berättar jag, med mina egna ord, vad det kan betyda, när kirurgi verkligen hjälper och när det är dags att träffa mig.",
+      "Välj ditt huvudsakliga besvär så hjälper assistenten dig förstå vad det kan betyda, när kirurgi verkligen hjälper, och vad du bör ha redo för att få ut mesta möjliga av ditt besök hos dr Meisam.",
     detailsPlaceholder: "Valfritt: berätta gärna lite mer om hur du mår…",
-    ask: "Fråga dr Meisam",
-    thinking: "Dr Meisam funderar på ditt svar…",
-    botTag: "AI digital tvilling",
+    ask: "Kolla mina symtom",
+    thinking: "Går igenom ditt svar…",
+    botTag: "AI-symtomkoll",
     botGreeting:
-      "Hej, jag är dr Meisam Lunds AI-digitala tvilling, tränad på hans medicinska kunskap och arbetssätt. Jag är inte dr Meisam själv, men jag kan hjälpa dig förstå dina symtom. Vad besvärar dig?",
+      "Hej, jag är en AI-symtomkoll för dr Meisam Lunds mottagning. Jag är inte dr Meisam själv, jag är här för att hjälpa dig beskriva ditt besvär tydligt och förbereda dig inför besöket. Vad besvärar dig?",
     disclaimer:
-      "Jag är en AI-digital tvilling tränad på dr Meisams kunskap, inte dr Meisam själv. Denna vägledning är allmän, ingen diagnos, och ersätter inte en konsultation.",
+      "Detta är en AI-assistent, inte dr Meisam själv. Den kan ha fel och ställer ingen diagnos. Dr Meisam kan komma att ställa några av samma frågor igen personligen för att bekräfta dina svar innan någon behandling bestäms.",
     labels: {
       causes: "Möjliga orsaker",
       surgery: "När kirurgi kan hjälpa",
       redflags: "Sök vård akut om…",
+      prepare: "Förbered ditt besök",
       book: "När du bör boka",
     },
     symptoms: [
@@ -629,7 +644,7 @@ const sv = {
     title: "Vanliga frågor",
     subtitle: "Raka svar på det patienter frågar mig mest.",
     items: [
-      { q: "Hur bokar jag en konsultation?", a: "Ring American Hospital Dubais kontaktcenter eller skriv till oss på WhatsApp via knapparna på sidan. Mitt team hittar en tid som passar dig." },
+      { q: "Hur bokar jag en konsultation?", a: "Ring American Hospital Dubais kundtjänst på 800 24392 (eller +971 4 377 5500 utanför Förenade Arabemiraten) via knappen på sidan, så hittar sjukhusets team en tid som passar dig. WhatsApp är till för snabba, brådskande frågor, men själva bokningen sker alltid via sjukhuset." },
       { q: "Kommer jag definitivt att behöva opereras?", a: "Inte alls. Många tillstånd sköts utan kirurgi. Jag rekommenderar bara operation när den ger tydlig nytta, och jag förklarar alltid varför." },
       { q: "Vad är titthålskirurgi?", a: "Den använder några små snitt och en kamera istället för ett stort snitt. För de flesta betyder det mindre smärta, mindre ärr och snabbare återgång." },
       { q: "Erbjuder du andra bedömningar?", a: "Ja, och jag välkomnar dem. En lugn, oberoende genomgång kan ge verklig tydlighet inför ett viktigt beslut." },
@@ -651,6 +666,8 @@ const sv = {
     call: "Ring ",
     whatsapp: "WhatsApp oss",
     hours: "Mån – fre: 08:00 – 18:00",
+    intlNote: "Ringer du utanför Förenade Arabemiraten? Nå American Hospital Dubai direkt på",
+    whatsappNote: "WhatsApp är till för snabba, brådskande frågor, bokning sker alltid via American Hospital Dubai.",
   },
   footer: {
     role: "Specialistkirurg",
@@ -658,6 +675,10 @@ const sv = {
     followMe: "Följ mig",
     rights: "Alla rättigheter förbehållna.",
     practising: "Verksam vid American Hospital Dubai",
+    contactTitle: "Kontakt",
+    uae: "Förenade Arabemiraten",
+    intl: "utanför Förenade Arabemiraten",
+    whatsappLabel: "WhatsApp för brådskande frågor",
   },
 };
 

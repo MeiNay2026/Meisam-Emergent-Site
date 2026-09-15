@@ -3,7 +3,7 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MessagesSquare, X, Send, Loader2, Stethoscope, Sparkles,
-  Info, CheckCircle2, AlertTriangle, CalendarClock,
+  Info, CheckCircle2, AlertTriangle, CalendarClock, ClipboardList,
 } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { telHref } from "@/lib/site";
@@ -101,7 +101,7 @@ export default function SymptomBot({ open, setOpen }) {
                 <Stethoscope className="h-5 w-5" />
               </div>
               <div className="flex-1 leading-tight">
-                <div className="font-heading text-lg font-medium">Dr. Meisam Lund</div>
+                <div className="font-heading text-lg font-medium">{s.title}</div>
                 <div className="flex items-center gap-1.5 text-[11px] text-cream-100/70">
                   <span className="h-2 w-2 rounded-full bg-lime" /> {s.botTag}
                 </div>
@@ -260,6 +260,19 @@ const ResultCard = ({ data, s, bookLabel }) => (
         ))}
       </ul>
     </Row>
+
+    {data.prepare_for_visit?.length > 0 && (
+      <Row icon={<ClipboardList className="h-3.5 w-3.5" />} title={s.labels.prepare} tone="neutral">
+        <ul className="space-y-1">
+          {data.prepare_for_visit.map((c, i) => (
+            <li key={i} className="flex gap-2 text-[13px] text-forest-800">
+              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
+              {c}
+            </li>
+          ))}
+        </ul>
+      </Row>
+    )}
 
     <Row icon={<CalendarClock className="h-3.5 w-3.5" />} title={s.labels.book} tone="neutral">
       <p className="mb-3 text-[13px] leading-relaxed text-forest-800">{data.when_to_book}</p>

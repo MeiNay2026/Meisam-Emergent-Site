@@ -1,13 +1,22 @@
 export const SITE = {
   doctorName: "Dr. Meisam Lund",
-  phone: "+97143775500",
-  phoneDisplay: "+971 4 377 5500",
+  // Primary CTA number: American Hospital Dubai customer care (toll-free within the UAE).
+  phone: "80024392",
+  phoneDisplay: "800 24392",
+  // UAE toll-free numbers aren't reachable from outside the country, so international
+  // callers are routed to the hospital's direct dial-in line instead.
+  phoneIntl: "+97143775500",
+  phoneIntlDisplay: "+971 4 377 5500",
+  // Dr. Meisam's business WhatsApp — for urgent questions/chat only. Appointment
+  // requests received here should be redirected to American Hospital Dubai's own
+  // booking channel, since he is not permitted to book patients outside the hospital.
   whatsapp: "971503147013",
   hospital: "American Hospital Dubai",
   location: "American Hospital Dubai, Oud Metha, Dubai",
 };
 
 export const telHref = `tel:${SITE.phone}`;
+export const telHrefIntl = `tel:${SITE.phoneIntl}`;
 export const waHref = `https://wa.me/${SITE.whatsapp}`;
 
 export const SOCIALS = {

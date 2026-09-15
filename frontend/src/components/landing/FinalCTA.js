@@ -1,7 +1,7 @@
 import React from "react";
 import { MapPin, Clock, Linkedin, Instagram } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
-import { IMAGES, SITE, SOCIALS } from "@/lib/site";
+import { IMAGES, SITE, SOCIALS, telHrefIntl } from "@/lib/site";
 import { Reveal } from "./Reveal";
 import { BookButton, CallButton, WhatsAppButton } from "./cta";
 
@@ -39,6 +39,14 @@ export default function FinalCTA() {
             <CallButton label={f.call} />
             <WhatsAppButton label={f.whatsapp} />
           </div>
+
+          <p className="mx-auto mt-5 max-w-xl text-xs leading-relaxed text-cream-500/70">
+            {f.intlNote}{" "}
+            <a href={telHrefIntl} className="underline underline-offset-2 hover:text-lime">
+              {SITE.phoneIntlDisplay}
+            </a>
+            . {f.whatsappNote}
+          </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 text-sm text-cream-500/80 sm:flex-row sm:gap-10">
             <span className="inline-flex items-center gap-2">
