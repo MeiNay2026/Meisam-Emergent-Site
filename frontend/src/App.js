@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "@/App.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Nav from "@/components/landing/Nav";
@@ -16,31 +19,44 @@ import Insurance from "@/components/landing/Insurance";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 
+// Created once per browser tab (module scope, client-only — this file is
+// "use client") rather than per-render, same effect as the old index.js setup.
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60_000,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
 function App() {
   const [botOpen, setBotOpen] = useState(false);
   const openBot = () => setBotOpen(true);
 
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-cream-100 font-body text-forest-900 antialiased">
-        <Nav onCheckSymptoms={openBot} />
-        <main>
-          <Hero onCheckSymptoms={openBot} />
-          <TrustBar />
-          <Conditions />
-          <WhyChoose />
-          <About />
-          <PatientJourney />
-          <Testimonials />
-          <Articles />
-          <FAQ />
-          <Insurance />
-          <FinalCTA />
-        </main>
-        <Footer />
-        <SymptomBot open={botOpen} setOpen={setBotOpen} />
-      </div>
-    </LanguageProvider>
+    <QueryClientProvider client={queryClient}>
+      <LanguageProvider>
+        <div className="min-h-screen bg-cream-100 font-body text-forest-900 antialiased">
+          <Nav onCheckSymptoms={openBot} />
+          <main>
+            <Hero onCheckSymptoms={openBot} />
+            <TrustBar />
+            <Conditions />
+            <WhyChoose />
+            <About />
+            <PatientJourney />
+            <Testimonials />
+            <Articles />
+            <FAQ />
+            <Insurance />
+            <FinalCTA />
+          </main>
+          <Footer />
+          <SymptomBot open={botOpen} setOpen={setBotOpen} />
+        </div>
+      </LanguageProvider>
+    </QueryClientProvider>
   );
 }
 

@@ -5,7 +5,12 @@ import { LANGS } from "@/lib/site";
 const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState(() => localStorage.getItem("ml_lang") || "en");
+  // Guard for SSR: Next.js pre-renders this on the server first (no `localStorage`
+  // there), then again in the browser. Falling back to "en" on the server avoids
+  // a build-time crash; the real saved value takes over once useEffect runs below.
+  const [lang, setLang] = useState(() =>
+    typeof window !== "undefined" ? localStorage.getItem("ml_lang") || "en" : "en"
+  );
 
   const dir = LANGS.find((l) => l.code === lang)?.dir || "ltr";
 

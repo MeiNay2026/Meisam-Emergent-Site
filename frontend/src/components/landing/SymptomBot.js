@@ -8,7 +8,7 @@ import {
 import { useLang } from "@/context/LanguageContext";
 import { telHref } from "@/lib/site";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 export default function SymptomBot({ open, setOpen }) {
