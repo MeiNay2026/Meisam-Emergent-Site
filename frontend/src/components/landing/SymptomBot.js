@@ -162,7 +162,9 @@ export default function SymptomBot({ open, setOpen }) {
 
               {/* symptom chips (always available) */}
               {!loading && (
-                <div className="flex flex-wrap gap-2 pt-1">
+                <div className="pt-1">
+                  <p className="mb-2 px-1 text-[11px] font-medium text-forest-500">{s.chipsIntro}</p>
+                  <div className="flex flex-wrap gap-2">
                   {s.symptoms.map((sym) => (
                     <button
                       key={sym.id}
@@ -173,6 +175,7 @@ export default function SymptomBot({ open, setOpen }) {
                       {sym.label}
                     </button>
                   ))}
+                  </div>
                 </div>
               )}
             </div>

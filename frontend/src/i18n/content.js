@@ -38,7 +38,8 @@ const en = {
     title: "Symptom Checker",
     subtitle:
       "Select your main concern and this assistant will help you understand what it could mean, when surgery genuinely helps, and what to have ready so you get the most out of your appointment with Dr. Meisam.",
-    detailsPlaceholder: "Optional: add a little more about how you feel…",
+    detailsPlaceholder: "Write your symptoms here",
+    chipsIntro: "Pick from the symptoms below, or write it in your own words underneath",
     ask: "Check My Symptoms",
     thinking: "Reviewing your answer…",
     botTag: "AI Symptom Checker",
@@ -289,7 +290,8 @@ const ar = {
     title: "فاحص الأعراض",
     subtitle:
       "اختر همّك الرئيسي وسيساعدك هذا المساعد على فهم ما قد يعنيه، ومتى تفيد الجراحة حقًا، وما يجب تجهيزه للاستفادة القصوى من موعدك مع د. ميسم.",
-    detailsPlaceholder: "اختياري: أضف المزيد حول شعورك…",
+    detailsPlaceholder: "اكتب أعراضك هنا",
+    chipsIntro: "اختر من الأعراض أدناه، أو اكتبها بكلماتك في الأسفل",
     ask: "افحص أعراضي",
     thinking: "جارٍ مراجعة إجابتك…",
     botTag: "فاحص أعراض بالذكاء الاصطناعي",
@@ -504,7 +506,8 @@ const sv = {
     title: "Symtomkoll",
     subtitle:
       "Välj ditt huvudsakliga besvär så hjälper assistenten dig förstå vad det kan betyda, när kirurgi verkligen hjälper, och vad du bör ha redo för att få ut mesta möjliga av ditt besök hos dr Meisam.",
-    detailsPlaceholder: "Valfritt: berätta gärna lite mer om hur du mår…",
+    detailsPlaceholder: "Skriv dina symtom här",
+    chipsIntro: "Välj ett symtom nedan, eller skriv det med egna ord här under",
     ask: "Kolla mina symtom",
     thinking: "Går igenom ditt svar…",
     botTag: "AI-symtomkoll",
