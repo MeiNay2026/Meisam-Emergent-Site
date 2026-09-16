@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Only one real URL exists today because the site is still a single page.
+  This file needs to grow as soon as the Next.js rebuild adds real pages
+  (services, conditions, second-opinion, blog posts, etc.) — each new page
+  gets its own <url> entry here, or search engines won't know it exists.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://doctormeisam.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
