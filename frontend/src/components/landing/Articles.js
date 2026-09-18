@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 import { ArrowRight, ArrowLeft, ExternalLink } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { Reveal, Overline } from "./Reveal";
 import { scrollToId } from "./cta";
+import { blogPosts } from "@/lib/blogPosts";
 
 const API = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api`;
 
@@ -29,7 +31,10 @@ export default function Articles() {
 
   const usingLive = posts.length > 0;
 
-  // Live WordPress posts, or curated fallback cards.
+  // Live WordPress posts (if WORDPRESS_BASE_URL is ever configured on the
+  // backend), or the real in-site blog posts at /blog/[slug] as the default.
+  // These used to fall back to non-clickable teaser cards that led nowhere;
+  // now every card is a genuine link to a full article.
   const items = usingLive
     ? posts.map((p, i) => ({
         tag: p.tag || "Article",
@@ -37,8 +42,13 @@ export default function Articles() {
         excerpt: p.excerpt,
         image: p.image,
         url: p.url,
+        external: true,
       }))
-    : ar.items.map((it) => ({ ...it, url: null }));
+    : ar.items.map((it, i) => ({
+        ...it,
+        url: blogPosts[i] ? `/blog/${blogPosts[i].slug}` : null,
+        external: false,
+      }));
 
   return (
     <section
@@ -59,19 +69,12 @@ export default function Articles() {
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it, i) => {
-            const CardTag = it.url ? "a" : "article";
-            const linkProps = it.url
-              ? { href: it.url, target: "_blank", rel: "noopener noreferrer" }
-              : {};
-            return (
-              <Reveal key={i} delay={(i % 3) * 0.08}>
-                <CardTag
-                  {...linkProps}
-                  data-testid={`article-card-${i}`}
-                  className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-forest-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                  onClick={!it.url ? () => scrollToId("contact") : undefined}
-                >
-                  {it.image ? (
+            const cardClassName =
+              "group flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-forest-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl";
+
+            const cardBody = (
+              <>
+                {it.image ? (
                     <div className="relative h-40 overflow-hidden">
                       <img
                         src={it.image}
@@ -102,14 +105,41 @@ export default function Articles() {
                     </p>
                     <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-forest-900 transition-colors group-hover:text-gold">
                       {ar.readMore}
-                      {it.url ? (
+                      {it.external ? (
                         <ExternalLink className="h-4 w-4" />
                       ) : (
                         <Arrow className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                       )}
                     </span>
                   </div>
-                </CardTag>
+              </>
+            );
+
+            return (
+              <Reveal key={i} delay={(i % 3) * 0.08}>
+                {it.external && it.url ? (
+                  <a
+                    href={it.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid={`article-card-${i}`}
+                    className={cardClassName}
+                  >
+                    {cardBody}
+                  </a>
+                ) : it.url ? (
+                  <Link href={it.url} data-testid={`article-card-${i}`} className={cardClassName}>
+                    {cardBody}
+                  </Link>
+                ) : (
+                  <article
+                    data-testid={`article-card-${i}`}
+                    className={cardClassName}
+                    onClick={() => scrollToId("contact")}
+                  >
+                    {cardBody}
+                  </article>
+                )}
               </Reveal>
             );
           })}

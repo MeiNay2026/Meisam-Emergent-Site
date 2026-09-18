@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Only one real URL exists today because the site is still a single page.
-  This file needs to grow as soon as the Next.js rebuild adds real pages
-  (services, conditions, second-opinion, blog posts, etc.) — each new page
-  gets its own <url> entry here, or search engines won't know it exists.
+  Add a new <url> entry here every time a new real page is added to the site
+  (services, conditions, second-opinion, more blog posts, etc.) — search
+  engines and AI crawlers rely on this list to discover pages that aren't
+  linked from the homepage's main nav.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://doctormeisam.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://doctormeisam.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://doctormeisam.com/blog/do-i-really-need-surgery</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doctormeisam.com/blog/gallstones-explained</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doctormeisam.com/blog/hernia-myths</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doctormeisam.com/blog/when-abdominal-pain-becomes-serious</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doctormeisam.com/blog/recovery-after-keyhole-surgery</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doctormeisam.com/blog/value-of-a-second-opinion</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
