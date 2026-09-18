@@ -3,9 +3,6 @@ import { ArrowRight } from "lucide-react";
 import BlogHeader from "@/components/blog/BlogHeader";
 import BlogFooter from "@/components/blog/BlogFooter";
 import { blogPosts } from "@/lib/blogPosts";
-import { IMAGES } from "@/lib/site";
-
-const IMAGE_MAP = { anatomy: IMAGES.anatomy, hospital: IMAGES.hospitalAmbient };
 
 export const metadata = {
   title: "Surgical Health Articles",
@@ -51,7 +48,10 @@ export default function BlogIndexPage() {
       <BlogHeader />
 
       <main>
-        <section className="mx-auto max-w-5xl px-5 pb-8 pt-16 lg:px-8 lg:pt-20">
+        {/* Nav is now the real fixed homepage header (see BlogHeader.js), so
+            this needs enough top padding to clear it instead of sitting
+            underneath it. */}
+        <section className="mx-auto max-w-5xl px-5 pb-8 pt-28 lg:px-8 lg:pt-32">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-forest-500">
             Surgical clarity
           </p>
@@ -76,8 +76,8 @@ export default function BlogIndexPage() {
               >
                 <div className="relative h-40 overflow-hidden">
                   <img
-                    src={IMAGE_MAP[p.image]}
-                    alt=""
+                    src={p.image}
+                    alt={p.imageAlt}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />

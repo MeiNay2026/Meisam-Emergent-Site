@@ -4,8 +4,16 @@ import { telHref, waHref, SITE } from "@/lib/site";
 
 export const scrollToId = (id) => {
   const el = document.getElementById(id);
-  if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+  // The section doesn't exist on this page (e.g. a standalone /blog page
+  // reusing this same Nav/Footer) — go to the homepage and land on it there,
+  // instead of silently doing nothing.
+  if (typeof window !== "undefined") {
+    window.location.href = `/#${id}`;
+  }
 };
 
 // Primary "Book Consultation" — links to hospital call centre.

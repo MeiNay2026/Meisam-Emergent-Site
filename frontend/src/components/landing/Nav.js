@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe, Check } from "lucide-react";
 import {
@@ -32,6 +33,12 @@ export default function Nav({ onCheckSymptoms }) {
     { id: "about", label: t.nav.about },
     { id: "contact", label: t.nav.contact },
   ];
+
+  // A real page, not a homepage scroll-anchor, so it's a plain Link rather
+  // than a scrollToId() button. Rendered the same on every page (including
+  // blog pages, which reuse this exact Nav component) so it's always one tap
+  // away, from anywhere on the site, back to the article index.
+  const blogLink = { href: "/blog", label: t.nav.blog || "Blog" };
 
   const go = (id) => {
     setMobileOpen(false);
@@ -70,6 +77,15 @@ export default function Nav({ onCheckSymptoms }) {
               {l.label}
             </button>
           ))}
+          <Link
+            href={blogLink.href}
+            data-testid="nav-link-blog"
+            className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:start-0 after:h-px after:w-0 after:bg-lime after:transition-all after:duration-300 hover:after:w-full ${
+              light ? "text-cream-100/90 hover:text-white" : "text-forest-800/90 hover:text-forest-900"
+            }`}
+          >
+            {blogLink.label}
+          </Link>
         </div>
 
         <div className="flex items-center gap-2.5">
@@ -137,6 +153,13 @@ export default function Nav({ onCheckSymptoms }) {
                   {l.label}
                 </button>
               ))}
+              <Link
+                href={blogLink.href}
+                onClick={() => setMobileOpen(false)}
+                className="rounded-xl px-4 py-3 text-start text-sm font-medium text-forest-800 transition-colors hover:bg-forest-100"
+              >
+                {blogLink.label}
+              </Link>
               <div className="mt-3 flex flex-col gap-2">
                 <BookButton label={t.nav.book} testid="mobile-book-btn" variant="lime" className="w-full" />
                 <button

@@ -4,9 +4,7 @@ import { ArrowRight, CalendarDays, Clock } from "lucide-react";
 import BlogHeader from "@/components/blog/BlogHeader";
 import BlogFooter from "@/components/blog/BlogFooter";
 import { blogPosts, getPostBySlug, getRelatedPosts } from "@/lib/blogPosts";
-import { IMAGES, SITE, telHref } from "@/lib/site";
-
-const IMAGE_MAP = { anatomy: IMAGES.anatomy, hospital: IMAGES.hospitalAmbient };
+import { SITE, telHref } from "@/lib/site";
 
 // Pre-renders every post to static HTML at build time, the same "real HTML,
 // not an empty div" benefit the rest of the Next.js migration was done for.
@@ -30,11 +28,13 @@ export async function generateMetadata({ params }) {
       url: `https://doctormeisam.com/blog/${post.slug}`,
       publishedTime: post.publishedDate,
       authors: ["Dr. Meisam Lund"],
+      images: [post.image],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.metaDescription,
+      images: [post.image],
     },
   };
 }
@@ -49,6 +49,7 @@ function postJsonLd(post) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription,
+    image: post.image,
     url: `https://doctormeisam.com/blog/${post.slug}`,
     datePublished: post.publishedDate,
     dateModified: post.updatedDate || post.publishedDate,
@@ -103,7 +104,10 @@ export default async function BlogPostPage({ params }) {
       <BlogHeader />
 
       <main>
-        <article className="mx-auto max-w-3xl px-5 pb-24 pt-14 lg:px-8 lg:pt-20">
+        {/* Nav is now the real fixed homepage header (see BlogHeader.js), so
+            this needs enough top padding to clear it instead of sitting
+            underneath it. */}
+        <article className="mx-auto max-w-3xl px-5 pb-24 pt-28 lg:px-8 lg:pt-32">
           <Link href="/blog" className="text-xs font-semibold uppercase tracking-[0.18em] text-forest-500 hover:text-forest-900">
             &larr; All articles
           </Link>
@@ -128,7 +132,7 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           <div className="relative mt-8 h-56 overflow-hidden rounded-3xl sm:h-72">
-            <img src={IMAGE_MAP[post.image]} alt="" className="h-full w-full object-cover" />
+            <img src={post.image} alt={post.imageAlt} className="h-full w-full object-cover" />
           </div>
 
           {/* GEO "quick answer" box: a short, self-contained answer near the top
