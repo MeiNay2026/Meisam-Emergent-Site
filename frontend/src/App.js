@@ -8,6 +8,7 @@ import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
 import TrustBar from "@/components/landing/TrustBar";
 import SymptomBot from "@/components/landing/SymptomBot";
+import WhatsAppFloat from "@/components/landing/WhatsAppFloat";
 import Conditions from "@/components/landing/Conditions";
 import WhyChoose from "@/components/landing/WhyChoose";
 import About from "@/components/landing/About";
@@ -53,6 +54,7 @@ function App() {
             <FinalCTA />
           </main>
           <Footer />
+          <WhatsAppFloat hide={botOpen} />
           <SymptomBot open={botOpen} setOpen={setBotOpen} />
         </div>
       </LanguageProvider>
