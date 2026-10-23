@@ -25,6 +25,14 @@
 //   - No promised turnaround time for second opinions or appointments.
 //   - No invented patient quotes, reviews or statistics.
 //   - Educational only, always makes clear this isn't a diagnosis.
+//
+// Photo notes: every photo is a free Unsplash image chosen to read as warm,
+// human and non-clinical, and to match the practice's actual patient
+// population (Dubai: western expats, Arab/Mediterranean, Gulf Arab and South
+// Asian patients) rather than a generic/stock "anywhere" look. `imagePosition`
+// is an optional CSS object-position value — used when a photo needs to be
+// cropped toward one part of the frame (e.g. a two-person photo cropped down
+// to just one person) rather than centered.
 
 export const blogPosts = [
   {
@@ -36,8 +44,8 @@ export const blogPosts = [
     excerpt: "When surgery helps, and when other options may be better for you.",
     readTime: "6 min read",
     publishedDate: "2026-09-16",
-    image: "https://images.unsplash.com/photo-1659989693409-5adc97274bed?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "A doctor sitting with a patient in a warm, relaxed consultation room, talking through their options",
+    image: "https://images.unsplash.com/photo-1758691462071-757bca955439?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A doctor warmly comforting a patient with a reassuring hand on the arm",
     quickAnswer:
       "Surgery is usually the right choice when it removes a clear, ongoing source of pain, danger or risk that other treatments can't fix, and when that benefit outweighs the risks of the operation itself. If your situation isn't an emergency, it's reasonable to ask about non-surgical options first and to get a second opinion before agreeing to anything.",
     sections: [
@@ -93,8 +101,8 @@ export const blogPosts = [
     excerpt: "Symptoms, causes and the treatment options worth knowing about.",
     readTime: "7 min read",
     publishedDate: "2026-09-16",
-    image: "https://images.unsplash.com/photo-1556911073-a517e752729c?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "A woman smiling while preparing fresh vegetables and lemons in a bright kitchen",
+    image: "https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A close-up of hands chopping fresh herbs on a wooden board",
     quickAnswer:
       "Gallstones are small, hardened deposits that form inside the gallbladder, usually made of cholesterol. Many people have them without ever knowing, but if they cause repeated pain, especially after fatty meals, or lead to infection or inflammation, keyhole removal of the gallbladder is usually the most reliable long-term treatment.",
     sections: [
@@ -151,8 +159,8 @@ export const blogPosts = [
     excerpt: "Common myths about hernias and the facts you should actually know.",
     readTime: "6 min read",
     publishedDate: "2026-09-16",
-    image: "https://images.unsplash.com/photo-1729280924877-4750c0dba51e?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "A healthy-looking man jogging calmly through a sunlit forest trail",
+    image: "https://images.unsplash.com/photo-1641337221253-fdc7237f6b61?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A man doing a dumbbell curl in a well-lit gym",
     quickAnswer:
       "A hernia will not heal or go away on its own, and it can only be corrected with surgery. However, not every hernia needs to be repaired immediately, a small one causing no symptoms can often be safely monitored, while a painful or enlarging one usually should be addressed before it causes complications.",
     sections: [
@@ -205,8 +213,8 @@ export const blogPosts = [
     excerpt: "The red flags you should never ignore, and when to seek care.",
     readTime: "6 min read",
     publishedDate: "2026-09-16",
-    image: "https://images.unsplash.com/photo-1618914241652-ff0a094b5a86?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "A woman sitting on the edge of a bed with her hand pressed gently to her side",
+    image: "https://images.unsplash.com/photo-1577989231124-fea5077a859b?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A man in a white t-shirt sitting and looking down, hand resting near his midsection, soft natural light",
     quickAnswer:
       "Most abdominal pain is minor and settles on its own. Seek urgent medical care if pain is sudden and severe, keeps getting worse, is accompanied by fever, persistent vomiting, blood in vomit or stool, a rigid or very tender abdomen, or fainting, these can point to conditions such as appendicitis, a blocked bowel, or a bleeding or infected organ that need prompt assessment.",
     sections: [
@@ -260,8 +268,8 @@ export const blogPosts = [
     excerpt: "What to expect and simple tips for a faster, calmer recovery.",
     readTime: "7 min read",
     publishedDate: "2026-09-16",
-    image: "https://images.unsplash.com/photo-1592621385612-4d7129426394?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "A woman relaxed and smiling under a blanket on a couch in soft natural light",
+    image: "https://images.unsplash.com/photo-1758344953704-1e836a1ff42a?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A woman smiling while running through a sunlit grassy field",
     quickAnswer:
       "Recovery after keyhole (laparoscopic) surgery is generally faster and less painful than after open surgery, because the incisions are much smaller. Most patients manage with simple pain relief, are walking the same day, and return to light daily activities within a week or two, though the exact timeline depends on which operation was performed.",
     sections: [
@@ -321,8 +329,9 @@ export const blogPosts = [
     excerpt: "Getting clarity and confidence before an important decision.",
     readTime: "5 min read",
     publishedDate: "2026-09-16",
-    image: "https://images.unsplash.com/photo-1686771416282-3888ddaf249b?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "Two people shaking hands warmly across a desk with a notepad and small plant",
+    image: "https://images.unsplash.com/photo-1631217868902-fa06818573b4?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A doctor in warm conversation with a patient in a consultation room, cropped to focus on the doctor",
+    imagePosition: "65% 28%",
     quickAnswer:
       "Seeking a second opinion before a significant surgical decision is a normal and sensible step, not a lack of trust in your first doctor. It's especially worth doing when the diagnosis is uncertain, when surgery is major or irreversible, or when you simply want to feel fully confident before proceeding.",
     sections: [

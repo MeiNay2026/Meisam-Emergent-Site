@@ -104,9 +104,8 @@ export default async function BlogPostPage({ params }) {
       <BlogHeader />
 
       <main>
-        {/* Nav is now the real fixed homepage header (see BlogHeader.js), so
-            this needs enough top padding to clear it instead of sitting
-            underneath it. */}
+        {/* Nav is the real fixed homepage header (see BlogHeader.js), so this
+            needs enough top padding to clear it instead of sitting underneath. */}
         <article className="mx-auto max-w-3xl px-5 pb-24 pt-28 lg:px-8 lg:pt-32">
           <Link href="/blog" className="text-xs font-semibold uppercase tracking-[0.18em] text-forest-500 hover:text-forest-900">
             &larr; All articles
@@ -132,7 +131,12 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           <div className="relative mt-8 h-56 overflow-hidden rounded-3xl sm:h-72">
-            <img src={post.image} alt={post.imageAlt} className="h-full w-full object-cover" />
+            <img
+              src={post.image}
+              alt={post.imageAlt}
+              style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
+              className="h-full w-full object-cover"
+            />
           </div>
 
           {/* GEO "quick answer" box: a short, self-contained answer near the top
