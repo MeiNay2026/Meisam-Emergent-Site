@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, Layers, Droplet, Activity, Scale, Microscope, Siren, Check } from "lucide-react";
+import { Plus, Minus, Layers, Droplet, Activity, Scale, Microscope, Siren, Check, ArrowRight } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { Reveal, Overline } from "./Reveal";
 
@@ -11,6 +12,20 @@ const ICONS = {
   weightloss: Scale,
   endoscopy: Microscope,
   emergency: Siren,
+};
+
+// Maps a condition card's id to its dedicated, deeply-optimized procedure
+// page (see src/lib/conditionPages.js) when one exists. Not every card has
+// one yet — only the current highest case-volume priorities do — so this is
+// checked before rendering the "Read the full guide" link.
+const DEDICATED_PAGES = {
+  hernia: "hernia-surgery",
+  gallbladder: "gallbladder-surgery",
+  emergency: "appendicitis-emergency-surgery",
+  gi: "stomach-bowel-conditions",
+  endoscopy: "endoscopy",
+  // "weightloss" deliberately has no dedicated page yet — bariatric surgery
+  // is intentionally de-prioritised in this project's content strategy.
 };
 
 export default function Conditions() {
@@ -39,6 +54,7 @@ export default function Conditions() {
           {c.items.map((it, i) => {
             const Icon = ICONS[it.id] || Layers;
             const isOpen = open === it.id;
+            const pageSlug = DEDICATED_PAGES[it.id];
             return (
               <Reveal key={it.id} delay={(i % 3) * 0.08}>
                 <motion.div
@@ -74,6 +90,16 @@ export default function Conditions() {
                             </li>
                           ))}
                         </ul>
+                        {pageSlug && (
+                          <Link
+                            href={`/conditions/${pageSlug}`}
+                            data-testid={`condition-full-guide-${it.id}`}
+                            className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-forest-900 transition-colors hover:text-gold"
+                          >
+                            Read the full guide
+                            <ArrowRight className="h-3.5 w-3.5" />
+                          </Link>
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
