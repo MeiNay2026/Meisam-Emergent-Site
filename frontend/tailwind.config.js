@@ -11,6 +11,28 @@ module.exports = {
         heading: ['"Cormorant Garamond"', 'serif'],
         body: ['Manrope', 'sans-serif'],
       },
+      // Every text-* size across the site, scaled up 20% from Tailwind's
+      // defaults (line-heights scaled to match so the proportions/rhythm
+      // stay the same, just bigger). This covers every text-xs..text-9xl
+      // class already used in the codebase, so no component files need to
+      // change — only a handful of one-off text-[11px]-style arbitrary
+      // values elsewhere are NOT covered by this and would need their own
+      // bump if you want those scaled too.
+      fontSize: {
+        xs: ['0.9rem', { lineHeight: '1.2rem' }],
+        sm: ['1.05rem', { lineHeight: '1.5rem' }],
+        base: ['1.2rem', { lineHeight: '1.8rem' }],
+        lg: ['1.35rem', { lineHeight: '2.1rem' }],
+        xl: ['1.5rem', { lineHeight: '2.1rem' }],
+        '2xl': ['1.8rem', { lineHeight: '2.4rem' }],
+        '3xl': ['2.25rem', { lineHeight: '2.7rem' }],
+        '4xl': ['2.7rem', { lineHeight: '3rem' }],
+        '5xl': ['3.6rem', { lineHeight: '1' }],
+        '6xl': ['4.5rem', { lineHeight: '1' }],
+        '7xl': ['5.4rem', { lineHeight: '1' }],
+        '8xl': ['7.2rem', { lineHeight: '1' }],
+        '9xl': ['9.6rem', { lineHeight: '1' }],
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

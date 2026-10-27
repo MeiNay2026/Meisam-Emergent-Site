@@ -52,11 +52,13 @@ export default function Articles() {
 
   return (
     <section
-      id="resources"
       data-testid="articles-section"
-      className="scroll-mt-24 bg-cream-100 py-24 lg:py-32"
+      className="bg-cream-100 py-24 lg:py-32"
     >
-      <div className="mx-auto max-w-7xl px-5 lg:px-10">
+      {/* id + scroll-mt moved here from the outer <section> — see Conditions.js
+          for why: it keeps the nav-link scroll landing at the heading instead
+          of at this section's own top padding. */}
+      <div id="resources" className="scroll-mt-24 mx-auto max-w-7xl px-5 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <Overline>{ar.overline}</Overline>

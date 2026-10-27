@@ -11,9 +11,8 @@ export default function FinalCTA() {
 
   return (
     <section
-      id="contact"
       data-testid="final-cta"
-      className="grain relative scroll-mt-24 overflow-hidden bg-forest-900 py-24 lg:py-32"
+      className="grain relative overflow-hidden bg-forest-900 py-24 lg:py-32"
     >
       <div
         className="absolute inset-0 opacity-20"
@@ -25,7 +24,10 @@ export default function FinalCTA() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-forest-900 via-forest-900/85 to-forest-900/70" />
 
-      <div className="relative mx-auto max-w-4xl px-5 text-center lg:px-10">
+      {/* id + scroll-mt moved here from the outer <section> — see Conditions.js
+          for why: it keeps the nav-link scroll landing at the content instead
+          of at this section's own top padding. */}
+      <div id="contact" className="relative scroll-mt-24 mx-auto max-w-4xl px-5 text-center lg:px-10">
         <Reveal>
           <h2 className="font-heading text-4xl font-light leading-tight tracking-tight text-cream-100 sm:text-5xl lg:text-6xl">
             {f.title}

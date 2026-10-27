@@ -29,7 +29,10 @@ export const IMAGES = {
   // which won't be reliable once this project is deployed independently. Now self-hosted
   // from /public/images/ — place the real files there (see deploy notes).
    heroDoctor: "/u4ja9nos_SR5_0382.webp",
-   aboutDoctor: "/qpdb2xg6_MEISAM%20BIO%20PROFILE%20PIC.jpeg",
+   // Replaced Oct 2026 — the old file here was a mismatched placeholder photo
+   // (different face/hair than the real Hero image). This one is Dr. Lund at
+   // his desk at American Hospital Dubai, correctly matching his other photos.
+   aboutDoctor: "/about-dr-meisam-desk.jpg",
   heroBg:
     "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=2400&q=80",
   hospitalAmbient:

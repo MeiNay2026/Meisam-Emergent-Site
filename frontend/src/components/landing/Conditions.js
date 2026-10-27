@@ -35,11 +35,15 @@ export default function Conditions() {
 
   return (
     <section
-      id="conditions"
       data-testid="conditions-section"
-      className="scroll-mt-24 bg-cream-100 py-24 lg:py-32"
+      className="bg-cream-100 py-24 lg:py-32"
     >
-      <div className="mx-auto max-w-7xl px-5 lg:px-10">
+      {/* id + scroll-mt live here (not on the outer <section>) so clicking the
+          nav link lands right at the heading, not at the top of this section's
+          own py-24/py-32 padding — otherwise the fixed nav's scroll-margin
+          offset is satisfied by blank padding and the heading still appears
+          visibly "pushed down" below the nav instead of right under it. */}
+      <div id="conditions" className="scroll-mt-24 mx-auto max-w-7xl px-5 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <Overline>{c.overline}</Overline>

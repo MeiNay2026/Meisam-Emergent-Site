@@ -11,12 +11,14 @@ export default function WhyChoose() {
 
   return (
     <section
-      id="why"
       data-testid="why-choose"
-      className="grain relative scroll-mt-24 overflow-hidden bg-forest-900 py-24 text-cream-100 lg:py-32"
+      className="grain relative overflow-hidden bg-forest-900 py-24 text-cream-100 lg:py-32"
     >
       <div className="pointer-events-none absolute -bottom-32 -start-24 h-[400px] w-[400px] rounded-full bg-forest-700/40 blur-3xl" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-10">
+      {/* id + scroll-mt moved here from the outer <section> — see Conditions.js
+          for why: it keeps the nav-link scroll landing at the heading instead
+          of at this section's own top padding. */}
+      <div id="why" className="relative scroll-mt-24 mx-auto max-w-7xl px-5 lg:px-10">
         <div className="max-w-2xl">
           <Reveal>
             <Overline>{w.overline}</Overline>

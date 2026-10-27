@@ -10,11 +10,13 @@ export default function About() {
 
   return (
     <section
-      id="about"
       data-testid="about-section"
-      className="scroll-mt-24 bg-white py-24 lg:py-32"
+      className="bg-white py-24 lg:py-32"
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 lg:grid-cols-12 lg:gap-16 lg:px-10">
+      {/* id + scroll-mt moved here from the outer <section> — see Conditions.js
+          for why: it keeps the nav-link scroll landing at the content instead
+          of at this section's own top padding. */}
+      <div id="about" className="scroll-mt-24 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 lg:grid-cols-12 lg:gap-16 lg:px-10">
         {/* Image */}
         <div className="lg:col-span-5">
           <Reveal>
@@ -27,7 +29,7 @@ export default function About() {
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-6 inset-x-6 grid grid-cols-3 gap-6 rounded-2xl border border-forest-100 bg-cream-100 px-7 py-5 shadow-xl">
+              <div className="absolute -bottom-6 end-6 grid grid-cols-3 gap-6 rounded-2xl border border-forest-100 bg-cream-100 px-7 py-5 shadow-xl">
                 {a.stats.map((st, i) => (
                   <div key={i} className="text-center" data-testid={`about-stat-${i}`}>
                     <div className="font-heading text-2xl font-medium text-forest-900">{st.value}</div>
