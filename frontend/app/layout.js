@@ -69,13 +69,12 @@ const physicianJsonLd = {
   },
   worksFor: {
     "@type": "Hospital",
-    name: "American Hospital Dubai",
-    url: "https://www.ahdubai.com/",
+    name: "American Hospital Dubai, Dubai Science Park",
+    url: "https://www.ahdubai.com/branches/american-hospital-dubai-science-park",
     telephone: "+971-4-377-5500",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "19th Street, Oud Metha",
-      addressLocality: "Dubai",
+      addressLocality: "Dubai Science Park, Dubai",
       addressCountry: "AE",
     },
   },

@@ -12,7 +12,7 @@ export const SITE = {
   // booking channel, since he is not permitted to book patients outside the hospital.
   whatsapp: "971503147013",
   hospital: "American Hospital Dubai",
-  location: "American Hospital Dubai, Oud Metha, Dubai",
+  location: "American Hospital Dubai, Dubai Science Park, Dubai",
 };
 
 export const telHref = `tel:${SITE.phone}`;

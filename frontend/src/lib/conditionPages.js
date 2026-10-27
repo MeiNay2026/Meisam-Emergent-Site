@@ -62,14 +62,17 @@ export const conditionPages = [
       {
         heading: "Why choose Dr. Meisam Lund",
         paragraphs: [
-          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, trained at Karolinska University Hospital in Stockholm, with further clinical experience across Sweden, the USA and the UAE. He practises at American Hospital Dubai, combining minimally invasive technique with a straightforward approach: surgery is recommended only when it offers genuine benefit, and every option is explained clearly before a decision is made.",
+          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, trained at Karolinska University Hospital in Stockholm, with further clinical experience across Sweden, the USA and the UAE. He practises at American Hospital Dubai, Dubai Science Park, combining minimally invasive technique with a straightforward approach: surgery is recommended only when it offers genuine benefit, and every option is explained clearly before a decision is made.",
         ],
       },
-      // TODO: add a "Research & published work" section here once the exact
-      // citation details for Dr. Lund's fundus-first cholecystectomy study
-      // are confirmed (title, journal, year, DOI/link, co-authors). This is
-      // a strong differentiator for "gallbladder expert" positioning but
-      // must not be summarised or cited until the real reference is in hand.
+      {
+        heading: "Research & published work",
+        paragraphs: [
+          "Dr. Lund is a published author on gallbladder surgery technique. He co-authored \"Fundus first as the standard technique for laparoscopic cholecystectomy,\" published in Scientific Reports (Nature) in 2019, a review of 1,745 laparoscopic gallbladder removals performed over a decade. The study found that the fundus-first (\"dome-down\") approach — starting dissection from the top of the gallbladder rather than the duct area first — was associated with a markedly lower rate of bile duct injury than the conventional technique.",
+          "This fundus-first technique is one of the approaches Dr. Lund draws on for difficult or inflamed gallbladders, where it can reduce the risk of injury to surrounding structures compared with a standard approach.",
+          "Cengiz Y, Lund M, Jänes A, Lundell L, Sandblom G, Israelsson L. \"Fundus first as the standard technique for laparoscopic cholecystectomy.\" Sci Rep 9, 18736 (2019). https://doi.org/10.1038/s41598-019-55401-6",
+        ],
+      },
     ],
     faqs: [
       {
@@ -98,7 +101,7 @@ export const conditionPages = [
       },
       {
         q: "Where can I see Dr. Lund for gallbladder surgery in Dubai?",
-        a: "Dr. Meisam Lund practises at American Hospital Dubai. Call to book a consultation, or use the WhatsApp button on this site to ask a question first.",
+        a: "Dr. Meisam Lund practises at American Hospital Dubai, Dubai Science Park. Call to book a consultation, or use the WhatsApp button on this site to ask a question first.",
       },
     ],
   },
@@ -150,7 +153,7 @@ export const conditionPages = [
       {
         heading: "Why choose Dr. Meisam Lund",
         paragraphs: [
-          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, trained at Karolinska University Hospital in Stockholm, with further clinical experience across Sweden, the USA and the UAE. He practises at American Hospital Dubai, and tailors each hernia repair, open or laparoscopic, around the patient rather than a one-size-fits-all approach.",
+          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, trained at Karolinska University Hospital in Stockholm, with further clinical experience across Sweden, the USA and the UAE. He practises at American Hospital Dubai, Dubai Science Park, and tailors each hernia repair, open or laparoscopic, around the patient rather than a one-size-fits-all approach.",
         ],
       },
     ],
@@ -181,7 +184,7 @@ export const conditionPages = [
       },
       {
         q: "Where can I see Dr. Lund for hernia surgery in Dubai?",
-        a: "Dr. Meisam Lund practises at American Hospital Dubai. Call to book a consultation, or use the WhatsApp button on this site to ask a question first.",
+        a: "Dr. Meisam Lund practises at American Hospital Dubai, Dubai Science Park. Call to book a consultation, or use the WhatsApp button on this site to ask a question first.",
       },
     ],
   },
@@ -231,7 +234,7 @@ export const conditionPages = [
       {
         heading: "Why choose Dr. Meisam Lund",
         paragraphs: [
-          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, with Level I trauma training and military surgical experience alongside his general surgery practice at American Hospital Dubai. That combination means emergency abdominal cases are met with the same calm, precise approach as routine, planned surgery.",
+          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, with Level I trauma training and military surgical experience alongside his general surgery practice at American Hospital Dubai, Dubai Science Park. That combination means emergency abdominal cases are met with the same calm, precise approach as routine, planned surgery.",
         ],
       },
     ],
@@ -294,7 +297,7 @@ export const conditionPages = [
       {
         heading: "Why choose Dr. Meisam Lund",
         paragraphs: [
-          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, practising at American Hospital Dubai, with an approach built around careful diagnosis first and surgery only when it is genuinely the best option.",
+          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, practising at American Hospital Dubai, Dubai Science Park, with an approach built around careful diagnosis first and surgery only when it is genuinely the best option.",
         ],
       },
     ],
@@ -350,7 +353,7 @@ export const conditionPages = [
       {
         heading: "Why choose Dr. Meisam Lund",
         paragraphs: [
-          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, practising at American Hospital Dubai, with a preference for minimally invasive technique wherever the condition safely allows it.",
+          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, practising at American Hospital Dubai, Dubai Science Park, with a preference for minimally invasive technique wherever the condition safely allows it.",
         ],
       },
     ],
@@ -409,7 +412,7 @@ export const conditionPages = [
       {
         heading: "Why choose Dr. Meisam Lund",
         paragraphs: [
-          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, practising at American Hospital Dubai, and uses endoscopy as a central tool for giving patients a clear, confident answer about what is actually happening before any further decision is made.",
+          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, practising at American Hospital Dubai, Dubai Science Park, and uses endoscopy as a central tool for giving patients a clear, confident answer about what is actually happening before any further decision is made.",
         ],
       },
     ],
@@ -461,7 +464,7 @@ export const conditionPages = [
       {
         heading: "Why choose Dr. Meisam Lund",
         paragraphs: [
-          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, practising at American Hospital Dubai, with a standing philosophy that surgery should only be recommended when it offers genuine benefit, the same principle he applies when reviewing another surgeon's recommendation.",
+          "Dr. Lund is a Swedish Board-Certified Consultant General Surgeon, board-certified since 2013, practising at American Hospital Dubai, Dubai Science Park, with a standing philosophy that surgery should only be recommended when it offers genuine benefit, the same principle he applies when reviewing another surgeon's recommendation.",
         ],
       },
     ],
