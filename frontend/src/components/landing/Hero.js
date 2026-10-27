@@ -31,6 +31,11 @@ export default function Hero({ onCheckSymptoms }) {
         />
         {/* soft blend into the cream canvas (no heavy shadow over his face) */}
         <div className="absolute inset-0 bg-gradient-to-t from-cream-100 via-cream-100/10 to-transparent lg:bg-gradient-to-r lg:from-cream-100 lg:via-cream-100/5 lg:to-transparent" />
+        {/* No scrim here on purpose: the photo stays full-bleed on first
+            load. Legibility for the nav logo sitting on top of it (below lg)
+            is handled in Nav.js instead — light text with a drop-shadow
+            while unscrolled, switching to dark text once the solid cream
+            panel scrolls in behind it. */}
       </div>
 
       {/* Content */}

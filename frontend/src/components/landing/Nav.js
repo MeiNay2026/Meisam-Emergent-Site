@@ -23,7 +23,16 @@ export default function Nav({ onCheckSymptoms }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const light = false; // hero now has a light cream canvas, so nav uses dark text
+  // Below `lg` the hero photo is a full-bleed banner sitting directly under
+  // this (transparent, unscrolled) nav, so dark text has no guaranteed
+  // contrast there — the subtitle in muted forest-500 was reported
+  // unreadable against it. Fix: go light + a dark drop-shadow while
+  // unscrolled and below `lg` (the shadow holds up whatever part of the
+  // photo lands behind it, bright or dark); `lg:` forces it back to dark
+  // since the photo there is a right-hand panel, not a banner behind the
+  // nav; and scrolling in the solid cream panel forces it back to dark at
+  // every width too. No scrim/wash needed, so the hero stays full-bleed on
+  // first load.
 
   const links = [
     { id: "conditions", label: t.nav.conditions },
@@ -55,24 +64,47 @@ export default function Nav({ onCheckSymptoms }) {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-10">
-        <button onClick={() => go("hero")} data-testid="nav-logo" className="text-start leading-tight">
-          <span className={`block font-heading text-2xl font-semibold tracking-tight transition-colors sm:text-3xl ${light ? "text-cream-100" : "text-forest-900"}`}>
+        <button onClick={() => go("hero")} data-testid="nav-logo" className="whitespace-nowrap text-start leading-tight">
+          {/* Name stays at the OLD (pre +20%) size below sm — at phone widths, the
+              bigger scaled text-2xl/text-3xl plus whitespace-nowrap pushed total
+              nav width past the viewport (confirmed by measurement: right-edge
+              controls got clipped at ~375px). Room opens up at sm/lg, so it still
+              grows there, just not all the way down at phone width. */}
+          <span
+            className={`block whitespace-nowrap font-heading text-xl font-semibold tracking-tight transition-colors sm:text-2xl lg:text-3xl ${
+              scrolled
+                ? "text-forest-900"
+                : "text-cream-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.45)] lg:text-forest-900 lg:drop-shadow-none"
+            }`}
+          >
             Dr. Meisam Lund
           </span>
-          <span className={`block text-[11px] font-medium uppercase tracking-[0.22em] transition-colors ${light ? "text-cream-100/70" : "text-forest-500"}`}>
+          <span
+            className={`block whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.22em] transition-colors ${
+              scrolled
+                ? "text-forest-500"
+                : "text-cream-100/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)] lg:text-forest-500 lg:drop-shadow-none"
+            }`}
+          >
             {t.footer.role}
           </span>
         </button>
 
-        <div className="hidden items-center gap-7 xl:flex">
+        {/* Pushed from xl to 2xl, and gap-7 to gap-5: at the larger font sizes
+            (see tailwind.config.js fontSize scale), 7 nav items no longer fit
+            on one line at the xl breakpoint — they wrapped mid-label ("Why
+            Choose" / "Me"). 2xl gives them enough room; below that the
+            hamburger menu is used instead. */}
+        <div className="hidden items-center gap-5 2xl:flex">
           {links.map((l) => (
             <button
               key={l.id}
               onClick={() => go(l.id)}
               data-testid={`nav-link-${l.id}`}
-              className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:start-0 after:h-px after:w-0 after:bg-lime after:transition-all after:duration-300 hover:after:w-full ${
-                light ? "text-cream-100/90 hover:text-white" : "text-forest-800/90 hover:text-forest-900"
-              }`}
+              // Always dark: these only ever render at 2xl (1536px)+, where
+              // the hero photo is already off to the right, never behind
+              // the nav — so there's no photo-contrast case to handle.
+              className="relative whitespace-nowrap text-sm font-medium text-forest-800/90 transition-colors after:absolute after:-bottom-1.5 after:start-0 after:h-px after:w-0 after:bg-lime after:transition-all after:duration-300 hover:text-forest-900 hover:after:w-full"
             >
               {l.label}
             </button>
@@ -80,9 +112,7 @@ export default function Nav({ onCheckSymptoms }) {
           <Link
             href={blogLink.href}
             data-testid="nav-link-blog"
-            className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:start-0 after:h-px after:w-0 after:bg-lime after:transition-all after:duration-300 hover:after:w-full ${
-              light ? "text-cream-100/90 hover:text-white" : "text-forest-800/90 hover:text-forest-900"
-            }`}
+            className="relative whitespace-nowrap text-sm font-medium text-forest-800/90 transition-colors after:absolute after:-bottom-1.5 after:start-0 after:h-px after:w-0 after:bg-lime after:transition-all after:duration-300 hover:text-forest-900 hover:after:w-full"
           >
             {blogLink.label}
           </Link>
@@ -94,9 +124,9 @@ export default function Nav({ onCheckSymptoms }) {
               <button
                 data-testid="language-switcher"
                 className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-2 text-xs font-semibold backdrop-blur transition-colors ${
-                  light
-                    ? "border-cream-100/40 bg-white/10 text-cream-100 hover:bg-white/20"
-                    : "border-forest-900/15 bg-white/50 text-forest-800 hover:bg-white"
+                  scrolled
+                    ? "border-forest-900/15 bg-white/50 text-forest-800 hover:bg-white"
+                    : "border-cream-100/40 bg-white/10 text-cream-100 hover:bg-white/20 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)] lg:border-forest-900/15 lg:bg-white/50 lg:text-forest-800 lg:hover:bg-white lg:drop-shadow-none"
                 }`}
               >
                 <Globe className="h-4 w-4" />
@@ -118,13 +148,15 @@ export default function Nav({ onCheckSymptoms }) {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <BookButton label={t.nav.book} testid="nav-book-btn" variant="lime" className="hidden sm:inline-flex" />
+          <BookButton label={t.nav.book} testid="nav-book-btn" variant="lime" className="hidden whitespace-nowrap sm:inline-flex" />
 
           <button
             onClick={() => setMobileOpen((v) => !v)}
             data-testid="mobile-menu-toggle"
-            className={`inline-flex h-10 w-10 items-center justify-center rounded-full border xl:hidden ${
-              light ? "border-cream-100/40 bg-white/10 text-cream-100" : "border-forest-900/15 bg-white/50 text-forest-900"
+            className={`inline-flex h-10 w-10 items-center justify-center rounded-full border 2xl:hidden ${
+              scrolled
+                ? "border-forest-900/15 bg-white/50 text-forest-900"
+                : "border-cream-100/40 bg-white/10 text-cream-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)] lg:border-forest-900/15 lg:bg-white/50 lg:text-forest-900 lg:drop-shadow-none"
             }`}
             aria-label="Menu"
           >
@@ -140,7 +172,7 @@ export default function Nav({ onCheckSymptoms }) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-forest-100 bg-cream-100/95 backdrop-blur-xl xl:hidden"
+            className="overflow-hidden border-t border-forest-100 bg-cream-100/95 backdrop-blur-xl 2xl:hidden"
             data-testid="mobile-menu"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
