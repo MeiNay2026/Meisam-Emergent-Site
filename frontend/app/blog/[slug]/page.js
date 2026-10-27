@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
       type: "article",
       title: post.title,
       description: post.metaDescription,
-      url: `https://doctormeisam.com/blog/${post.slug}`,
+      url: `https://www.doctormeisam.com/blog/${post.slug}`,
       publishedTime: post.publishedDate,
       authors: ["Dr. Meisam Lund"],
       images: [post.image],
@@ -50,22 +50,22 @@ function postJsonLd(post) {
     headline: post.title,
     description: post.metaDescription,
     image: post.image,
-    url: `https://doctormeisam.com/blog/${post.slug}`,
+    url: `https://www.doctormeisam.com/blog/${post.slug}`,
     datePublished: post.publishedDate,
     dateModified: post.updatedDate || post.publishedDate,
     author: {
       "@type": "Person",
       name: "Dr. Meisam Lund",
-      url: "https://doctormeisam.com/",
+      url: "https://www.doctormeisam.com/",
       jobTitle: "Consultant General Surgeon",
       worksFor: { "@type": "Hospital", name: "American Hospital Dubai" },
     },
     publisher: {
       "@type": "Organization",
       name: "Dr. Meisam Lund",
-      logo: { "@type": "ImageObject", url: "https://doctormeisam.com/qpdb2xg6_MEISAM%20BIO%20PROFILE%20PIC.jpeg" },
+      logo: { "@type": "ImageObject", url: "https://www.doctormeisam.com/qpdb2xg6_MEISAM%20BIO%20PROFILE%20PIC.jpeg" },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://doctormeisam.com/blog/${post.slug}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://www.doctormeisam.com/blog/${post.slug}` },
   };
 }
 

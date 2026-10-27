@@ -4,10 +4,10 @@
 const en = {
   nav: {
     conditions: "Conditions",
-    whyChoose: "Why Choose Me",
-    journey: "Patient Journey",
+    whyChoose: "Why Choose",
+    journey: "Journey",
     resources: "Resources",
-    about: "About Me",
+    about: "About",
     contact: "Contact",
     blog: "Blog",
     book: "Book Consultation",
@@ -258,10 +258,10 @@ const en = {
 const ar = {
   nav: {
     conditions: "الحالات",
-    whyChoose: "لماذا تختارني",
-    journey: "رحلة المريض",
+    whyChoose: "لماذا أنا",
+    journey: "الرحلة",
     resources: "المصادر",
-    about: "نبذة عني",
+    about: "نبذة",
     contact: "تواصل",
     blog: "المقالات",
     book: "احجز استشارة",
@@ -477,7 +477,7 @@ const sv = {
   nav: {
     conditions: "Tillstånd",
     whyChoose: "Varför mig",
-    journey: "Patientresan",
+    journey: "Resan",
     resources: "Resurser",
     about: "Om mig",
     contact: "Kontakt",

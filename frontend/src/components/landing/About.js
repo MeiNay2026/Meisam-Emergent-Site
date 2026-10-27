@@ -22,14 +22,26 @@ export default function About() {
           <Reveal>
             <div className="relative">
               <div className="overflow-hidden rounded-[2rem] border border-forest-100 shadow-2xl shadow-forest-900/10">
+                {/* Narrow/phone view keeps the original fixed-height crop.
+                    At lg+ the column is much narrower than it is tall, so a
+                    fixed height no longer reads as "vertical" — switching to
+                    an explicit portrait aspect-ratio (and letting height
+                    follow from it) keeps the crop genuinely vertical at any
+                    column width. */}
                 <img
                   src={IMAGES.aboutDoctor}
                   alt="Dr. Meisam Lund"
-                  className="h-[420px] w-full object-cover lg:h-[520px]"
+                  className="h-[420px] w-full object-cover lg:aspect-[3/4] lg:h-auto"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-6 end-6 grid grid-cols-3 gap-6 rounded-2xl border border-forest-100 bg-cream-100 px-7 py-5 shadow-xl">
+              {/* Centered under the photo regardless of the box's own
+                  (content-driven) width: inset-x-0 + mx-auto on an
+                  absolutely-positioned, auto-width element centers it
+                  between the container's left and right edges — unlike the
+                  old `end-6`, which only pinned it to the right and let it
+                  drift off-center whenever its content width changed. */}
+              <div className="absolute -bottom-6 inset-x-0 mx-auto w-fit grid grid-cols-3 gap-6 rounded-2xl border border-forest-100 bg-cream-100 px-7 py-5 shadow-xl">
                 {a.stats.map((st, i) => (
                   <div key={i} className="text-center" data-testid={`about-stat-${i}`}>
                     <div className="font-heading text-2xl font-medium text-forest-900">{st.value}</div>

@@ -40,4 +40,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://doctormeisam.com/sitemap.xml
+Sitemap: https://www.doctormeisam.com/sitemap.xml

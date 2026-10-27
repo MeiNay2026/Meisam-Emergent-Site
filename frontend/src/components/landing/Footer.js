@@ -20,20 +20,35 @@ export default function Footer() {
   return (
     <footer data-testid="site-footer" className="border-t border-forest-100 bg-cream-100">
       <div className="mx-auto max-w-7xl px-5 py-14 lg:px-10">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          <div>
+        {/* sectionDivider: on narrow/phone view (flex-col) the four blocks
+            below used to run together with nothing but a gap between them —
+            a rule line + top padding on every block but the first gives
+            each one a clear boundary. At lg+ the row layout already
+            separates them with whitespace, so the rule is switched off
+            there. */}
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+          <div className="border-t border-forest-100 pt-8 first:border-t-0 first:pt-0 lg:border-t-0 lg:pt-0">
             <div className="font-heading text-2xl font-semibold tracking-tight text-forest-900">
               {SITE.doctorName}
             </div>
             <div className="text-xs font-medium uppercase tracking-[0.22em] text-forest-500">
               {t.footer.role}
             </div>
-            <p className="mt-4 max-w-xs font-heading text-lg font-light italic text-forest-700/80">
+            {/* max-w-xs forced an awkward break ("...Personal" / "care.")
+                partway through the last of the three short sentences. At
+                lg+ this column sits in a justify-between row with plenty of
+                real space around it, but a flex item with no explicit width
+                still shrink-wraps its text by default — so even after
+                dropping max-w-xs it kept wrapping. lg:whitespace-nowrap
+                makes the one-line width the column's minimum, which the
+                row has room for; below lg it's free to wrap by whole words
+                instead of at a fixed, arbitrary point. */}
+            <p className="mt-4 font-heading text-lg font-light italic text-forest-700/80 lg:whitespace-nowrap">
               {t.footer.tagline}
             </p>
           </div>
 
-          <nav className="flex flex-wrap gap-x-8 gap-y-3">
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 border-t border-forest-100 pt-8 first:border-t-0 first:pt-0 lg:border-t-0 lg:pt-0">
             {links.map((l) => (
               <button
                 key={l.id}
@@ -45,8 +60,8 @@ export default function Footer() {
             ))}
           </nav>
 
-          <div>
-            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-forest-500">
+          <div className="border-t border-forest-100 pt-8 first:border-t-0 first:pt-0 lg:border-t-0 lg:pt-0">
+            <div className="mb-3 whitespace-nowrap text-xs font-bold uppercase tracking-[0.18em] text-forest-700">
               {t.footer.contactTitle}
             </div>
             <div className="space-y-1.5 text-sm text-forest-800/90">
@@ -71,8 +86,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-forest-500">
+          <div className="border-t border-forest-100 pt-8 first:border-t-0 first:pt-0 lg:border-t-0 lg:pt-0">
+            {/* Bolder + darker, same as the Contact label above it, so both
+                read as section headings rather than blending into the body
+                text beneath them. */}
+            <div className="mb-3 whitespace-nowrap text-xs font-bold uppercase tracking-[0.18em] text-forest-700">
               {t.footer.followMe}
             </div>
             <div className="flex gap-3">

@@ -63,7 +63,14 @@ export default function Nav({ onCheckSymptoms }) {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-10">
+      {/* gap-6/lg:gap-8: `justify-content:space-between` alone gives no
+          guaranteed MINIMUM spacing between the three groups below — once
+          their combined width nearly fills the max-w-7xl cap (which happens
+          right at the 2xl breakpoint, where the link row first appears),
+          space-between can collapse to zero and the logo touches the first
+          link. An explicit gap is a floor that space-between can only add
+          to, never shrink below. */}
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 lg:gap-8 lg:px-10">
         <button onClick={() => go("hero")} data-testid="nav-logo" className="whitespace-nowrap text-start leading-tight">
           {/* Name stays at the OLD (pre +20%) size below sm — at phone widths, the
               bigger scaled text-2xl/text-3xl plus whitespace-nowrap pushed total

@@ -95,7 +95,12 @@ export const blogPosts = [
   {
     slug: "gallstones-explained",
     tag: "Gallbladder",
-    title: "Gallstones Explained: Symptoms, Causes and Treatment Options",
+    // Was "Gallstones Explained: Symptoms, Causes and Treatment Options" — at
+    // 78 characters plus the " | Dr. Meisam Lund" template suffix it rendered
+    // an 80-character <title>, which Semrush (and Google, which truncates
+    // around ~60-70 characters) flagged as too long. This keeps the same
+    // three keywords in a shorter frame.
+    title: "Gallstones: Symptoms, Causes and Treatment",
     metaDescription:
       "What gallstones actually are, the symptoms that suggest your gallbladder is the cause, and when keyhole gallbladder removal is and isn't the right treatment.",
     excerpt: "Symptoms, causes and the treatment options worth knowing about.",

@@ -489,6 +489,19 @@ export function getConditionBySlug(slug) {
   return conditionPages.find((c) => c.slug === slug);
 }
 
+// Was `.filter(c => c.slug !== slug).slice(0, count)` — always the first
+// `count` entries of the array in fixed order. Since the two LAST entries
+// (colon-small-bowel-surgery, second-opinion-surgical-decisions) were never
+// within the first 3 of anyone else's filtered list, no other condition page
+// ever linked to them — the only inbound links either had were from each
+// other, and neither had any inbound link from a page a crawler could reach
+// another way, so Semrush flagged them as orphaned along with the rest of
+// this cluster. Rotating the start point by each page's own index instead
+// means every page appears in the "next `count`" of whichever pages precede
+// it, so the full set round-robins and nothing is left permanently unlinked.
 export function getOtherConditions(slug, count = 3) {
-  return conditionPages.filter((c) => c.slug !== slug).slice(0, count);
+  const idx = conditionPages.findIndex((c) => c.slug === slug);
+  if (idx === -1) return conditionPages.slice(0, count);
+  const rotated = [...conditionPages.slice(idx + 1), ...conditionPages.slice(0, idx)];
+  return rotated.slice(0, count);
 }

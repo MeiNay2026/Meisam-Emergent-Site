@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
       type: "article",
       title: page.title,
       description: page.metaDescription,
-      url: `https://doctormeisam.com/conditions/${page.slug}`,
+      url: `https://www.doctormeisam.com/conditions/${page.slug}`,
     },
     twitter: {
       card: "summary",
@@ -46,7 +46,7 @@ function medicalWebPageJsonLd(page) {
     "@type": "MedicalWebPage",
     name: page.title,
     description: page.metaDescription,
-    url: `https://doctormeisam.com/conditions/${page.slug}`,
+    url: `https://www.doctormeisam.com/conditions/${page.slug}`,
     medicalAudience: { "@type": "Patient" },
     about: {
       "@type": "MedicalProcedure",
@@ -57,7 +57,7 @@ function medicalWebPageJsonLd(page) {
       "@type": "Person",
       name: "Dr. Meisam Lund",
       jobTitle: "Consultant General Surgeon",
-      url: "https://doctormeisam.com/",
+      url: "https://www.doctormeisam.com/",
       worksFor: { "@type": "Hospital", name: "American Hospital Dubai" },
     },
     author: {

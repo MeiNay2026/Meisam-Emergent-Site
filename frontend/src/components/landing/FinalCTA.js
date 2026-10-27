@@ -27,7 +27,12 @@ export default function FinalCTA() {
       {/* id + scroll-mt moved here from the outer <section> — see Conditions.js
           for why: it keeps the nav-link scroll landing at the content instead
           of at this section's own top padding. */}
-      <div id="contact" className="relative scroll-mt-24 mx-auto max-w-4xl px-5 text-center lg:px-10">
+      {/* max-w-4xl is too narrow for the heading at its lg:text-6xl size —
+          it wraps to 2 lines. Widening the whole block at lg+ (not just the
+          heading) keeps the subtitle/buttons visually matched to it, and
+          only changes anything at lg+ since the narrow/phone layout below
+          that breakpoint is untouched (heading stays allowed to wrap there). */}
+      <div id="contact" className="relative scroll-mt-24 mx-auto max-w-4xl px-5 text-center lg:max-w-6xl lg:px-10">
         <Reveal>
           <h2 className="font-heading text-4xl font-light leading-tight tracking-tight text-cream-100 sm:text-5xl lg:text-6xl">
             {f.title}

@@ -14,7 +14,7 @@ export const metadata = {
     title: "Surgical Health Articles | Dr. Meisam Lund",
     description:
       "Plain-language, medically-grounded articles on hernias, gallstones, abdominal pain, recovery and surgical decision-making.",
-    url: "https://doctormeisam.com/blog",
+    url: "https://www.doctormeisam.com/blog",
   },
 };
 
@@ -25,13 +25,13 @@ function blogIndexJsonLd() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Surgical Health Articles",
-    url: "https://doctormeisam.com/blog",
+    url: "https://www.doctormeisam.com/blog",
     description:
       "Plain-language articles from Dr. Meisam Lund on hernias, gallstones, abdominal pain, recovery and surgical decision-making.",
     hasPart: blogPosts.map((p) => ({
       "@type": "BlogPosting",
       headline: p.title,
-      url: `https://doctormeisam.com/blog/${p.slug}`,
+      url: `https://www.doctormeisam.com/blog/${p.slug}`,
       datePublished: p.publishedDate,
     })),
   };
@@ -62,6 +62,16 @@ export default function BlogIndexPage() {
             Honest, plain-language articles from Dr. Meisam Lund on the conditions and decisions
             patients ask about most, no jargon, no fear. These are general educational guides,
             not a substitute for an in-person assessment.
+          </p>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-forest-700/80">
+            Each article is written and medically reviewed by Dr. Lund himself, drawing on his
+            training across Sweden, the United States and the UAE and his day-to-day practice as
+            a Consultant General Surgeon at American Hospital Dubai. Topics range from everyday
+            questions, when a symptom is worth worrying about, what recovery actually involves,
+            to bigger decisions like whether surgery is the right call at all or whether a second
+            opinion is worth seeking first. If you read something here that sounds like your
+            situation, the next step is always the same: book a consultation so Dr. Meisam can
+            look at your specific case rather than a general description of it.
           </p>
         </section>
 

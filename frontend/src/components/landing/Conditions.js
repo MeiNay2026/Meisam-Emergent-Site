@@ -94,28 +94,38 @@ export default function Conditions() {
                             </li>
                           ))}
                         </ul>
-                        {pageSlug && (
-                          <Link
-                            href={`/conditions/${pageSlug}`}
-                            data-testid={`condition-full-guide-${it.id}`}
-                            className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-forest-900 transition-colors hover:text-gold"
-                          >
-                            Read the full guide
-                            <ArrowRight className="h-3.5 w-3.5" />
-                          </Link>
-                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
 
-                  <button
-                    onClick={() => setOpen(isOpen ? null : it.id)}
-                    data-testid={`condition-toggle-${it.id}`}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-forest-900 transition-colors hover:text-gold"
-                  >
-                    {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-                    {isOpen ? c.close : c.learnMore}
-                  </button>
+                  <div className="mt-6 flex items-center justify-between gap-4">
+                    <button
+                      onClick={() => setOpen(isOpen ? null : it.id)}
+                      data-testid={`condition-toggle-${it.id}`}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-forest-900 transition-colors hover:text-gold"
+                    >
+                      {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                      {isOpen ? c.close : c.learnMore}
+                    </button>
+
+                    {/* Rendered unconditionally (not gated behind `isOpen`) on
+                        purpose: when this was only inside the AnimatePresence
+                        block above, it never existed in the server-rendered
+                        HTML at all (isOpen starts false), so crawlers never
+                        saw a link to these dedicated pages anywhere on the
+                        homepage — Semrush flagged all of them as orphaned,
+                        reachable only via sitemap.xml. */}
+                    {pageSlug && (
+                      <Link
+                        href={`/conditions/${pageSlug}`}
+                        data-testid={`condition-full-guide-${it.id}`}
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-900 transition-colors hover:text-gold"
+                      >
+                        Full guide
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    )}
+                  </div>
                 </motion.div>
               </Reveal>
             );

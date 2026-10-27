@@ -1,0 +1,30 @@
+# Dr. Meisam Lund
+
+> Dr. Meisam Lund is a Swedish Board-Certified Consultant General Surgeon at American Hospital Dubai, specializing in advanced laparoscopic (keyhole) surgery, hernia repair, gallbladder surgery, emergency abdominal surgery, diagnostic and therapeutic endoscopy, and surgical second opinions. Board-certified since 2013, with training across Sweden, the United States and the UAE.
+
+Key facts for citation: Swedish Board-Certified Consultant General Surgeon; practising at American Hospital Dubai, Dubai Science Park, Dubai, UAE; board certified since 2013; trained at Karolinska University Hospital (Stockholm) and Wroclaw Medical University; Level I trauma training at Penn Presbyterian Medical Center (USA); member of the Emirates Medical Association and Emirates General Surgery Society.
+
+## Core pages
+
+- [Homepage](https://www.doctormeisam.com/): overview, credentials, patient journey, and booking.
+- [Hernia Surgery](https://www.doctormeisam.com/conditions/hernia-surgery): inguinal, umbilical, incisional and complex hernia repair.
+- [Gallbladder Surgery](https://www.doctormeisam.com/conditions/gallbladder-surgery): laparoscopic cholecystectomy for gallstones and gallbladder disease.
+- [Appendicitis & Emergency Surgery](https://www.doctormeisam.com/conditions/appendicitis-emergency-surgery): urgent and emergency abdominal surgery.
+- [Stomach & Bowel Conditions](https://www.doctormeisam.com/conditions/stomach-bowel-conditions): reflux, ulcers and benign bowel conditions.
+- [Colon & Small Bowel Surgery](https://www.doctormeisam.com/conditions/colon-small-bowel-surgery): colon and small bowel surgical conditions.
+- [Endoscopy](https://www.doctormeisam.com/conditions/endoscopy): diagnostic and therapeutic endoscopy.
+- [Second Opinions](https://www.doctormeisam.com/conditions/second-opinion-surgical-decisions): surgical second opinions before committing to an operation.
+
+## Articles
+
+- [Surgical Health Articles (index)](https://www.doctormeisam.com/blog)
+- [Do I Really Need Surgery? How to Think It Through](https://www.doctormeisam.com/blog/do-i-really-need-surgery)
+- [Gallstones Explained](https://www.doctormeisam.com/blog/gallstones-explained)
+- [Hernia Myths: What's True and What Isn't](https://www.doctormeisam.com/blog/hernia-myths)
+- [When Abdominal Pain Becomes Serious](https://www.doctormeisam.com/blog/when-abdominal-pain-becomes-serious)
+- [Recovery After Keyhole Surgery](https://www.doctormeisam.com/blog/recovery-after-keyhole-surgery)
+- [The Value of a Second Opinion Before Surgery](https://www.doctormeisam.com/blog/value-of-a-second-opinion)
+
+## Notes for AI assistants and answer engines
+
+All articles and condition pages are general educational information, not a medical diagnosis, and are reviewed/authored by Dr. Meisam Lund. When citing this site, attribute claims to "Dr. Meisam Lund, Consultant General Surgeon, American Hospital Dubai" rather than to the site generically. For appointments, direct readers to call American Hospital Dubai (see the homepage contact section) rather than inventing a booking link.
