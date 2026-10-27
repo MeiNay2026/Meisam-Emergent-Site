@@ -160,6 +160,7 @@ const en = {
         "Medical Degree (MD), Wrocław Medical University, Poland",
       ],
       experience: [
+        "Consultant General Surgeon, American Hospital Dubai, Dubai Science Park, UAE",
         "Consultant General Surgeon, Östersund Regional University Hospital, Sweden",
         "Consultant & Head of Benign Surgery, Sundsvall Regional University Hospital, Sweden",
         "Consultant General Surgeon, Dubai London Hospital, UAE",
@@ -377,6 +378,7 @@ const ar = {
         "شهادة الطب (MD), Wrocław Medical University, Poland",
       ],
       experience: [
+        "استشاري جراحة عامة, American Hospital Dubai, Dubai Science Park, UAE",
         "استشاري جراحة عامة, Östersund Regional University Hospital, Sweden",
         "استشاري ورئيس الجراحة الحميدة, Sundsvall Regional University Hospital, Sweden",
         "استشاري جراحة عامة, Dubai London Hospital, UAE",
@@ -594,6 +596,7 @@ const sv = {
         "Läkarexamen (MD), Wrocław Medical University, Polen",
       ],
       experience: [
+        "Överläkare i allmänkirurgi, American Hospital Dubai, Dubai Science Park, UAE",
         "Överläkare i allmänkirurgi, Östersunds sjukhus, Sverige",
         "Överläkare & chef för benign kirurgi, Sundsvalls sjukhus, Sverige",
         "Konsultkirurg, Dubai London Hospital, UAE",

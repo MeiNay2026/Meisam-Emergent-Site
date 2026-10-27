@@ -27,7 +27,7 @@ export default function About() {
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-6 end-6 grid grid-cols-3 gap-6 rounded-2xl border border-forest-100 bg-cream-100 px-7 py-5 shadow-xl">
+              <div className="absolute -bottom-6 inset-x-6 grid grid-cols-3 gap-6 rounded-2xl border border-forest-100 bg-cream-100 px-7 py-5 shadow-xl">
                 {a.stats.map((st, i) => (
                   <div key={i} className="text-center" data-testid={`about-stat-${i}`}>
                     <div className="font-heading text-2xl font-medium text-forest-900">{st.value}</div>

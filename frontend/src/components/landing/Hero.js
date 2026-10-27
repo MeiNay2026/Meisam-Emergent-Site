@@ -61,13 +61,14 @@ export default function Hero({ onCheckSymptoms }) {
             {t.hero.subtitle}
           </motion.p>
 
-          <motion.div {...fade(0.42)} className="mt-9 flex flex-wrap items-center gap-3">
-            <BookButton label={t.hero.cta1} testid="hero-book-btn" variant="lime" />
+          <motion.div {...fade(0.42)} className="mt-9 grid grid-cols-1 gap-3 sm:max-w-md sm:grid-cols-2">
+            <BookButton label={t.hero.cta1} testid="hero-book-btn" variant="lime" className="w-full" />
             <SymptomButton
               label={t.hero.cta2}
               onClick={onCheckSymptoms}
               testid="hero-symptom-btn"
               variant="light"
+              className="w-full"
             />
           </motion.div>
 
