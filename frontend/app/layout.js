@@ -104,6 +104,15 @@ const structuredDataJsonLd = {
         name: "American Hospital Dubai, Dubai Science Park",
         url: "https://www.ahdubai.com/branches/american-hospital-dubai-science-park",
         telephone: "+971-4-377-5500",
+        // Every LocalBusiness-lineage node (Hospital included) needs its own
+        // address — Semrush flags each nested Hospital sub-object
+        // independently, not just the top-level MedicalBusiness node above.
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "American Hospital Dubai, Dubai Science Park",
+          addressLocality: "Dubai",
+          addressCountry: "AE",
+        },
       },
     },
   ],

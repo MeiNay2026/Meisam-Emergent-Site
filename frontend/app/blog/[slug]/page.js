@@ -58,7 +58,16 @@ function postJsonLd(post) {
       name: "Dr. Meisam Lund",
       url: "https://www.doctormeisam.com/",
       jobTitle: "Consultant General Surgeon",
-      worksFor: { "@type": "Hospital", name: "American Hospital Dubai" },
+      worksFor: {
+        "@type": "Hospital",
+        name: "American Hospital Dubai",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "American Hospital Dubai, Dubai Science Park",
+          addressLocality: "Dubai",
+          addressCountry: "AE",
+        },
+      },
     },
     publisher: {
       "@type": "Organization",
@@ -187,8 +196,7 @@ export default async function BlogPostPage({ params }) {
               Not sure what your symptoms mean?
             </p>
             <p className="mx-auto mt-2 max-w-md text-sm text-cream-500/80">
-              Try the pre-visit symptom checker on the homepage, or call {SITE.hospital} to book a
-              consultation with Dr. Meisam.
+              Call {SITE.hospital} to book a consultation with Dr. Meisam and get a clear answer.
             </p>
             <a
               href={telHref}

@@ -14,14 +14,10 @@ import React from "react";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Nav from "@/components/landing/Nav";
 
-const goHome = () => {
-  if (typeof window !== "undefined") window.location.href = "/";
-};
-
 export default function BlogHeader() {
   return (
     <LanguageProvider>
-      <Nav onCheckSymptoms={goHome} />
+      <Nav />
     </LanguageProvider>
   );
 }

@@ -9,9 +9,9 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { useLang } from "@/context/LanguageContext";
-import { BookButton, scrollToId } from "./cta";
+import { BookButton, CallButton, scrollToId } from "./cta";
 
-export default function Nav({ onCheckSymptoms }) {
+export default function Nav() {
   const { t, lang, setLang, langs } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -201,15 +201,13 @@ export default function Nav({ onCheckSymptoms }) {
               </Link>
               <div className="mt-3 flex flex-col gap-2">
                 <BookButton label={t.nav.book} testid="mobile-book-btn" variant="lime" className="w-full" />
-                <button
-                  onClick={() => {
-                    setMobileOpen(false);
-                    onCheckSymptoms?.();
-                  }}
-                  className="rounded-full border border-forest-900/25 px-6 py-3 text-sm font-semibold text-forest-900"
-                >
-                  {t.nav.checkSymptoms}
-                </button>
+                <CallButton
+                  label={t.nav.call}
+                  onClick={() => setMobileOpen(false)}
+                  testid="mobile-call-btn"
+                  variant="light"
+                  className="w-full"
+                />
               </div>
             </div>
           </motion.div>

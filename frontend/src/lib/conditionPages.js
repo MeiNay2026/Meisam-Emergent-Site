@@ -16,7 +16,14 @@ export const conditionPages = [
     slug: "gallbladder-surgery",
     tag: "Gallbladder",
     homeId: "gallbladder", // maps back to the Conditions.js card with this id
-    title: "Gallbladder Surgery in Dubai | Dr. Meisam Lund",
+    // `title` is the bare page title — same convention as blogPosts.js —
+    // NOT "... | Dr. Meisam Lund". The root layout's title.template already
+    // appends that suffix to every page's <title>, so a hardcoded suffix
+    // here rendered it twice ("... Dubai | Dr. Meisam Lund | Dr. Meisam
+    // Lund"), which is what Semrush's "title too long" check caught on the
+    // 3 longest of these 7 pages (the other 4 had the same duplicate bug,
+    // just short enough to stay under its length threshold).
+    title: "Gallbladder Surgery in Dubai",
     h1: "Gallbladder Surgery in Dubai",
     metaDescription:
       "Laparoscopic gallbladder removal (cholecystectomy) in Dubai with Dr. Meisam Lund, Swedish Board-Certified Consultant General Surgeon at American Hospital Dubai.",
@@ -109,7 +116,7 @@ export const conditionPages = [
     slug: "hernia-surgery",
     tag: "Hernia",
     homeId: "hernia",
-    title: "Hernia Surgery in Dubai | Dr. Meisam Lund",
+    title: "Hernia Surgery in Dubai",
     h1: "Hernia Surgery in Dubai",
     metaDescription:
       "Inguinal, umbilical and incisional hernia repair in Dubai with Dr. Meisam Lund, Swedish Board-Certified Consultant General Surgeon at American Hospital Dubai.",
@@ -192,7 +199,7 @@ export const conditionPages = [
     slug: "appendicitis-emergency-surgery",
     tag: "Emergency Surgery",
     homeId: "emergency",
-    title: "Appendicitis & Emergency Abdominal Surgery in Dubai | Dr. Meisam Lund",
+    title: "Appendicitis & Emergency Abdominal Surgery in Dubai",
     h1: "Appendicitis & Emergency Abdominal Surgery in Dubai",
     metaDescription:
       "Appendicitis and emergency abdominal surgery in Dubai with Dr. Meisam Lund, Level I trauma-trained Consultant General Surgeon at American Hospital Dubai.",
@@ -261,7 +268,7 @@ export const conditionPages = [
     slug: "stomach-bowel-conditions",
     tag: "Stomach & Bowel",
     homeId: "gi",
-    title: "Stomach & Bowel Conditions in Dubai | Dr. Meisam Lund",
+    title: "Stomach & Bowel Conditions in Dubai",
     h1: "Stomach & Bowel Conditions in Dubai",
     metaDescription:
       "Diagnosis and surgical treatment of reflux, ulcers and bowel conditions in Dubai with Dr. Meisam Lund, Consultant General Surgeon at American Hospital Dubai.",
@@ -323,7 +330,7 @@ export const conditionPages = [
   {
     slug: "colon-small-bowel-surgery",
     tag: "Colon & Small Bowel",
-    title: "Colon & Small Bowel Surgery in Dubai | Dr. Meisam Lund",
+    title: "Colon & Small Bowel Surgery in Dubai",
     h1: "Colon & Small Bowel Surgery in Dubai",
     metaDescription:
       "Colon and small bowel surgery in Dubai with Dr. Meisam Lund, Consultant General Surgeon at American Hospital Dubai, using minimally invasive technique where possible.",
@@ -376,7 +383,7 @@ export const conditionPages = [
     slug: "endoscopy",
     tag: "Endoscopy",
     homeId: "endoscopy",
-    title: "Diagnostic & Therapeutic Endoscopy in Dubai | Dr. Meisam Lund",
+    title: "Diagnostic & Therapeutic Endoscopy in Dubai",
     h1: "Diagnostic & Therapeutic Endoscopy in Dubai",
     metaDescription:
       "Diagnostic and therapeutic endoscopy in Dubai with Dr. Meisam Lund, Consultant General Surgeon at American Hospital Dubai, for accurate diagnosis without surgery.",
@@ -434,7 +441,7 @@ export const conditionPages = [
   {
     slug: "second-opinion-surgical-decisions",
     tag: "Second Opinion",
-    title: "Second Opinions for Surgical Decisions in Dubai | Dr. Meisam Lund",
+    title: "Second Opinions for Surgical Decisions in Dubai",
     h1: "Second Opinions for Surgical Decisions in Dubai",
     metaDescription:
       "Get an honest second opinion on a recommended surgery in Dubai from Dr. Meisam Lund, Consultant General Surgeon at American Hospital Dubai.",

@@ -11,7 +11,10 @@ const en = {
     contact: "Contact",
     blog: "Blog",
     book: "Book Consultation",
-    checkSymptoms: "Check My Symptoms",
+    // Replaces the old "Check My Symptoms" key now that the symptom-checker
+    // feature is gone — used as the label prefix on the Hero/mobile-nav call
+    // button, which appends the phone number itself (see cta.js CallButton).
+    call: "Call ",
   },
   hero: {
     overline: "Swedish Board Certified Consultant Surgeon",
@@ -19,7 +22,7 @@ const en = {
     subtitle:
       "Internationally trained across Sweden, the USA and the UAE, helping patients make confident, unhurried decisions using advanced minimally invasive techniques.",
     cta1: "Book Consultation",
-    cta2: "Check My Symptoms",
+    cta2: "Call ",
     rating: "Trusted by patients from Sweden, the UAE & around the world",
     badgeTitle: "Practising at American Hospital Dubai",
     badgeWords: ["Excellence.", "Precision.", "Compassion."],
@@ -32,40 +35,6 @@ const en = {
       "Advanced Laparoscopic Surgery",
       "Military & Disaster Medicine",
       "American Hospital Dubai",
-    ],
-  },
-  symptom: {
-    overline: "Pre-Visit Symptom Checker",
-    title: "Symptom Checker",
-    subtitle:
-      "Select your main concern and this assistant will help you understand what it could mean, when surgery genuinely helps, and what to have ready so you get the most out of your appointment with Dr. Meisam.",
-    detailsPlaceholder: "Write your symptoms here",
-    chipsIntro: "Pick from the symptoms below, or write it in your own words underneath",
-    ask: "Check My Symptoms",
-    thinking: "Reviewing your answer…",
-    botTag: "AI Symptom Checker",
-    botGreeting:
-      "Hello, I'm an AI symptom checker for Dr. Meisam Lund's practice. I'm not Dr. Meisam himself, I'm here to help you describe your complaint clearly and get ready for your appointment. What's bothering you?",
-    disclaimer:
-      "This is an AI assistant, not Dr. Meisam himself. It can make mistakes and does not diagnose. Dr. Meisam may ask you some of the same questions again in person to verify your answers before deciding on any treatment.",
-    labels: {
-      causes: "Possible causes",
-      surgery: "When surgery may help",
-      redflags: "See care urgently if…",
-      prepare: "Get ready for your visit",
-      book: "When to book",
-    },
-    symptoms: [
-      { id: "lump", label: "A lump or swelling" },
-      { id: "abdominal-pain", label: "Upper abdominal pain" },
-      { id: "gallstones", label: "Gallstones" },
-      { id: "reflux", label: "Reflux or heartburn" },
-      { id: "stomach-pain", label: "Persistent stomach pain" },
-      { id: "blood-stool", label: "Blood in stool" },
-      { id: "weight-loss", label: "Unexplained weight loss" },
-      { id: "hernia", label: "Hernia" },
-      { id: "appendix", label: "Appendix pain" },
-      { id: "second-opinion", label: "Need a second opinion" },
     ],
   },
   why: {
@@ -265,7 +234,7 @@ const ar = {
     contact: "تواصل",
     blog: "المقالات",
     book: "احجز استشارة",
-    checkSymptoms: "افحص أعراضي",
+    call: "اتصل ",
   },
   hero: {
     overline: "استشاري جراحة عامة معتمد من المجلس السويدي",
@@ -273,7 +242,7 @@ const ar = {
     subtitle:
       "تدريب دولي في السويد والولايات المتحدة والإمارات, أساعد المرضى على اتخاذ قرارات واثقة ومدروسة باستخدام أحدث تقنيات الجراحة طفيفة التوغل.",
     cta1: "احجز استشارة",
-    cta2: "افحص أعراضي",
+    cta2: "اتصل ",
     rating: "موضع ثقة المرضى من السويد والإمارات وحول العالم",
     badgeTitle: "أمارس في المستشفى الأمريكي دبي",
     badgeWords: ["تميّز.", "دقة.", "رحمة."],
@@ -286,40 +255,6 @@ const ar = {
       "جراحة متقدمة بالمنظار",
       "الطب العسكري والكوارث",
       "المستشفى الأمريكي دبي",
-    ],
-  },
-  symptom: {
-    overline: "فاحص الأعراض قبل الزيارة",
-    title: "فاحص الأعراض",
-    subtitle:
-      "اختر همّك الرئيسي وسيساعدك هذا المساعد على فهم ما قد يعنيه، ومتى تفيد الجراحة حقًا، وما يجب تجهيزه للاستفادة القصوى من موعدك مع د. ميسم.",
-    detailsPlaceholder: "اكتب أعراضك هنا",
-    chipsIntro: "اختر من الأعراض أدناه، أو اكتبها بكلماتك في الأسفل",
-    ask: "افحص أعراضي",
-    thinking: "جارٍ مراجعة إجابتك…",
-    botTag: "فاحص أعراض بالذكاء الاصطناعي",
-    botGreeting:
-      "مرحبًا، أنا فاحص أعراض بالذكاء الاصطناعي لعيادة د. ميسم لوند. لست الدكتور ميسم نفسه، بل هنا لمساعدتك على وصف شكواك بوضوح والاستعداد لموعدك. ما الذي يزعجك؟",
-    disclaimer:
-      "هذا مساعد بالذكاء الاصطناعي وليس الدكتور ميسم نفسه. قد يخطئ ولا يقدّم تشخيصًا. قد يسأل د. ميسم بعض الأسئلة نفسها مجددًا شخصيًا للتحقق من إجاباتك قبل تحديد أي علاج.",
-    labels: {
-      causes: "الأسباب المحتملة",
-      surgery: "متى قد تفيد الجراحة",
-      redflags: "اطلب الرعاية فورًا إذا…",
-      prepare: "استعد لموعدك",
-      book: "متى تحجز",
-    },
-    symptoms: [
-      { id: "lump", label: "كتلة أو انتفاخ" },
-      { id: "abdominal-pain", label: "ألم أعلى البطن" },
-      { id: "gallstones", label: "حصوات المرارة" },
-      { id: "reflux", label: "ارتجاع أو حرقة" },
-      { id: "stomach-pain", label: "ألم مستمر في المعدة" },
-      { id: "blood-stool", label: "دم في البراز" },
-      { id: "weight-loss", label: "فقدان وزن غير مبرر" },
-      { id: "hernia", label: "فتق" },
-      { id: "appendix", label: "ألم الزائدة" },
-      { id: "second-opinion", label: "أحتاج رأيًا ثانيًا" },
     ],
   },
   why: {
@@ -483,7 +418,7 @@ const sv = {
     contact: "Kontakt",
     blog: "Blogg",
     book: "Boka konsultation",
-    checkSymptoms: "Kolla mina symtom",
+    call: "Ring ",
   },
   hero: {
     overline: "Svensk specialistläkare i kirurgi",
@@ -491,7 +426,7 @@ const sv = {
     subtitle:
       "Internationellt utbildad i Sverige, USA och Förenade Arabemiraten, jag hjälper patienter fatta trygga, genomtänkta beslut med avancerad titthålskirurgi.",
     cta1: "Boka konsultation",
-    cta2: "Kolla mina symtom",
+    cta2: "Ring ",
     rating: "Anlitad av patienter från Sverige, Förenade Arabemiraten och hela världen",
     badgeTitle: "Verksam vid American Hospital Dubai",
     badgeWords: ["Excellens.", "Precision.", "Omtanke."],
@@ -504,40 +439,6 @@ const sv = {
       "Avancerad titthålskirurgi",
       "Militär- & katastrofmedicin",
       "American Hospital Dubai",
-    ],
-  },
-  symptom: {
-    overline: "Symtomkoll inför besöket",
-    title: "Symtomkoll",
-    subtitle:
-      "Välj ditt huvudsakliga besvär så hjälper assistenten dig förstå vad det kan betyda, när kirurgi verkligen hjälper, och vad du bör ha redo för att få ut mesta möjliga av ditt besök hos dr Meisam.",
-    detailsPlaceholder: "Skriv dina symtom här",
-    chipsIntro: "Välj ett symtom nedan, eller skriv det med egna ord här under",
-    ask: "Kolla mina symtom",
-    thinking: "Går igenom ditt svar…",
-    botTag: "AI-symtomkoll",
-    botGreeting:
-      "Hej, jag är en AI-symtomkoll för dr Meisam Lunds mottagning. Jag är inte dr Meisam själv, jag är här för att hjälpa dig beskriva ditt besvär tydligt och förbereda dig inför besöket. Vad besvärar dig?",
-    disclaimer:
-      "Detta är en AI-assistent, inte dr Meisam själv. Den kan ha fel och ställer ingen diagnos. Dr Meisam kan komma att ställa några av samma frågor igen personligen för att bekräfta dina svar innan någon behandling bestäms.",
-    labels: {
-      causes: "Möjliga orsaker",
-      surgery: "När kirurgi kan hjälpa",
-      redflags: "Sök vård akut om…",
-      prepare: "Förbered ditt besök",
-      book: "När du bör boka",
-    },
-    symptoms: [
-      { id: "lump", label: "En knöl eller svullnad" },
-      { id: "abdominal-pain", label: "Smärta högt i buken" },
-      { id: "gallstones", label: "Gallsten" },
-      { id: "reflux", label: "Reflux eller halsbränna" },
-      { id: "stomach-pain", label: "Ihållande magsmärta" },
-      { id: "blood-stool", label: "Blod i avföringen" },
-      { id: "weight-loss", label: "Oförklarlig viktnedgång" },
-      { id: "hernia", label: "Bråck" },
-      { id: "appendix", label: "Smärta i blindtarmen" },
-      { id: "second-opinion", label: "Behöver en andra bedömning" },
     ],
   },
   why: {

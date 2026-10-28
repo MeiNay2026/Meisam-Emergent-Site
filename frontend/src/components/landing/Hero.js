@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Star, MapPin } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { IMAGES } from "@/lib/site";
-import { BookButton, SymptomButton } from "./cta";
+import { BookButton, CallButton } from "./cta";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -11,7 +11,7 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay },
 });
 
-export default function Hero({ onCheckSymptoms }) {
+export default function Hero() {
   const { t } = useLang();
 
   return (
@@ -68,13 +68,7 @@ export default function Hero({ onCheckSymptoms }) {
 
           <motion.div {...fade(0.42)} className="mt-9 grid grid-cols-1 gap-3 sm:max-w-md sm:grid-cols-2">
             <BookButton label={t.hero.cta1} testid="hero-book-btn" variant="lime" className="w-full" />
-            <SymptomButton
-              label={t.hero.cta2}
-              onClick={onCheckSymptoms}
-              testid="hero-symptom-btn"
-              variant="light"
-              className="w-full"
-            />
+            <CallButton label={t.hero.cta2} testid="hero-call-btn" variant="light" className="w-full" />
           </motion.div>
 
           <motion.div {...fade(0.55)} className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">

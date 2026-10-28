@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, MessageCircle, MessagesSquare } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { telHref, waHref, SITE } from "@/lib/site";
 
 export const scrollToId = (id) => {
@@ -34,34 +34,30 @@ export const BookButton = ({ testid = "book-consultation-btn", label, variant = 
   );
 };
 
-export const SymptomButton = ({ onClick, label, testid = "check-symptoms-btn", variant = "light", className = "" }) => {
+// variant "onDark" (default) is the original look, built for the dark
+// FinalCTA section — unchanged. variant "light" reuses the former
+// SymptomButton's light-background styling, for use on the cream Hero
+// section and the (white) mobile nav menu, now that this is also the
+// second Hero CTA (see Hero.js) and the mobile nav's second button (see
+// Nav.js), replacing the removed symptom-checker buttons.
+export const CallButton = ({ label, onClick, variant = "onDark", testid = "call-btn", className = "" }) => {
   const styles =
-    variant === "onDark"
-      ? "border-white/40 bg-white/10 text-cream-100 hover:bg-white/20"
-      : "border-forest-900/25 bg-white/70 text-forest-900 hover:bg-white";
+    variant === "light"
+      ? "group border-forest-900/25 bg-white/70 px-7 text-forest-900 hover:-translate-y-0.5 hover:bg-white hover:shadow-lg"
+      : "border-cream-100/30 bg-white/10 px-6 text-cream-100 hover:bg-white/20";
   return (
-    <button
+    <a
+      href={telHref}
       onClick={onClick}
       data-testid={testid}
-      className={`group inline-flex items-center justify-center gap-2 rounded-full border px-7 py-3.5 text-sm font-semibold backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${styles} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-full border py-3.5 text-sm font-semibold backdrop-blur transition-all duration-300 ${styles} ${className}`}
     >
+      <Phone className="h-4 w-4" />
       {label}
-      <MessagesSquare className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-    </button>
+      {SITE.phoneDisplay}
+    </a>
   );
 };
-
-export const CallButton = ({ label, className = "" }) => (
-  <a
-    href={telHref}
-    data-testid="call-btn"
-    className={`inline-flex items-center justify-center gap-2 rounded-full border border-cream-100/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-cream-100 backdrop-blur transition-all duration-300 hover:bg-white/20 ${className}`}
-  >
-    <Phone className="h-4 w-4" />
-    {label}
-    {SITE.phoneDisplay}
-  </a>
-);
 
 export const WhatsAppButton = ({ label, className = "" }) => (
   <a

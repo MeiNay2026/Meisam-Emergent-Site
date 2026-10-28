@@ -58,13 +58,31 @@ function medicalWebPageJsonLd(page) {
       name: "Dr. Meisam Lund",
       jobTitle: "Consultant General Surgeon",
       url: "https://www.doctormeisam.com/",
-      worksFor: { "@type": "Hospital", name: "American Hospital Dubai" },
+      worksFor: {
+        "@type": "Hospital",
+        name: "American Hospital Dubai",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "American Hospital Dubai, Dubai Science Park",
+          addressLocality: "Dubai",
+          addressCountry: "AE",
+        },
+      },
     },
     author: {
       "@type": "Person",
       name: "Dr. Meisam Lund",
       jobTitle: "Consultant General Surgeon",
-      worksFor: { "@type": "Hospital", name: "American Hospital Dubai" },
+      worksFor: {
+        "@type": "Hospital",
+        name: "American Hospital Dubai",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "American Hospital Dubai, Dubai Science Park",
+          addressLocality: "Dubai",
+          addressCountry: "AE",
+        },
+      },
     },
     lastReviewed: new Date().toISOString().slice(0, 10),
   };
@@ -172,8 +190,7 @@ export default async function ConditionPage({ params }) {
               Think you may need {page.tag.toLowerCase()} surgery?
             </p>
             <p className="mx-auto mt-2 max-w-md text-sm text-cream-500/80">
-              Call {SITE.hospital} to book a consultation with Dr. Meisam, or try the pre-visit
-              symptom checker on the homepage first.
+              Call {SITE.hospital} to book a consultation with Dr. Meisam.
             </p>
             <a
               href={telHref}
