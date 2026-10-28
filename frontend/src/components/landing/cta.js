@@ -1,6 +1,6 @@
 import React from "react";
-import { Phone, MessageCircle } from "lucide-react";
-import { telHref, waHref, SITE } from "@/lib/site";
+import { Phone, MessageCircle, CalendarCheck } from "lucide-react";
+import { telHref, waHref, bookingUrl, SITE } from "@/lib/site";
 
 export const scrollToId = (id) => {
   const el = document.getElementById(id);
@@ -16,7 +16,10 @@ export const scrollToId = (id) => {
   }
 };
 
-// Primary "Book Consultation" — links to hospital call centre.
+// Primary "Book Consultation" — now a genuinely separate option from Call:
+// links out to American Hospital Dubai's own doctor-profile page for Dr. Lund,
+// where their real "Request an Appointment" booking form lives (see bookingUrl
+// in site.js). Opens in a new tab since it leaves doctormeisam.com entirely.
 export const BookButton = ({ testid = "book-consultation-btn", label, variant = "dark", className = "" }) => {
   const styles =
     variant === "lime"
@@ -24,12 +27,14 @@ export const BookButton = ({ testid = "book-consultation-btn", label, variant = 
       : "bg-forest-900 text-cream-100 hover:bg-lime hover:text-forest-900";
   return (
     <a
-      href={telHref}
+      href={bookingUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       data-testid={testid}
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl ${styles} ${className}`}
     >
       {label}
-      <Phone className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
+      <CalendarCheck className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
     </a>
   );
 };

@@ -18,6 +18,13 @@ export const SITE = {
 export const telHref = `tel:${SITE.phone}`;
 export const telHrefIntl = `tel:${SITE.phoneIntl}`;
 export const waHref = `https://wa.me/${SITE.whatsapp}`;
+// American Hospital Dubai's own doctor-profile page for Dr. Lund — it carries
+// their real "Request an Appointment" booking flow (a form, pre-selectable to
+// Meisam Lund among the hospital's doctors), confirmed by opening the page
+// directly rather than guessed. There's no separate standalone booking URL:
+// the form is a same-page modal on ahdubai.com, so this profile page — where
+// that modal lives, one click away — is the right link for "Book Consultation".
+export const bookingUrl = "https://www.ahdubai.com/doctors-profile/meisam-lund";
 
 export const SOCIALS = {
   linkedin: "https://www.linkedin.com/in/drmeisam",
