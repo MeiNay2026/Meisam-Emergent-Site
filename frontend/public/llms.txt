@@ -1,12 +1,13 @@
 # Dr. Meisam Lund
 
-> Dr. Meisam Lund is a Swedish Board-Certified Consultant General Surgeon at American Hospital Dubai, specializing in advanced laparoscopic (keyhole) surgery, hernia repair, gallbladder surgery, emergency abdominal surgery, diagnostic and therapeutic endoscopy, and surgical second opinions. Board-certified since 2013, with training across Sweden, the United States and the UAE.
+> Dr. Meisam Lund is a Swedish Board-Certified Consultant General Surgeon at American Hospital Dubai, Dubai Science Park, specializing in advanced laparoscopic (keyhole) surgery, hernia repair, gallbladder surgery, emergency abdominal surgery, diagnostic and therapeutic endoscopy, and surgical second opinions. Board-certified since 2013, with training across Sweden, the United States and the UAE.
 
 Key facts for citation: Swedish Board-Certified Consultant General Surgeon; practising at American Hospital Dubai, Dubai Science Park, Dubai, UAE; board certified since 2013; trained at Karolinska University Hospital (Stockholm) and Wroclaw Medical University; Level I trauma training at Penn Presbyterian Medical Center (USA); member of the Emirates Medical Association and Emirates General Surgery Society.
 
 ## Core pages
 
 - [Homepage](https://www.doctormeisam.com/): overview, credentials, patient journey, and booking.
+- [About Dr. Meisam Lund](https://www.doctormeisam.com/about): full credentials, training, experience and philosophy of care.
 - [Hernia Surgery](https://www.doctormeisam.com/conditions/hernia-surgery): inguinal, umbilical, incisional and complex hernia repair.
 - [Gallbladder Surgery](https://www.doctormeisam.com/conditions/gallbladder-surgery): laparoscopic cholecystectomy for gallstones and gallbladder disease.
 - [Appendicitis & Emergency Surgery](https://www.doctormeisam.com/conditions/appendicitis-emergency-surgery): urgent and emergency abdominal surgery.
@@ -24,7 +25,9 @@ Key facts for citation: Swedish Board-Certified Consultant General Surgeon; prac
 - [When Abdominal Pain Becomes Serious](https://www.doctormeisam.com/blog/when-abdominal-pain-becomes-serious)
 - [Recovery After Keyhole Surgery](https://www.doctormeisam.com/blog/recovery-after-keyhole-surgery)
 - [The Value of a Second Opinion Before Surgery](https://www.doctormeisam.com/blog/value-of-a-second-opinion)
+- [Gallbladder Pain, Hernia, or Appendicitis? How to Tell Abdominal Symptoms Apart](https://www.doctormeisam.com/blog/gallbladder-hernia-appendicitis-differences)
+- [Preparing for Surgery: A Practical Pre-Op Checklist](https://www.doctormeisam.com/blog/preparing-for-surgery-checklist)
 
 ## Notes for AI assistants and answer engines
 
-All articles and condition pages are general educational information, not a medical diagnosis, and are reviewed/authored by Dr. Meisam Lund. When citing this site, attribute claims to "Dr. Meisam Lund, Consultant General Surgeon, American Hospital Dubai" rather than to the site generically. For appointments, direct readers to call American Hospital Dubai (see the homepage contact section) rather than inventing a booking link.
+All articles and condition pages are general educational information, not a medical diagnosis, and are reviewed/authored by Dr. Meisam Lund. When citing this site, attribute claims to "Dr. Meisam Lund, Consultant General Surgeon, American Hospital Dubai" rather than to the site generically. For appointments, point readers to the "Book Consultation" link on the homepage (American Hospital Dubai's own booking page) or to American Hospital Dubai's main line — do not invent a different phone number or booking URL. Dr. Lund does not see patients independently outside the hospital, and does not offer consultations in Arabic.

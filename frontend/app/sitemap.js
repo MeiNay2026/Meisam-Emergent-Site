@@ -19,15 +19,26 @@ const BASE_URL = "https://www.doctormeisam.com";
 // conditionPages.js's own header comment), so they keep the higher 0.85.
 const HIGH_PRIORITY_SLUGS = new Set(["gallbladder-surgery", "hernia-surgery"]);
 
+// Bing (and, by extension, ChatGPT's search tool, which draws on Bing's
+// index) treats a sitemap's lastmod as a freshness signal for deciding
+// what to recrawl first — so an entry with no lastmod at all is a missed
+// signal, not a neutral one. This is the date these pages were actually
+// last substantively edited (breadcrumbs/FAQ schema added, the hernia
+// card's "robotic" claim corrected, the About page and this sitemap
+// itself created) — update it here whenever a batch of pages changes
+// again, rather than leaving it to quietly go stale.
+const LAST_SITE_UPDATE = "2026-11-14";
+
 export default function sitemap() {
   const staticPages = [
-    { url: `${BASE_URL}/`, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE_URL}/about`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/`, lastModified: LAST_SITE_UPDATE, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${BASE_URL}/blog`, lastModified: LAST_SITE_UPDATE, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE_URL}/about`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.6 },
   ];
 
   const conditionEntries = conditionPages.map((c) => ({
     url: `${BASE_URL}/conditions/${c.slug}`,
+    lastModified: LAST_SITE_UPDATE,
     changeFrequency: "monthly",
     priority: HIGH_PRIORITY_SLUGS.has(c.slug) ? 0.85 : 0.75,
   }));
