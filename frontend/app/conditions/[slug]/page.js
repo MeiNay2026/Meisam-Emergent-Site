@@ -100,6 +100,23 @@ function faqJsonLd(page) {
   };
 }
 
+// BreadcrumbList: Home > Conditions > [page]. Helps Google's breadcrumb rich
+// result and gives AI crawlers an explicit signal of where this page sits
+// in the site's hierarchy, rather than inferring it from the URL alone.
+// "Conditions" has no standalone URL of its own (it's the homepage's
+// #conditions anchor), so it points there rather than to a dead link.
+function breadcrumbJsonLd(page) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.doctormeisam.com/" },
+      { "@type": "ListItem", position: 2, name: "Conditions", item: "https://www.doctormeisam.com/#conditions" },
+      { "@type": "ListItem", position: 3, name: page.tag, item: `https://www.doctormeisam.com/conditions/${page.slug}` },
+    ],
+  };
+}
+
 export default async function ConditionPage({ params }) {
   const { slug } = await params;
   const page = getConditionBySlug(slug);
@@ -118,6 +135,11 @@ export default async function ConditionPage({ params }) {
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(page)) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(page)) }}
       />
 
       <BlogHeader />

@@ -380,12 +380,172 @@ export const blogPosts = [
       },
     ],
   },
+  // --- Added Nov 2026 as part of the SEO/GEO content audit. Both posts
+  // below are DRAFT content: written to match the site's existing tone,
+  // rules and medical caution (see the content-rules comment at the top of
+  // this file), but not yet reviewed by Dr. Lund. Do not treat as published
+  // until he's signed off on the medical framing.
+  //
+  // Deliberately NOT added to content.js's `articles.items` (the homepage
+  // "Resources" teaser cards) — that list is English-only and position-
+  // matched 1:1 against this array by index (see Articles.js), and
+  // extending it would mean writing matching Arabic/Swedish teaser copy,
+  // which this file's own header comment already flags as a separate,
+  // careful job. These two posts are still fully real pages: listed on
+  // /blog, in the sitemap, and internally linked from the condition pages
+  // and from each other.
+  {
+    slug: "gallbladder-hernia-appendicitis-differences",
+    tag: "Symptoms",
+    title: "Gallbladder Pain, Hernia, or Appendicitis? How to Tell Abdominal Symptoms Apart",
+    metaDescription:
+      "How to tell gallbladder pain, a hernia and appendicitis apart by where and how they typically present, from a Consultant General Surgeon in Dubai.",
+    excerpt: "Three common causes of abdominal pain, and how their patterns usually differ.",
+    readTime: "6 min read",
+    publishedDate: "2026-11-14",
+    image: "https://images.unsplash.com/photo-1758691462071-757bca955439?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A doctor warmly talking through a patient's symptoms with a reassuring hand on the arm",
+    quickAnswer:
+      "Gallbladder pain is usually felt in the upper right abdomen, often after a fatty meal. A hernia shows as a visible or palpable bulge, most often in the groin, navel or a previous scar. Appendicitis classically starts as vague pain near the navel that moves and sharpens to the lower right abdomen. These patterns are a useful starting point, not a diagnosis — all three need an in-person examination to confirm.",
+    sections: [
+      {
+        heading: "Why these three get confused",
+        paragraphs: [
+          "Gallbladder disease, hernias and appendicitis are three of the most common reasons patients end up discussing abdominal pain with a general surgeon, and early on they can feel similar: a vague ache or discomfort somewhere in the abdomen that's hard to pin down. The good news is that each one tends to have a recognisable pattern once you know what to look for, which is the aim of this guide. It isn't a substitute for an examination, it's a way to have a more useful conversation with whoever assesses you.",
+        ],
+      },
+      {
+        heading: "Gallbladder pain: upper right, often after eating",
+        paragraphs: [
+          "Gallbladder pain typically sits in the upper right or central abdomen, often triggered or worsened by a fatty or heavy meal, and can spread to the back or right shoulder blade. Attacks tend to come and go, lasting thirty minutes to a few hours, with nausea or bloating alongside. For the full picture, including when it does and doesn't need surgery, see our guides on gallbladder surgery and gallstones explained.",
+        ],
+      },
+      {
+        heading: "A hernia: a bulge, not just pain",
+        paragraphs: [
+          "A hernia's defining feature isn't the pain itself, it's a visible or palpable bulge, most often in the groin, at the navel, or at the site of a previous surgical scar. The bulge is often more noticeable standing, coughing or straining, and may flatten when lying down. Discomfort is usually a dragging or aching sensation around the bulge itself rather than pain that migrates elsewhere. More detail is in our hernia surgery guide and hernia myths article.",
+        ],
+      },
+      {
+        heading: "Appendicitis: pain that starts vague and moves",
+        paragraphs: [
+          "The classic appendicitis pattern is pain that starts vaguely around the navel and, over several hours, moves and sharpens into the lower right abdomen, often with loss of appetite, nausea and a low-grade fever. Unlike gallbladder pain, it typically doesn't settle and recur, it tends to steadily worsen. Our appendicitis & emergency surgery guide covers this in full.",
+        ],
+      },
+      {
+        heading: "What these patterns can't tell you",
+        paragraphs: [
+          "Real symptoms don't always read from a textbook; a complicated or unusually positioned organ can mimic another condition entirely, and some patients feel very little pain even with a condition that needs prompt treatment. These patterns are a way to organise what you're noticing before you see someone, not a way to rule something out yourself.",
+        ],
+      },
+      {
+        heading: "When to stop comparing and seek care now",
+        paragraphs: [
+          "Sudden severe pain, a fever, persistent vomiting, a rigid or very tender abdomen, or a hernia that won't push back in are signs to seek urgent care rather than keep narrowing it down at home. Our full guide to abdominal pain red flags covers exactly which symptoms warrant an emergency department rather than a routine appointment.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can I tell a hernia apart from gallbladder pain myself?",
+        a: "Often, yes, to a point: a hernia shows as a visible or palpable bulge, usually in the groin, navel or a scar, while gallbladder pain is felt internally in the upper right abdomen with no bulge at all. But confirming it, and ruling out anything else, still needs an in-person examination.",
+      },
+      {
+        q: "What's the main difference between gallbladder pain and appendicitis?",
+        a: "Gallbladder pain sits in the upper right abdomen and often follows a fatty meal, usually coming and going in attacks. Appendicitis classically starts vaguely near the navel and steadily moves and sharpens to the lower right abdomen over hours, without settling on its own.",
+      },
+      {
+        q: "Should I wait and see which one it turns out to be?",
+        a: "Not if symptoms are worsening, or if you notice any red-flag signs such as fever, persistent vomiting or severe pain. For milder, stable symptoms, a routine assessment is reasonable, but a surgeon examining you is always a faster, more reliable path to an answer than monitoring symptoms yourself.",
+      },
+    ],
+  },
+  {
+    slug: "preparing-for-surgery-checklist",
+    tag: "Preparation",
+    title: "Preparing for Surgery: A Practical Pre-Op Checklist",
+    metaDescription:
+      "A practical checklist for the days before surgery: medications, fasting, logistics, what to bring, and the questions worth asking your surgical team first.",
+    excerpt: "Medications, fasting, logistics and what to bring, before your operation.",
+    readTime: "6 min read",
+    publishedDate: "2026-11-14",
+    image: "https://images.unsplash.com/photo-1631217868902-fa06818573b4?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A doctor in warm conversation with a patient ahead of a planned procedure, cropped to focus on the doctor",
+    imagePosition: "65% 28%",
+    quickAnswer:
+      "Preparing for surgery mainly comes down to five things: telling your surgical team about every medication and supplement you take, following their exact fasting instructions, arranging a ride home and support afterward, packing simply, and asking any remaining questions before the day itself. Your surgical team will always give you precise timings for your specific operation, this is a general outline to prepare with.",
+    sections: [
+      {
+        heading: "Why preparation matters",
+        paragraphs: [
+          "Good preparation doesn't just reduce last-minute stress, it genuinely lowers the chance of a delay or complication on the day. Most of it is simple admin done a few days ahead, not anything medical you need to manage yourself.",
+        ],
+      },
+      {
+        heading: "Medications and supplements",
+        paragraphs: [
+          "Tell your surgical team about every medication, supplement and herbal remedy you take, including anything over-the-counter. Blood thinners, some supplements, and certain other medications often need to be paused before surgery, but exactly which ones, and for how many days, varies by drug and by procedure. Never stop or adjust a medication on your own, always confirm the exact timing with your surgical team.",
+        ],
+      },
+      {
+        heading: "Fasting before your operation",
+        paragraphs: [
+          "Most operations under general anaesthesia require fasting from food and drink for a set period beforehand, for safety during anaesthesia. The exact number of hours depends on the type of anaesthesia and the hospital's own protocol, so always follow the specific instructions you're given rather than a general rule, and call your team if anything is unclear.",
+        ],
+      },
+      {
+        heading: "Arranging your logistics",
+        paragraphs: [
+          "After anaesthesia you will not be able to drive yourself home, so arrange for someone to collect you and, depending on the procedure, to stay with you for the first night. It's worth arranging this well in advance rather than the morning of your surgery, and confirming with your workplace or family how much time off or support you'll realistically need during early recovery.",
+        ],
+      },
+      {
+        heading: "What to bring with you",
+        paragraphs: [
+          "Keep it simple: identification, your insurance details, a list of your current medications and dosages, loose comfortable clothing for the journey home, and any specific items your team has asked you to bring. Leave valuables at home.",
+        ],
+      },
+      {
+        heading: "Questions worth asking before the day",
+        paragraphs: [
+          "A short list goes a long way: exactly when should I stop eating and drinking? Which of my regular medications should I take as normal, and which should I pause? How long will I realistically need help at home afterward? What's the clearest sign something isn't going as expected during recovery? Asking these in advance means you're not trying to remember the answers on the morning of surgery.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How many days before surgery should I stop taking blood thinners?",
+        a: "This varies by medication and by procedure, so it must be confirmed with your surgical team, never stopped or adjusted on your own. Tell them about every medication and supplement you take well before your surgery date so there's time to plan this properly.",
+      },
+      {
+        q: "Can I eat or drink before surgery?",
+        a: "Most operations require fasting for a set period beforehand, but the exact number of hours depends on your anaesthesia and your hospital's protocol. Always follow the specific instructions given to you rather than a general rule.",
+      },
+      {
+        q: "Do I need someone to drive me home after surgery?",
+        a: "Yes, for any procedure involving general anaesthesia or sedation, you won't be able to drive yourself safely afterward. Arrange a ride, and for many procedures, someone to stay with you for the first night, well before your surgery date.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug) {
   return blogPosts.find((p) => p.slug === slug) || null;
 }
 
+// Was `.filter(p => p.slug !== slug).slice(0, count)` — always the first
+// `count` entries of the array in fixed order, same bug that was already
+// found and fixed on conditionPages.js's getOtherConditions (see its
+// comment there). The two most recently added posts, being last in the
+// array, would never appear in the first 3 of anyone else's filtered list —
+// meaning no other post would ever link to them, and their only inbound
+// links would be the /blog index. Rotating the start point by each post's
+// own index means every post appears in the "next `count`" of whichever
+// posts precede it, so the whole set round-robins and nothing is left
+// permanently unlinked, exactly like the conditions fix.
 export function getRelatedPosts(slug, count = 3) {
-  return blogPosts.filter((p) => p.slug !== slug).slice(0, count);
+  const idx = blogPosts.findIndex((p) => p.slug === slug);
+  if (idx === -1) return blogPosts.slice(0, count);
+  const rotated = [...blogPosts.slice(idx + 1), ...blogPosts.slice(0, idx)];
+  return rotated.slice(0, count);
 }

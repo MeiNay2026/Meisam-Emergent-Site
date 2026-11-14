@@ -62,7 +62,13 @@ const en = {
         title: "Hernia Surgery",
         short: "Inguinal, umbilical, incisional and complex hernia repairs using advanced techniques.",
         long: "Most hernias are safe to observe until they cause symptoms, but a bulge that grows, hurts or becomes hard to push back deserves attention. I favour tailored repairs, open or laparoscopic, chosen around your body and your life, not a one-size-fits-all mesh.",
-        bullets: ["Inguinal & umbilical repair", "Incisional & recurrent hernias", "Laparoscopic & robotic options"],
+        // Was "Laparoscopic & robotic options" — robotic surgery isn't
+        // mentioned anywhere else on the site (not in Dr. Lund's bio/
+        // credentials, not on the dedicated hernia-surgery page, which only
+        // discusses open vs. laparoscopic). Matching the claim to what's
+        // actually documented elsewhere avoids promising a technique that
+        // isn't backed up site-wide.
+        bullets: ["Inguinal & umbilical repair", "Incisional & recurrent hernias", "Laparoscopic & open options"],
       },
       {
         id: "gallbladder",
@@ -179,6 +185,11 @@ const en = {
       { tag: "Warning signs", title: "When Abdominal Pain Becomes Serious", excerpt: "The red flags you should never ignore, and when to seek care." },
       { tag: "Recovery", title: "Recovery After Keyhole Surgery", excerpt: "What to expect and simple tips for a faster, calmer recovery." },
       { tag: "Second opinion", title: "The Value of a Second Opinion", excerpt: "Getting clarity and confidence before an important decision." },
+      // Appended Nov 2026 — matches the 2 new posts added to blogPosts.js.
+      // Order and count here must stay aligned with blogPosts.js (see
+      // Articles.js, which maps this array to blogPosts by index).
+      { tag: "Symptoms", title: "Gallbladder, Hernia, or Appendicitis?", excerpt: "How to tell three common causes of abdominal pain apart." },
+      { tag: "Preparation", title: "Preparing for Surgery", excerpt: "A practical checklist for the days before your operation." },
     ],
   },
   faq: {
@@ -277,7 +288,7 @@ const ar = {
     learnMore: "اعرف المزيد",
     close: "عرض أقل",
     items: [
-      { id: "hernia", title: "جراحة الفتق", short: "إصلاح الفتق الإربي والسري والجراحي والمعقّد بتقنيات متقدمة.", long: "معظم أنواع الفتق آمنة للمراقبة حتى تسبب أعراضًا، لكن الانتفاخ الذي يكبر أو يؤلم يستحق الاهتمام. أفضّل الإصلاح المخصّص, مفتوحًا أو بالمنظار, بما يناسب جسمك وحياتك.", bullets: ["إصلاح إربي وسري", "فتق جراحي ومتكرر", "خيارات المنظار والروبوت"] },
+      { id: "hernia", title: "جراحة الفتق", short: "إصلاح الفتق الإربي والسري والجراحي والمعقّد بتقنيات متقدمة.", long: "معظم أنواع الفتق آمنة للمراقبة حتى تسبب أعراضًا، لكن الانتفاخ الذي يكبر أو يؤلم يستحق الاهتمام. أفضّل الإصلاح المخصّص, مفتوحًا أو بالمنظار, بما يناسب جسمك وحياتك.", bullets: ["إصلاح إربي وسري", "فتق جراحي ومتكرر", "خيارات المنظار والجراحة المفتوحة"] },
       { id: "gallbladder", title: "جراحة المرارة", short: "استئصال المرارة بالمنظار للحصوات والالتهاب والألم.", long: "حصوات المرارة شائعة وغالبًا صامتة. عندما تسبب ألمًا أو التهابًا، يكون استئصال المرارة بالمنظار من أكثر العمليات أمانًا, ويعود معظم المرضى للمنزل في نفس اليوم.", bullets: ["جراحة بالمنظار", "خروج في نفس اليوم غالبًا", "عودة سريعة للحياة"] },
       { id: "gi", title: "حالات المعدة والأمعاء", short: "رعاية شاملة للارتجاع والقرحة واضطرابات الأمعاء الحميدة.", long: "من الارتجاع العنيد إلى مشكلات الأمعاء، أفحص بعناية قبل التوصية بأي شيء. كثير من الحالات تتحسن بالتشخيص الصحيح دون جراحة.", bullets: ["جراحة مضادة للارتجاع", "حالات الأمعاء والقولون", "وضوح تشخيصي أولًا"] },
       { id: "weightloss", title: "جراحة إنقاص الوزن", short: "جراحة سمنة مبنية على الأدلة مع دعم طويل الأمد.", long: "جراحة إنقاص الوزن قرار شخصي وجاد. أركّز على ما إذا كانت مناسبة لك حقًا، وأجهّزك جيدًا، وأبقى معك للمتابعة طويلة الأمد.", bullets: ["تقييم دقيق للأهلية", "متابعة منظّمة طويلة الأمد", "نهج داعم دون أحكام"] },
@@ -363,6 +374,8 @@ const ar = {
       { tag: "علامات تحذير", title: "متى يصبح ألم البطن خطيرًا", excerpt: "العلامات التي يجب ألا تتجاهلها ومتى تطلب الرعاية." },
       { tag: "التعافي", title: "التعافي بعد جراحة المنظار", excerpt: "ما تتوقعه ونصائح بسيطة لتعافٍ أسرع وأهدأ." },
       { tag: "رأي ثانٍ", title: "قيمة الرأي الثاني", excerpt: "وضوح وثقة قبل اتخاذ قرار مهم." },
+      { tag: "الأعراض", title: "المرارة أم الفتق أم الزائدة الدودية؟", excerpt: "كيف تفرّق بين ثلاثة أسباب شائعة لألم البطن." },
+      { tag: "التحضير", title: "الاستعداد للجراحة", excerpt: "قائمة عملية للأيام التي تسبق عمليتك الجراحية." },
     ],
   },
   faq: {
@@ -461,7 +474,7 @@ const sv = {
     learnMore: "Läs mer",
     close: "Visa mindre",
     items: [
-      { id: "hernia", title: "Bråckkirurgi", short: "Ljumsk-, navel-, ärr- och komplexa bråck med avancerad teknik.", long: "De flesta bråck är säkra att avvakta tills de ger besvär, men en utbuktning som växer eller gör ont förtjänar uppmärksamhet. Jag föredrar skräddarsydda ingrepp, öppna eller titthål, anpassade efter dig.", bullets: ["Ljumsk- & navelbråck", "Ärr- & återkommande bråck", "Titthåls- & robotalternativ"] },
+      { id: "hernia", title: "Bråckkirurgi", short: "Ljumsk-, navel-, ärr- och komplexa bråck med avancerad teknik.", long: "De flesta bråck är säkra att avvakta tills de ger besvär, men en utbuktning som växer eller gör ont förtjänar uppmärksamhet. Jag föredrar skräddarsydda ingrepp, öppna eller titthål, anpassade efter dig.", bullets: ["Ljumsk- & navelbråck", "Ärr- & återkommande bråck", "Titthåls- & öppen kirurgi"] },
       { id: "gallbladder", title: "Gallblåskirurgi", short: "Titthålsborttagning av gallblåsan vid sten, inflammation och smärta.", long: "Gallsten är vanligt och ofta symtomfritt. När de ger smärta eller infektion är titthålsborttagning en av de säkraste operationerna, de flesta går hem samma eller nästa dag.", bullets: ["Titthålskirurgi", "Hemgång ofta samma dag", "Snabb återgång till vardagen"] },
       { id: "gi", title: "Mag- & tarmtillstånd", short: "Omfattande vård för reflux, sår, tarmbesvär och godartade tillstånd.", long: "Från envis reflux till tarmbesvär utreder jag noga innan jag rekommenderar något. Många tillstånd förbättras med rätt diagnos utan kirurgi.", bullets: ["Reflux- & antirefluxkirurgi", "Tarm- & kolontillstånd", "Diagnostisk tydlighet först"] },
       { id: "weightloss", title: "Överviktskirurgi", short: "Evidensbaserad obesitaskirurgi med långsiktigt stöd.", long: "Överviktskirurgi är ett allvarligt och personligt beslut. Jag fokuserar på om det verkligen är rätt för dig och följer dig långsiktigt.", bullets: ["Noggrann lämplighetsbedömning", "Strukturerad uppföljning", "Ett stödjande, fördomsfritt bemötande"] },
@@ -547,6 +560,8 @@ const sv = {
       { tag: "Varningstecken", title: "När magsmärta blir allvarlig", excerpt: "Varningstecknen du aldrig bör ignorera, och när du bör söka vård." },
       { tag: "Återhämtning", title: "Återhämtning efter titthålskirurgi", excerpt: "Vad du kan förvänta dig och enkla tips för snabbare återhämtning." },
       { tag: "Andra bedömning", title: "Värdet av en andra bedömning", excerpt: "Tydlighet och trygghet inför ett viktigt beslut." },
+      { tag: "Symtom", title: "Gallblåsa, bråck eller blindtarmsinflammation?", excerpt: "Så skiljer du tre vanliga orsaker till magsmärta åt." },
+      { tag: "Förberedelse", title: "Att förbereda sig för kirurgi", excerpt: "En praktisk checklista för dagarna före din operation." },
     ],
   },
   faq: {

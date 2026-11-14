@@ -90,6 +90,20 @@ function faqJsonLd(post) {
   };
 }
 
+// BreadcrumbList: Home > Blog > [post] — same reasoning as the condition
+// pages' breadcrumb (see app/conditions/[slug]/page.js).
+function breadcrumbJsonLd(post) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.doctormeisam.com/" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.doctormeisam.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://www.doctormeisam.com/blog/${post.slug}` },
+    ],
+  };
+}
+
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -108,6 +122,11 @@ export default async function BlogPostPage({ params }) {
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(post)) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(post)) }}
       />
 
       <BlogHeader />

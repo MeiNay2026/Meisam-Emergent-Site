@@ -17,7 +17,15 @@ export const SITE = {
 
 export const telHref = `tel:${SITE.phone}`;
 export const telHrefIntl = `tel:${SITE.phoneIntl}`;
-export const waHref = `https://wa.me/${SITE.whatsapp}`;
+// Was `https://wa.me/${SITE.whatsapp}` — wa.me is just a redirector that
+// forwards to this same api.whatsapp.com endpoint. Audit crawlers (Semrush
+// included) that hit the same wa.me link from every page in a single crawl
+// get throttled by WhatsApp's own rate limiting and see it as a broken link
+// (HTTP 429), even though real visitors clicking it in a browser never hit
+// that limit. Linking straight to api.whatsapp.com skips the redirect hop
+// entirely — same destination, same behaviour for patients, no extra hop
+// for a crawler (or a flaky connection) to fail on.
+export const waHref = `https://api.whatsapp.com/send?phone=${SITE.whatsapp}`;
 // American Hospital Dubai's own doctor-profile page for Dr. Lund — it carries
 // their real "Request an Appointment" booking flow (a form, pre-selectable to
 // Meisam Lund among the hospital's doctors), confirmed by opening the page
